@@ -61,9 +61,7 @@ function closeMenu() {
       li.addEventListener("mouseenter", () => open(sub));
 
       link.addEventListener("click", (e) => {
-        const href = link.getAttribute("href") || "";
-        if (href === "#" || href === "") e.preventDefault();
-
+        e.preventDefault();
         if (sub.classList.contains("active")) {
           sub.classList.remove("active");
           activeMenu = null;
@@ -93,45 +91,37 @@ function closeMenu() {
     const submenuTriggers = document.querySelectorAll(".has-submenu");
 
     submenuTriggers.forEach((trigger) => {
-      // используем и click, и touchstart для iPhone
-      ["click", "touchstart"].forEach((eventName) => {
-        trigger.addEventListener(
-          eventName,
-          (e) => {
-            if (window.innerWidth < 1200) {
-              e.preventDefault();
-              e.stopPropagation();
-              const submenu = trigger.nextElementSibling;
-              if (!submenu) return;
+      const submenu = trigger.nextElementSibling;
+      if (!submenu) return;
 
-              const isOpen = submenu.classList.contains("open");
+      const toggleMenu = (e) => {
+        if (window.innerWidth >= 1200) return;
+        e.preventDefault();
+        e.stopPropagation();
 
-              // Если уже открыто — закрываем
-              if (isOpen) {
-                submenu.classList.remove("open");
-                trigger.classList.remove("active");
-                return;
-              }
+        const isOpen = submenu.classList.contains("open");
 
-              // Закрываем остальные
-              document
-                .querySelectorAll(".submenu.open, .submenu-grid-wide.open")
-                .forEach((s) => s.classList.remove("open"));
-              document
-                .querySelectorAll(".has-submenu.active")
-                .forEach((a) => a.classList.remove("active"));
+        // Закрываем все
+        document
+          .querySelectorAll(".submenu.open, .submenu-grid-wide.open")
+          .forEach((s) => s.classList.remove("open"));
+        document
+          .querySelectorAll(".has-submenu.active")
+          .forEach((a) => a.classList.remove("active"));
 
-              // Открываем текущее
-              submenu.classList.add("open");
-              trigger.classList.add("active");
-            }
-          },
-          { passive: false } // важно для iOS — иначе preventDefault не сработает
-        );
-      });
+        // Если не было открыто — открываем
+        if (!isOpen) {
+          submenu.classList.add("open");
+          trigger.classList.add("active");
+        }
+      };
+
+      // поддержка iPhone / iPad
+      trigger.addEventListener("touchend", toggleMenu);
+      trigger.addEventListener("click", toggleMenu);
     });
 
-    // Клик вне меню — закрывает всё
+    // Закрытие при клике вне
     document.addEventListener("click", (e) => {
       if (!e.target.closest("nav") && !e.target.closest("#menu-toggle")) {
         document
