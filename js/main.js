@@ -90,51 +90,66 @@ function closeMenu() {
 
   // === Мобильная версия ===
   function setupMobile() {
-const submenuTriggers = document.querySelectorAll(".has-submenu");
+    const submenuTriggers = document.querySelectorAll(".has-submenu");
 
-submenuTriggers.forEach((trigger) => {
-  trigger.addEventListener("click", (e) => {
-    if (window.innerWidth < 1200) {
-      e.preventDefault();
-      const submenu = trigger.nextElementSibling;
-      if (!submenu) return;
+    submenuTriggers.forEach((trigger) => {
+      // используем и click, и touchstart для iPhone
+      ["click", "touchstart"].forEach((eventName) => {
+        trigger.addEventListener(
+          eventName,
+          (e) => {
+            if (window.innerWidth < 1200) {
+              e.preventDefault();
+              e.stopPropagation();
+              const submenu = trigger.nextElementSibling;
+              if (!submenu) return;
 
-      const isOpen = submenu.classList.contains("open");
+              const isOpen = submenu.classList.contains("open");
 
-      // Если уже открыто — закрываем
-      if (isOpen) {
-        submenu.classList.remove("open");
-        trigger.classList.remove("active");
-        return;
-      }
+              // Если уже открыто — закрываем
+              if (isOpen) {
+                submenu.classList.remove("open");
+                trigger.classList.remove("active");
+                return;
+              }
 
-      // Закрываем остальные
-      document
-        .querySelectorAll(".submenu.open, .submenu-grid-wide.open")
-        .forEach((s) => s.classList.remove("open"));
-      document
-        .querySelectorAll(".has-submenu.active")
-        .forEach((a) => a.classList.remove("active"));
+              // Закрываем остальные
+              document
+                .querySelectorAll(".submenu.open, .submenu-grid-wide.open")
+                .forEach((s) => s.classList.remove("open"));
+              document
+                .querySelectorAll(".has-submenu.active")
+                .forEach((a) => a.classList.remove("active"));
 
-      // Открываем текущее
-      submenu.classList.add("open");
-      trigger.classList.add("active");
-    }
-  });
-});
-
+              // Открываем текущее
+              submenu.classList.add("open");
+              trigger.classList.add("active");
+            }
+          },
+          { passive: false } // важно для iOS — иначе preventDefault не сработает
+        );
+      });
+    });
 
     // Клик вне меню — закрывает всё
     document.addEventListener("click", (e) => {
       if (!e.target.closest("nav") && !e.target.closest("#menu-toggle")) {
-        document.querySelectorAll(".submenu.open, .submenu-grid-wide.open").forEach((s) => s.classList.remove("open"));
-        document.querySelectorAll(".has-submenu.active").forEach((a) => a.classList.remove("active"));
+        document
+          .querySelectorAll(".submenu.open, .submenu-grid-wide.open")
+          .forEach((s) => s.classList.remove("open"));
+        document
+          .querySelectorAll(".has-submenu.active")
+          .forEach((a) => a.classList.remove("active"));
       }
     });
 
     cleanup = () => {
-      document.querySelectorAll(".submenu, .submenu-grid-wide").forEach((s) => s.classList.remove("open"));
-      document.querySelectorAll(".has-submenu.active").forEach((a) => a.classList.remove("active"));
+      document
+        .querySelectorAll(".submenu, .submenu-grid-wide")
+        .forEach((s) => s.classList.remove("open"));
+      document
+        .querySelectorAll(".has-submenu.active")
+        .forEach((a) => a.classList.remove("active"));
     };
   }
 
