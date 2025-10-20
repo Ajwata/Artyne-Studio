@@ -498,13 +498,12 @@ nav ul li:hover > .submenu-grid-wide {
   .menu-toggle { display: flex; }
   .call-btn { display: none; }
 
-  .hero {
+  .hero p {
+    font-size: 18px;
   }
   .hero h1 {
-    font-size: 55px;
-    max-width: 100%;
-
-    
+    font-size: 35px;
+    max-width: 100%
   }
 }
 
