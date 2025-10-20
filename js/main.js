@@ -1,4 +1,3 @@
-
 // === Меню ===
 const toggle = document.getElementById("menu-toggle");
 const nav = document.querySelector("nav");
@@ -13,9 +12,7 @@ toggle.addEventListener("click", () => {
 });
 
 // === Клик по overlay — закрывает меню ===
-overlay.addEventListener("click", () => {
-  closeMenu();
-});
+overlay.addEventListener("click", closeMenu);
 
 // === Клик вне меню — закрывает меню в мобилке ===
 document.addEventListener("click", (e) => {
@@ -40,6 +37,7 @@ function closeMenu() {
   const mqDesktop = window.matchMedia("(min-width: 1200px)");
   let cleanup = () => {};
 
+  // === Десктоп ===
   function setupDesktop() {
     const items = Array.from(document.querySelectorAll("nav ul li"));
     let activeMenu = null;
@@ -49,6 +47,7 @@ function closeMenu() {
       sub.classList.add("active");
       activeMenu = sub;
     }
+
     function closeAll() {
       if (activeMenu) activeMenu.classList.remove("active");
       activeMenu = null;
@@ -59,15 +58,12 @@ function closeMenu() {
       const sub = li.querySelector(".submenu-grid-wide, .submenu");
       if (!sub || !link) return;
 
-      // Наведение
       li.addEventListener("mouseenter", () => open(sub));
 
-      // Клик — фиксация/закрытие
       link.addEventListener("click", (e) => {
         const href = link.getAttribute("href") || "";
         if (href === "#" || href === "") e.preventDefault();
 
-        // Если уже открыто — закрываем
         if (sub.classList.contains("active")) {
           sub.classList.remove("active");
           activeMenu = null;
@@ -80,6 +76,7 @@ function closeMenu() {
     document.addEventListener("click", (e) => {
       if (!e.target.closest("nav")) closeAll();
     });
+
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeAll();
     });
@@ -93,44 +90,51 @@ function closeMenu() {
 
   // === Мобильная версия ===
   function setupMobile() {
-    const submenuTriggers = document.querySelectorAll(".has-submenu");
+const submenuTriggers = document.querySelectorAll(".has-submenu");
 
-    submenuTriggers.forEach((trigger) => {
-      trigger.addEventListener("click", (e) => {
-        if (window.innerWidth < 1200) {
-          e.preventDefault();
-          const submenu = trigger.nextElementSibling;
-          if (!submenu) return;
+submenuTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", (e) => {
+    if (window.innerWidth < 1200) {
+      e.preventDefault();
+      const submenu = trigger.nextElementSibling;
+      if (!submenu) return;
 
-          // если уже открыто — закрываем
-          if (submenu.classList.contains("open")) {
-            submenu.classList.remove("open");
-            return;
-          }
+      const isOpen = submenu.classList.contains("open");
 
-          // закрываем другие
-          document
-            .querySelectorAll(".submenu, .submenu-grid-wide")
-            .forEach((s) => s.classList.remove("open"));
+      // Если уже открыто — закрываем
+      if (isOpen) {
+        submenu.classList.remove("open");
+        trigger.classList.remove("active");
+        return;
+      }
 
-          // открываем текущее
-          submenu.classList.add("open");
-        }
-      });
-    });
+      // Закрываем остальные
+      document
+        .querySelectorAll(".submenu.open, .submenu-grid-wide.open")
+        .forEach((s) => s.classList.remove("open"));
+      document
+        .querySelectorAll(".has-submenu.active")
+        .forEach((a) => a.classList.remove("active"));
 
+      // Открываем текущее
+      submenu.classList.add("open");
+      trigger.classList.add("active");
+    }
+  });
+});
+
+
+    // Клик вне меню — закрывает всё
     document.addEventListener("click", (e) => {
       if (!e.target.closest("nav") && !e.target.closest("#menu-toggle")) {
-        document
-          .querySelectorAll(".submenu, .submenu-grid-wide")
-          .forEach((s) => s.classList.remove("open"));
+        document.querySelectorAll(".submenu.open, .submenu-grid-wide.open").forEach((s) => s.classList.remove("open"));
+        document.querySelectorAll(".has-submenu.active").forEach((a) => a.classList.remove("active"));
       }
     });
 
     cleanup = () => {
-      document
-        .querySelectorAll(".submenu, .submenu-grid-wide")
-        .forEach((s) => s.classList.remove("open"));
+      document.querySelectorAll(".submenu, .submenu-grid-wide").forEach((s) => s.classList.remove("open"));
+      document.querySelectorAll(".has-submenu.active").forEach((a) => a.classList.remove("active"));
     };
   }
 
@@ -144,17 +148,14 @@ function closeMenu() {
   apply();
 })();
 
-
-
+// === Прозрачность шапки при скролле ===
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
   if (window.scrollY > 50) header.classList.add("scrolled");
   else header.classList.remove("scrolled");
 });
 
-
-
-
+// === Повтор видео (если отключено autoplay loop) ===
 const video = document.querySelector(".bg-video video");
 if (video) {
   video.addEventListener("ended", () => {
@@ -163,13 +164,11 @@ if (video) {
   });
 }
 
+// === Задержка появления контента (4 секунды) ===
 window.addEventListener("load", () => {
   setTimeout(() => {
+    document.body.classList.add("content-visible");
     const header = document.querySelector("header");
     if (header) header.classList.add("visible");
-  }, 4000); // ⏳ задержка 4 секунды
+  }, 4000);
 });
-
-
-
-
