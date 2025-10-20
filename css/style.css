@@ -737,3 +737,26 @@ body {
   background: transparent;
 }
 
+@media (max-width: 1199px) {
+  .submenu,
+  .submenu-grid-wide {
+    display: block;         /* нужно для анимации */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s ease;
+  }
+
+  .submenu.open,
+  .submenu-grid-wide.open {
+    max-height: 1000px;     /* достаточно для всего контента */
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .submenu-inner {
+    padding: 10px 0;
+  }
+}
+
