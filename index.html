@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hellogreg/PPNeueMontreal/PPNeueMontreal.css">
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="src/favicon.png" />
   <link rel="apple-touch-icon" href="src/favicon.png" />
   <meta name="theme-color" content="#000000">
@@ -18,12 +19,13 @@
   <!-- ===== Фон (видео) ===== -->
   <div class="bg-video">
     <!-- Видео для десктопа -->
-    <video class="video-desktop" autoplay muted loop playsinline>
+    <video aria-hidden="true" preload="none" class="video-desktop" autoplay muted loop playsinline>
       <source src="src/background.mp4" type="video/mp4">
+    <source src="src/background.webm" type="video/webm">
     </video>
 
     <!-- Видео для мобильных -->
-    <video class="video-mobile" autoplay muted loop playsinline>
+    <video aria-hidden="true" preload="none" class="video-mobile" autoplay muted loop playsinline>
       <source src="src/background2.mp4" type="video/mp4">
     </video>
   </div>
@@ -32,6 +34,7 @@
 
   <!-- ===== Хедер ===== -->
   <header>
+    
     <div class="logo-block">
       <div class="logo">ARTYNE STUDIO</div>
       <div class="flag"><span></span> Ми працюємо!</div>
@@ -187,11 +190,250 @@
     </div>
   </section>
 
+
+
+
+
+
+
+<section class="services">
+  <h2>Наші послуги</h2>
+
+  <!-- ===== Tabs ===== -->
+  <div class="tabs">
+    <button class="tab active" data-tab="web">Розробка сайтів</button>
+    <button class="tab" data-tab="design">Веб-дизайн</button>
+    <button class="tab" data-tab="support">Підтримка</button>
+  </div>
+
+  <!-- ===== Content: Web ===== -->
+  <div class="services-cards tab-content active" id="web">
+    <div class="service-card" style="--clr:#ff0045">
+      <div class="icon"><i class="bi bi-lightning-charge-fill"></i></div>
+      <h3>Landing Page</h3>
+      <p>Односторінковий сайт, який фокусується на дії — заявка, дзвінок чи продаж.</p>
+      <ul class="features">
+        <li><i class="bi bi-check-circle"></i> Адаптивний дизайн</li>
+        <li><i class="bi bi-check-circle"></i> SEO-оптимізація</li>
+        <li><i class="bi bi-check-circle"></i> Висока швидкість завантаження</li>
+      </ul>
+      <div class="bottom">
+        <span class="price">від $800</span>
+        <a href="#" class="arrow-link"><span class="text">Дізнатись більше</span><i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="service-card" style="--clr:#0077ff">
+      <div class="icon"><i class="bi bi-building"></i></div>
+      <h3>Корпоративний сайт</h3>
+      <p>Іміджевий сайт для компанії, що підкреслює професійність і довіру бренду.</p>
+      <ul class="features">
+        <li><i class="bi bi-check-circle"></i> Індивідуальний UX/UI</li>
+        <li><i class="bi bi-check-circle"></i> Інтеграції з CRM</li>
+        <li><i class="bi bi-check-circle"></i> CMS-система</li>
+      </ul>
+      <div class="bottom">
+        <span class="price">від $1200</span>
+        <a href="#" class="arrow-link"><span class="text">Дізнатись більше</span><i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="service-card" style="--clr:#8e44ad">
+      <div class="icon"><i class="bi bi-bag-check"></i></div>
+      <h3>Інтернет-магазин</h3>
+      <p>eCommerce платформа з каталогом товарів, оплатою та аналітикою.</p>
+      <ul class="features">
+        <li><i class="bi bi-check-circle"></i> Оплата онлайн</li>
+        <li><i class="bi bi-check-circle"></i> Панель керування товарами</li>
+        <li><i class="bi bi-check-circle"></i> Аналітика продажів</li>
+      </ul>
+      <div class="bottom">
+        <span class="price">від $2000</span>
+        <a href="#" class="arrow-link"><span class="text">Дізнатись більше</span><i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Content: Design ===== -->
+  <div class="services-cards tab-content" id="design">
+    <div class="service-card" style="--clr:#00e0b8">
+      <div class="icon"><i class="bi bi-brush"></i></div>
+      <h3>UI/UX Дизайн</h3>
+      <p>Розробка інтерфейсів, що поєднують естетику та зручність використання.</p>
+      <ul class="features">
+        <li><i class="bi bi-check-circle"></i> Прототипування</li>
+        <li><i class="bi bi-check-circle"></i> Дизайн системи</li>
+        <li><i class="bi bi-check-circle"></i> Адаптивність</li>
+      </ul>
+      <div class="bottom">
+        <span class="price">від $700</span>
+        <a href="#" class="arrow-link"><span class="text">Дізнатись більше</span><i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="service-card" style="--clr:#ff7b00">
+      <div class="icon"><i class="bi bi-vector-pen"></i></div>
+      <h3>Редизайн сайту</h3>
+      <p>Оновлення зовнішнього вигляду сайту з покращенням структури та юзабіліті.</p>
+      <ul class="features">
+        <li><i class="bi bi-check-circle"></i> Аналіз поточного UX</li>
+        <li><i class="bi bi-check-circle"></i> Нові UI-рішення</li>
+        <li><i class="bi bi-check-circle"></i> Адаптація до сучасних трендів</li>
+      </ul>
+      <div class="bottom">
+        <span class="price">від $900</span>
+        <a href="#" class="arrow-link"><span class="text">Дізнатись більше</span><i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Content: Marketing ===== -->
+  <div class="services-cards tab-content" id="marketing">
+    <div class="service-card" style="--clr:#ffc107">
+      <div class="icon"><i class="bi bi-bullseye"></i></div>
+      <h3>Google Ads</h3>
+      <p>Налаштування рекламних кампаній із точним таргетингом і аналітикою.</p>
+      <ul class="features">
+        <li><i class="bi bi-check-circle"></i> Пошукова реклама</li>
+        <li><i class="bi bi-check-circle"></i> Ремаркетинг</li>
+        <li><i class="bi bi-check-circle"></i> Оптимізація CPC</li>
+      </ul>
+      <div class="bottom">
+        <span class="price">від $400</span>
+        <a href="#" class="arrow-link"><span class="text">Дізнатись більше</span><i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="service-card" style="--clr:#25d366">
+      <div class="icon"><i class="bi bi-megaphone"></i></div>
+      <h3>Соціальні мережі</h3>
+      <p>Створення та ведення рекламних кампаній у Meta, TikTok, Telegram.</p>
+      <ul class="features">
+        <li><i class="bi bi-check-circle"></i> Контент-план</li>
+        <li><i class="bi bi-check-circle"></i> A/B тестування</li>
+        <li><i class="bi bi-check-circle"></i> Аналітика KPI</li>
+      </ul>
+      <div class="bottom">
+        <span class="price">від $500</span>
+        <a href="#" class="arrow-link"><span class="text">Дізнатись більше</span><i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Content: Support ===== -->
+  <div class="services-cards tab-content" id="support">
+    <div class="service-card" style="--clr:#00b4ff">
+      <div class="icon"><i class="bi bi-gear"></i></div>
+      <h3>Технічна підтримка</h3>
+      <p>Оновлення, резервне копіювання та безпека вашого сайту.</p>
+      <ul class="features">
+        <li><i class="bi bi-check-circle"></i> Моніторинг 24/7</li>
+        <li><i class="bi bi-check-circle"></i> Виправлення помилок</li>
+        <li><i class="bi bi-check-circle"></i> Регулярні оновлення</li>
+      </ul>
+      <div class="bottom">
+        <span class="price">від $300</span>
+        <a href="#" class="arrow-link"><span class="text">Дізнатись більше</span><i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+   <!-- ===== Contact Form ===== -->
+<section class="consult-cta">
+  <div class="cta-content">
+    <h3>Не знаєте, який сайт або рішення вам потрібно?</h3>
+    <p>
+      Залиште заявку — ми проведемо безкоштовну консультацію, допоможемо визначити
+      оптимальний формат і розкажемо, як втілити ваш проєкт у життя.
+    </p>
+    <button class="btn-outline open-popup">Обговорити проєкт</button>
+  </div>
+</section>
+
+
+</section>
+
+
+
+
+
+
+<div class="popup-overlay" id="popup">
+  <div class="popup-form minimal">
+    <button class="popup-close" aria-label="Закрити">&times;</button>
+
+    <h2>Залиште заявку</h2>
+    <p>Ми зв’яжемось із вами для короткої консультації або уточнення деталей.</p>
+
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="Ваше ім’я" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" placeholder="+380 00 000 0000" required>
+      </div>
+      <button type="submit" class="btn-accent">Відправити</button>
+    </form>
+
+    <div class="popup-socials">
+      <a href="https://t.me/artyne_studio" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380665285252" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+      <a href="https://wa.me/380665285252" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<section class="why-us wide">
+  <div class="why-inner">
+    <div class="why-header">
+      <h2>Чому обирають <br><span>Artyne Studio</span></h2>
+      <p>
+        Ми створюємо не просто сайти — ми формуємо емоційні цифрові рішення, 
+        які допомагають брендам розкриватися, зростати та досягати реальних результатів.
+      </p>
+    </div>
+
+    <div class="why-cards">
+      <div class="why-item">
+        <i class="bi bi-lightning-charge-fill"></i>
+        <h3>Швидкість і ефективність</h3>
+        <p>Наші сайти завантажуються блискавично, працюють стабільно і приносять результат із перших днів запуску.</p>
+      </div>
+
+      <div class="why-item">
+        <i class="bi bi-stars"></i>
+        <h3>Дизайн, який запам’ятовується</h3>
+        <p>Ми створюємо сучасні інтерфейси з характером, які виділяють ваш бренд серед конкурентів.</p>
+      </div>
+
+      <div class="why-item">
+        <i class="bi bi-cpu"></i>
+        <h3>Технічна досконалість</h3>
+        <p>Використовуємо найкращі стандарти розробки, щоб ваш сайт працював бездоганно на будь-якому пристрої.</p>
+      </div>
+
+      <div class="why-item">
+        <i class="bi bi-infinity"></i>
+        <h3>Постійна підтримка</h3>
+        <p>Після запуску ми залишаємося поруч — допомагаємо розвивати, оновлювати і вдосконалювати ваш продукт.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
   <!-- ===== Подключения ===== -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
-
-
-
