@@ -34,7 +34,7 @@ function closeMenu() {
 
 // === Контроллер подменю ===
 (function () {
-  const mqDesktop = window.matchMedia("(min-width: 1200px)");
+  const mqDesktop = window.matchMedia("(min-width:1200px)");
   let cleanup = () => {};
 
   // === Десктоп ===
@@ -101,7 +101,6 @@ function closeMenu() {
 
         const isOpen = submenu.classList.contains("open");
 
-        // Закрываем все
         document
           .querySelectorAll(".submenu.open, .submenu-grid-wide.open")
           .forEach((s) => s.classList.remove("open"));
@@ -109,19 +108,16 @@ function closeMenu() {
           .querySelectorAll(".has-submenu.active")
           .forEach((a) => a.classList.remove("active"));
 
-        // Если не было открыто — открываем
         if (!isOpen) {
           submenu.classList.add("open");
           trigger.classList.add("active");
         }
       };
 
-      // поддержка iPhone / iPad
       trigger.addEventListener("touchend", toggleMenu);
       trigger.addEventListener("click", toggleMenu);
     });
 
-    // Закрытие при клике вне
     document.addEventListener("click", (e) => {
       if (!e.target.closest("nav") && !e.target.closest("#menu-toggle")) {
         document
@@ -153,12 +149,7 @@ function closeMenu() {
   apply();
 })();
 
-// === Прозрачность шапки при скролле ===
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
-  if (window.scrollY > 50) header.classList.add("scrolled");
-  else header.classList.remove("scrolled");
-});
+
 
 // === Повтор видео (если отключено autoplay loop) ===
 const video = document.querySelector(".bg-video video");
@@ -169,11 +160,87 @@ if (video) {
   });
 }
 
-// === Задержка появления контента (4 секунды) ===
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.body.classList.add("content-visible");
-    const header = document.querySelector("header");
-    if (header) header.classList.add("visible");
-  }, 4000);
+// === Появление контента: мгновенно на мобильных, с эффектом на десктопе ===
+const showContent = () => {
+  const header = document.querySelector("header");
+  document.body.classList.add("content-visible");
+  if (header) header.classList.add("visible");
+};
+
+const isMobile =
+  /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) ||
+  window.innerWidth <= 1199;
+
+// Для мобильных — сразу после загрузки DOM
+if (isMobile) {
+  document.addEventListener("DOMContentLoaded", showContent);
+} else {
+  // Для десктопа — ждём всё (видео, шрифты и т.д.)
+  window.addEventListener("load", () => {
+    setTimeout(showContent, 4000);
+  });
+}
+
+
+
+// === Depth motion parallax ===
+document.addEventListener("mousemove", (e) => {
+  const layers = document.querySelectorAll(".layer");
+  const x = (e.clientX - window.innerWidth / 2) / 50;
+  const y = (e.clientY - window.innerHeight / 2) / 50;
+  layers.forEach((layer) => {
+    const speed = layer.dataset.speed;
+    layer.style.transform = `translate3d(${x * speed}px, ${y * speed}px, 0)`;
+  });
 });
+
+
+const tabs = document.querySelectorAll('.tab');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    tabContents.forEach(c => c.classList.remove('active'));
+    document.getElementById(tab.dataset.tab).classList.add('active');
+  });
+});
+
+
+window.addEventListener("load", () => {
+  const popup = document.querySelector(".popup-overlay");
+  const openBtn = document.querySelector(".open-popup");
+  const closeBtn = document.querySelector(".popup-close");
+
+  if (!popup || !openBtn || !closeBtn) return; // защита от ошибок
+
+  openBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    popup.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popup.classList.remove("active");
+  });
+
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) popup.classList.remove("active");
+  });
+});
+
+
+
+// === Эффект рыбьего глаза при скролле ===
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  if (!header) return;
+  
+  if (window.scrollY > 10) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
