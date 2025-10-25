@@ -399,11 +399,12 @@ form.addEventListener('submit', async (e) => {
   }
 
   // Список проксі по черзі
-  const proxies = [
-    'https://api.allorigins.win/raw?url={URL}',
-    'https://corsproxy.io/?{URL}',
-    'https://thingproxy.freeboard.io/fetch/{URL}'
-  ];
+const proxies = [
+  'https://api.codetabs.com/v1/proxy?quest={URL}',
+  'https://corsproxy.io/?{URL}',
+  'https://api.allorigins.win/raw?url={URL}'
+];
+
 
   const success = await trySendThroughProxies(proxies);
 
@@ -424,6 +425,7 @@ if (success) {
   </script>
 </body>
 </html>
+
 
 
 
