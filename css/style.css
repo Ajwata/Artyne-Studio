@@ -22,7 +22,7 @@ body {
 }
 
 :root {
-  --font-main: "PP Neue Montreal", "Helvetica Neue", Helvetica, Arial,
+  --font-main: "PP Neue Montreal", Arial,
     sans-serif;
   --font-heading: "Benzin", sans-serif;
   --font-body: var(--font-main);
@@ -2307,4 +2307,5 @@ body {
     transform: rotate(360deg) scale(1.05);
   }
 }
+
 
