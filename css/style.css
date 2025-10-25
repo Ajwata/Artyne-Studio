@@ -135,6 +135,18 @@ header.scrolled .logo {
   border-radius: 1px;
 }
 
+nav.active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  nav {
+    backdrop-filter: blur(8px) saturate(120%);
+  }
+}
+
 nav ul {
   list-style: none;
   margin: 0;
@@ -2301,3 +2313,4 @@ body {
     transform: rotate(360deg) scale(1.05);
   }
 }
+
