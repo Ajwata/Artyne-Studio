@@ -360,12 +360,15 @@ const CHAT_ID = '8287036498';
       `<b>Бюджет:</b> ${data.budget||'-'}\n`+
       `<b>Коментарі:</b> ${data.comments||'-'}\n`;
 
-      try{
-        await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`,{
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({chat_id:CHAT_ID,text,parse_mode:'HTML'})
-        });
+      try {
+  await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(
+    `https://api.telegram.org/bot${TOKEN}/sendMessage`
+  )}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: 'HTML' })
+  });
+
         document.getElementById('successMsg').style.display='block';
         form.reset();
         steps[currentStep].classList.remove('active');
@@ -380,6 +383,7 @@ const CHAT_ID = '8287036498';
   </script>
 </body>
 </html>
+
 
 
 
