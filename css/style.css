@@ -5,6 +5,16 @@ body {
   overflow-x: hidden;
 }
 
+@font-face {
+  font-family: "Benzin";
+  src: url("../fonts/Benzin-Regular.woff2") format("woff2"),
+    url("../fonts/Benzin-Regular.woff") format("woff"),
+    url("../fonts/Benzin-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 .content {
   opacity: 0;
   transform: translateY(30px);
@@ -14,27 +24,19 @@ body {
 :root {
   --font-main: "PP Neue Montreal", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
-  --font-heading: var(--font-main);
+  --font-heading: "Benzin", sans-serif;
   --font-body: var(--font-main);
   --font-button: var(--font-main);
 }
 
-body {
-  font-family: var(--font-body);
-  font-weight: 400;
-  color: #000;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #000; /* просто чёрный фон под видео */
-}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
-  font-weight: 700;
+  font-family: var(--font-main);
+  font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.1;
 }
@@ -341,26 +343,17 @@ nav ul li:hover > .submenu-grid-wide {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 2s ease forwards 5s;
-  margin-top: 250px;
+  margin-top: 220px;
 }
 
 .hero h1 {
+  font-family: "Benzin", sans-serif;
   font-size: clamp(42px, 6vw, 78px);
-  margin: 0 0 24px;
-  font-weight: 700;
+  font-weight: 500;
   max-width: 70%;
   line-height: 1.05;
-  letter-spacing: -0.03em;
-  background: linear-gradient(
-    120deg,
-    #ffffff 0%,
-    #ffffff 25%,
-    #ffffff 50%,
-    #ffffff 75%,
-    #ffffff 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+  color: #fff;
   text-wrap: balance;
   transition: transform 0.3s ease, letter-spacing 0.3s ease, filter 0.3s ease;
 }
@@ -1087,7 +1080,7 @@ body {
 }
 /* === БЛОК НАШІ ПОСЛУГИ === */
 .services {
-  padding: 200px 5vw 140px;
+  padding: 5vw;
   color: #fff;
 }
 
@@ -1838,7 +1831,7 @@ body {
 .why-us.wide {
   position: relative;
   width: 100vw;
-  padding: 160px 0;
+  padding: 100px 0;
 
   overflow: hidden;
   box-sizing: border-box;
@@ -2313,4 +2306,3 @@ body {
     transform: rotate(360deg) scale(1.05);
   }
 }
-
