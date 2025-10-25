@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бриф на створення сайту — Artyne Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="icon" type="image/png" href="src/favicon.png" />
+  <style>
+    html,body{
+      margin:0;
+      height:100%;
+      font-family:"PP Neue Montreal","Helvetica Neue",Helvetica,Arial,sans-serif;
+      background:linear-gradient(180deg,#000,#050a19);
+      color:#fff;
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:conic-gradient(from 0deg,rgba(183,0,61,.2),rgba(0,87,183,.25),rgba(0,0,0,.8));
+      filter:blur(140px);
+      opacity:.8;
+      z-index:-1;
+      animation:spin 60s linear infinite;
+    }
+    @keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+
+    .container{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      padding:40px 20px;
+      text-align:center;
+    }
+    h1{
+      font-family:"Benzin",sans-serif;
+      font-size:clamp(34px,5vw,58px);
+      font-weight:500;
+      background:linear-gradient(90deg,#b7003d,#0077ff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:12px;
+    }
+    p.subtitle{
+      color:rgba(255,255,255,.7);
+      font-size:18px;
+      max-width:600px;
+      margin:0 auto 40px;
+      line-height:1.6;
+    }
+    .form-card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      backdrop-filter:blur(10px);
+      max-width:640px;
+      width:100%;
+      padding:40px 30px;
+      box-shadow:0 0 40px rgba(0,0,0,.4);
+      animation:fadeUp 1s ease;
+    }
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(30px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+    .step{display:none;animation:fadeUp .6s ease;}
+    .step.active{display:block;}
+    .step h2{
+      font-size:26px;
+      font-weight:600;
+      margin-bottom:16px;
+    }
+    label{
+      display:block;
+      text-align:left;
+      font-size:15px;
+      margin-bottom:6px;
+      color:rgba(255,255,255,.7);
+    }
+    input,textarea,select{
+      width:100%;
+      padding:14px 16px;
+      background:rgba(0,0,0,.4);
+      border:1px solid rgba(255,255,255,.15);
+      color:#fff;
+      border-radius:6px;
+      font-size:16px;
+      outline:none;
+      margin-bottom:18px;
+      transition:border-color .3s ease,box-shadow .3s ease;
+    }
+    input:focus,textarea:focus,select:focus{
+      border-color:#b7003d;
+      box-shadow:0 0 10px rgba(183,0,61,.3);
+    }
+    textarea{min-height:100px;resize:vertical;}
+    .buttons{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:10px;
+      gap:14px;
+    }
+    .btn{
+      flex:1;
+      background:linear-gradient(90deg,#b7003d,#0077ff);
+      border:none;
+      color:#fff;
+      font-weight:600;
+      font-size:17px;
+      padding:14px 20px;
+      border-radius:8px;
+      cursor:pointer;
+      transition:all .3s ease;
+    }
+    .btn:hover{
+      box-shadow:0 0 25px rgba(183,0,61,.4);
+      transform:translateY(-2px);
+    }
+    .btn.back{
+      background:transparent;
+      border:1px solid rgba(255,255,255,.25);
+    }
+    .success{
+      display:none;
+      margin-top:20px;
+      padding:14px;
+      border:1px solid rgba(125,242,201,.4);
+      border-radius:8px;
+      color:#b8ffde;
+      background:rgba(125,242,201,.1);
+      text-align:center;
+    }
+
+
+    select {
+  background: rgba(0, 0, 0, 0.6) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 6px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 14px 16px;
+  font-size: 16px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #b7003d;
+  box-shadow: 0 0 10px rgba(183, 0, 61, 0.3);
+}
+
+/* Стиль випадаючого меню */
+select option {
+  background: #0c0c0c;
+  color: #fff;
+}
+
+
+    @media(max-width:600px){
+      .form-card{padding:30px 20px;}
+      .buttons{flex-direction:column;}
+    }
+    /* --- Мобільна адаптація input’ів --- */
+@media (max-width: 600px) {
+  input,
+  textarea,
+  select {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  .form-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    padding: 30px 16px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Бриф на створення сайту</h1>
+    <p class="subtitle">Відповідай просто — навіть якщо не розумієшся на сайтах. Ми розберемо все разом 💡</p>
+    <form class="form-card" id="briefForm">
+
+      <!-- STEP 1 -->
+      <div class="step active" data-step="1">
+        <h2>1. Контактна інформація</h2>
+        <label>Ім’я</label>
+        <input name="name" placeholder="Ваше ім’я" required>
+        <label>Контакти (телефон, Telegram або email)</label>
+        <input name="contacts" placeholder="@username або номер телефону" required>
+        <div class="buttons">
+          <button type="button" class="btn next">Далі</button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step" data-step="2">
+        <h2>2. Про ваш сайт</h2>
+        <label>Для чого вам сайт?</label>
+        <textarea name="purpose" placeholder="Наприклад: продавати товари, показати послуги, представити бренд"></textarea>
+        <label>Які сторінки або розділи потрібні?</label>
+        <textarea name="pages" placeholder="Головна, Про нас, Послуги, Контакти…"></textarea>
+        <label>Приклади сайтів, які вам подобаються</label>
+        <input name="examples" placeholder="Посилання або опис стилю">
+        <div class="buttons">
+          <button type="button" class="btn back">Назад</button>
+          <button type="button" class="btn next">Далі</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step" data-step="3">
+        <h2>3. Деталі проекту</h2>
+        <label>Орієнтовний бюджет</label>
+        <select name="budget">
+          <option value="до $200">до $500</option>
+          <option value="$200–$500">$500–$800</option>
+          <option value="$500–$1000">$800–$1000</option>
+          <option value="$1000+">$1000+</option>
+        </select>
+        <label>Додаткові коментарі</label>
+        <textarea name="comments" placeholder="Напишіть усе, що важливо або що не впевнені"></textarea>
+        <div class="buttons">
+          <button type="button" class="btn back">Назад</button>
+          <button type="submit" class="btn">Надіслати в Telegram</button>
+        </div>
+      </div>
+
+      <div class="success" id="successMsg">✅ Дякуємо! Ваш бриф успішно відправлено в Telegram.</div>
+    </form>
+  </div>
+
+  <script>
+    const steps = document.querySelectorAll('.step');
+    let currentStep = 0;
+    document.querySelectorAll('.next').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        if(currentStep < steps.length-1){
+          steps[currentStep].classList.remove('active');
+          steps[++currentStep].classList.add('active');
+          window.scrollTo({top:0,behavior:'smooth'});
+        }
+      });
+    });
+    document.querySelectorAll('.back').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        if(currentStep>0){
+          steps[currentStep].classList.remove('active');
+          steps[--currentStep].classList.add('active');
+          window.scrollTo({top:0,behavior:'smooth'});
+        }
+      });
+    });
+
+    const TOKEN = 'PASTE_YOUR_TELEGRAM_BOT_TOKEN';
+    const CHAT_ID = 'PASTE_YOUR_CHAT_ID';
+    const form = document.getElementById('briefForm');
+    form.addEventListener('submit', async e=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const text = `🧾 <b>Новий бриф:</b>\n\n`+
+      `<b>Ім’я:</b> ${data.name}\n`+
+      `<b>Контакти:</b> ${data.contacts}\n`+
+      `<b>Мета сайту:</b> ${data.purpose||'-'}\n`+
+      `<b>Розділи:</b> ${data.pages||'-'}\n`+
+      `<b>Приклади:</b> ${data.examples||'-'}\n`+
+      `<b>Бюджет:</b> ${data.budget||'-'}\n`+
+      `<b>Коментарі:</b> ${data.comments||'-'}\n`;
+
+      try{
+        await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`,{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({chat_id:CHAT_ID,text,parse_mode:'HTML'})
+        });
+        document.getElementById('successMsg').style.display='block';
+        form.reset();
+        steps[currentStep].classList.remove('active');
+        currentStep=0;
+        steps[0].classList.add('active');
+        window.scrollTo({top:0,behavior:'smooth'});
+      }catch(err){
+        alert('Помилка при відправці. Перевір токен або chat_id.');
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
