@@ -265,6 +265,24 @@ input, textarea, select {
     width: 100%;
   }
 }
+.success {
+  display: none;
+  margin-top: 20px;
+  padding: 14px;
+  border: 1px solid rgba(125, 242, 201, .4);
+  border-radius: 8px;
+  color: #b8ffde;
+  background: rgba(125, 242, 201, .1);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+}
+.success.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
 
   </style>
 </head>
@@ -347,42 +365,66 @@ input, textarea, select {
 
 const TOKEN = 'AAHNkCw1Mo8l3-9GEr4YmB7y_qFcMWIEqPw';
 const CHAT_ID = '8287036498';
-    const form = document.getElementById('briefForm');
-    form.addEventListener('submit', async e=>{
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
-      const text = `🧾 <b>Новий бриф:</b>\n\n`+
-      `<b>Ім’я:</b> ${data.name}\n`+
-      `<b>Контакти:</b> ${data.contacts}\n`+
-      `<b>Мета сайту:</b> ${data.purpose||'-'}\n`+
-      `<b>Розділи:</b> ${data.pages||'-'}\n`+
-      `<b>Приклади:</b> ${data.examples||'-'}\n`+
-      `<b>Бюджет:</b> ${data.budget||'-'}\n`+
-      `<b>Коментарі:</b> ${data.comments||'-'}\n`;
+const form = document.getElementById('briefForm');
 
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const data = Object.fromEntries(new FormData(form).entries());
+  const text = `📬 <b>Нова заявка з сайту Artyne Studio</b>\n\n` +
+    `👤 <b>Ім’я:</b> ${data.name}\n` +
+    `📞 <b>Контакти:</b> ${data.contacts}\n` +
+    `💡 <b>Мета сайту:</b> ${data.purpose || '-'}\n` +
+    `📄 <b>Розділи:</b> ${data.pages || '-'}\n` +
+    `🎨 <b>Приклади:</b> ${data.examples || '-'}\n` +
+    `💰 <b>Бюджет:</b> ${data.budget || '-'}\n` +
+    `🗒️ <b>Коментарі:</b> ${data.comments || '-'}\n`;
+
+  // === Функція для відправки через кілька проксі ===
+  async function trySendThroughProxies(urls) {
+    for (const proxy of urls) {
       try {
-  await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(
-    `https://api.telegram.org/bot${TOKEN}/sendMessage`
-  )}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: 'HTML' })
-  });
-
-        document.getElementById('successMsg').style.display='block';
-        form.reset();
-        steps[currentStep].classList.remove('active');
-        currentStep=0;
-        steps[0].classList.add('active');
-        window.scrollTo({top:0,behavior:'smooth'});
-      }catch(err){
-        alert('Помилка при відправці. Перевір токен або chat_id.');
-        console.error(err);
+        const fullUrl = proxy.replace('{URL}', `https://api.telegram.org/bot${TOKEN}/sendMessage`);
+        const res = await fetch(fullUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: 'HTML' })
+        });
+        if (res.ok) return true; // якщо успіх — виходимо
+      } catch (err) {
+        console.warn(`❌ Проксі ${proxy} не відповів`);
       }
+    }
+    return false;
+  }
+
+  // Список проксі по черзі
+  const proxies = [
+    'https://api.allorigins.win/raw?url={URL}',
+    'https://corsproxy.io/?{URL}',
+    'https://thingproxy.freeboard.io/fetch/{URL}'
+  ];
+
+  const success = await trySendThroughProxies(proxies);
+
+if (success) {
+  const successMsg = document.getElementById('successMsg');
+  successMsg.classList.add('show');
+  form.reset();
+  steps[currentStep].classList.remove('active');
+  currentStep = 0;
+  steps[0].classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+ else {
+    alert('Помилка при відправці. Усі проксі недоступні.');
+  }
+
     });
   </script>
 </body>
 </html>
+
 
 
 
