@@ -162,8 +162,52 @@ select option {
   background: #0c0c0c;
   color: #fff;
 }
+/* Делает все поля корректно адаптивными */
+input, textarea, select {
+  box-sizing: border-box;
+  max-width: 100%;
+}
 
+/* Меняет порядок кнопок — "Далі" сначала, "Назад" после */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+}
+.buttons .back {
+  order: 1;
+}
+.buttons .next {
+  order: 2;
+}
 
+.step[data-step="3"] .buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.step[data-step="3"] .buttons .btn.back {
+  order: 2;
+}
+
+.step[data-step="3"] .buttons .btn[type="submit"] {
+  order: 2;
+  background: linear-gradient(90deg, #b7003d, #0077ff);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.step[data-step="3"] .buttons .btn[type="submit"]:hover {
+  box-shadow: 0 0 25px rgba(183, 0, 61, 0.4);
+  transform: translateY(-2px);
+}
     @media(max-width:600px){
       .form-card{padding:30px 20px;}
       .buttons{flex-direction:column;}
@@ -193,6 +237,32 @@ select option {
   .btn {
     width: 100%;
     font-size: 16px;
+  }
+
+    .step[data-step="3"] .buttons {
+    flex-direction: column;
+  }
+  .step[data-step="3"] .buttons .btn[type="submit"] {
+    order: 1;
+    width: 100%;
+  }
+  .step[data-step="3"] .buttons .btn.back {
+    order: 2;
+    width: 100%;
+  }
+
+    .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .buttons .next {
+    order: 1;
+  }
+  .buttons .back {
+    order: 2;
+  }
+  .btn {
+    width: 100%;
   }
 }
 
