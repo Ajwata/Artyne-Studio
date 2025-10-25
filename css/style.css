@@ -114,6 +114,7 @@ header.scrolled .logo {
 }
 
 .logo {
+  font-family: var(--font-main);
   font-size: 24px;
   font-weight: 500 !important;
   color: #fff;
@@ -2306,3 +2307,4 @@ body {
     transform: rotate(360deg) scale(1.05);
   }
 }
+
