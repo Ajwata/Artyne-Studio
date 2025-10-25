@@ -343,88 +343,59 @@ input, textarea, select {
 
   <script>
     const steps = document.querySelectorAll('.step');
-    let currentStep = 0;
-    document.querySelectorAll('.next').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        if(currentStep < steps.length-1){
-          steps[currentStep].classList.remove('active');
-          steps[++currentStep].classList.add('active');
-          window.scrollTo({top:0,behavior:'smooth'});
-        }
-      });
-    });
-    document.querySelectorAll('.back').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        if(currentStep>0){
-          steps[currentStep].classList.remove('active');
-          steps[--currentStep].classList.add('active');
-          window.scrollTo({top:0,behavior:'smooth'});
-        }
-      });
-    });
-
-const TOKEN = 'AAHNkCw1Mo8l3-9GEr4YmB7y_qFcMWIEqPw';
-const CHAT_ID = '8287036498';
-const form = document.getElementById('briefForm');
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const data = Object.fromEntries(new FormData(form).entries());
-  const text = `📬 <b>Нова заявка з сайту Artyne Studio</b>\n\n` +
-    `👤 <b>Ім’я:</b> ${data.name}\n` +
-    `📞 <b>Контакти:</b> ${data.contacts}\n` +
-    `💡 <b>Мета сайту:</b> ${data.purpose || '-'}\n` +
-    `📄 <b>Розділи:</b> ${data.pages || '-'}\n` +
-    `🎨 <b>Приклади:</b> ${data.examples || '-'}\n` +
-    `💰 <b>Бюджет:</b> ${data.budget || '-'}\n` +
-    `🗒️ <b>Коментарі:</b> ${data.comments || '-'}\n`;
-
-  // === Функція для відправки через кілька проксі ===
-  async function trySendThroughProxies(urls) {
-    for (const proxy of urls) {
-      try {
-        const fullUrl = proxy.replace('{URL}', `https://api.telegram.org/bot${TOKEN}/sendMessage`);
-        const res = await fetch(fullUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: 'HTML' })
-        });
-        if (res.ok) return true; // якщо успіх — виходимо
-      } catch (err) {
-        console.warn(`❌ Проксі ${proxy} не відповів`);
+  let currentStep = 0;
+  document.querySelectorAll('.next').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      if(currentStep < steps.length-1){
+        steps[currentStep].classList.remove('active');
+        steps[++currentStep].classList.add('active');
+        window.scrollTo({top:0,behavior:'smooth'});
       }
-    }
-    return false;
-  }
-
-  // Список проксі по черзі
-const proxies = [
-  'https://api.codetabs.com/v1/proxy?quest={URL}',
-  'https://corsproxy.io/?{URL}',
-  'https://api.allorigins.win/raw?url={URL}'
-];
-
-
-  const success = await trySendThroughProxies(proxies);
-
-if (success) {
-  const successMsg = document.getElementById('successMsg');
-  successMsg.classList.add('show');
-  form.reset();
-  steps[currentStep].classList.remove('active');
-  currentStep = 0;
-  steps[0].classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
- else {
-    alert('Помилка при відправці. Усі проксі недоступні.');
-  }
-
     });
+  });
+  document.querySelectorAll('.back').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      if(currentStep>0){
+        steps[currentStep].classList.remove('active');
+        steps[--currentStep].classList.add('active');
+        window.scrollTo({top:0,behavior:'smooth'});
+      }
+    });
+  });
+
+  // === ВІДПРАВКА ФОРМИ ЧЕРЕЗ CLOUDFLARE WORKER ===
+  const form = document.getElementById('briefForm');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const response = await fetch('https://telegrambot.shonraprince.workers.dev/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) throw new Error('Network response error');
+
+      const successMsg = document.getElementById('successMsg');
+      successMsg.classList.add('show');
+      form.reset();
+      steps[currentStep].classList.remove('active');
+      currentStep = 0;
+      steps[0].classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      alert('Помилка при відправці. Спробуйте пізніше.');
+      console.error(err);
+    }
+  });
   </script>
 </body>
 </html>
+
 
 
 
