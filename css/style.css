@@ -93,6 +93,7 @@ header.visible {
 }
 
 /* состояние после скролла */
+/* === ХЕДЕР ПРИ СКРОЛЛЕ С ЛИНИЕЙ === */
 header.scrolled {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(24px) saturate(180%);
@@ -100,12 +101,28 @@ header.scrolled {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
   transform: perspective(600px) rotateX(1.2deg) scale(1.02);
+  position: relative;
+  overflow: visible; /* чтобы линия не обрезалась */
+}
+
+/* === ГРАДИЕНТНА ЛІНІЯ ЗНИЗУ === */
+header.scrolled::after {
+  content: "";
+  position: absolute;
+  bottom: -1px; /* чуть ниже, чтобы не перекрывалась рамкой */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #b7003d, #0077ff);
+  box-shadow: 0 0 14px rgba(0, 119, 255, 0.4);
+  z-index: 10;
 }
 
 /* эффект подсветки логотипа */
 header.scrolled .logo {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
 }
+
 .logo-block {
   display: flex;
   flex-direction: column;
@@ -2825,8 +2842,12 @@ body {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 35px;
+    display: contents;
   }
 
+  .footer {
+    padding: 50px 5vw;
+  }
   .footer-col ul {
     display: none;
   }
