@@ -366,15 +366,17 @@
     <h2>Залиште заявку</h2>
     <p>Ми зв’яжемось із вами для короткої консультації або уточнення деталей.</p>
 
-    <form>
-      <div class="form-group">
-        <input type="text" placeholder="Ваше ім’я" required>
-      </div>
-      <div class="form-group">
-        <input type="tel" placeholder="+380 00 000 0000" required>
-      </div>
-      <button type="submit" class="btn-accent">Відправити</button>
-    </form>
+<!-- Форма в попапе -->
+<form id="popupForm">
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Ваше ім’я" required>
+  </div>
+  <div class="form-group">
+    <input type="tel" name="phone" placeholder="+380 00 000 0000" required>
+  </div>
+  <button type="submit" class="btn-accent">Відправити</button>
+</form>
+
 
     <div class="popup-socials">
       <a href="https://t.me/artyne_studio" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
@@ -524,18 +526,20 @@
         Опишіть ваш проєкт — і ми надамо рішення протягом кількох годин.
       </p>
 
-      <form>
-        <div class="row">
-          <input type="text" name="name" placeholder="Ваше ім’я *" required>
-          <input type="text" name="budget" placeholder="Бюджет *" required>
-        </div>
-        <div class="row">
-          <input type="tel" name="phone" placeholder="+380 00 000 0000 *" required>
-          <input type="email" name="email" placeholder="Email" required>
-        </div>
-        <textarea placeholder="Коротко про ваш проєкт, посилання або приклади..."></textarea>
-        <button type="submit" class="btn-gradient">Відправити</button>
-      </form>
+<!-- Форма в секции "Почнемо співпрацю" -->
+<form id="contactForm">
+  <div class="row">
+    <input type="text" name="name" placeholder="Ваше ім’я *" required>
+    <input type="text" name="budget" placeholder="Бюджет *" required>
+  </div>
+  <div class="row">
+    <input type="tel" name="phone" placeholder="+380 00 000 0000 *" required>
+    <input type="email" name="email" placeholder="Email" required>
+  </div>
+  <textarea name="message" placeholder="Коротко про ваш проєкт..."></textarea>
+  <button type="submit" class="btn-gradient">Відправити</button>
+</form>
+
     </div>
 
     <!-- Правая часть -->
