@@ -55,8 +55,18 @@ button {
   letter-spacing: 0.01em;
 }
 
+.bg-video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 2;
+}
+
 header {
-  position: fixed; /* вместо sticky */
+  position: sticky; /* вместо sticky */
   top: 0;
   left: 0;
   width: 100%;
@@ -73,23 +83,11 @@ header {
   align-items: center;
   z-index: 9999; /* подняли сильно выше всего */
   opacity: 0;
-  transform: translateY(-20px);
   transition: all 2s ease;
 }
 
 header.visible {
   opacity: 1;
-  transform: translateY(0);
-}
-
-.bg-video::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  z-index: 2;
 }
 
 /* состояние после скролла */
@@ -121,6 +119,13 @@ header.scrolled::after {
 /* эффект подсветки логотипа */
 header.scrolled .logo {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+header > .header-line {
+  top: 78px;
+  left: 0;
+  right: 0;
+  height: 1px;
 }
 
 .logo-block {
@@ -190,6 +195,7 @@ nav a {
   display: inline-block;
   letter-spacing: 0.02em;
   transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
 }
 
 nav a::after {
@@ -970,6 +976,10 @@ body {
 
 .service-card:hover .price {
   color: var(--clr, #ff0045);
+}
+
+.service-card > .icon {
+  max-width: 650px;
 }
 
 /* === Анимация появления === */
