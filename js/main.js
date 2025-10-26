@@ -250,51 +250,36 @@ window.addEventListener("scroll", () => {
 
 
 
-// === Форма обратной связи === //
+// === Форма обратного зв’язку (універсальна для всіх форм) === //
+document.querySelectorAll("form").forEach((form) => {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
 
-   const steps = document.querySelectorAll('.step');
-    let currentStep = 0;
-    document.querySelectorAll('.next').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        if(currentStep < steps.length-1){
-          steps[currentStep].classList.remove('active');
-          steps[++currentStep].classList.add('active');
-          window.scrollTo({top:0,behavior:'smooth'});
-        }
+    // Джерело форми (для Telegram повідомлення)
+    data.form_source = form.id || "Без назви форми";
+
+    try {
+      const response = await fetch("https://telegrambot.shonraprince.workers.dev/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       });
-    });
-    document.querySelectorAll('.back').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        if(currentStep>0){
-          steps[currentStep].classList.remove('active');
-          steps[--currentStep].classList.add('active');
-          window.scrollTo({top:0,behavior:'smooth'});
-        }
-      });
-    });
 
-    const form = document.getElementById('briefForm');
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
+      if (!response.ok) throw new Error("Network response error");
 
-      try {
-        const response = await fetch('https://telegrambot.shonraprince.workers.dev/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
+      // === Успішна відправка ===
+      console.log("✅ Заявка відправлена:", data);
+      form.reset();
 
-        if (!response.ok) throw new Error('Network response error');
+      // Якщо це попап — закриваємо його
+      const popup = form.closest(".popup-overlay");
+      if (popup) popup.classList.remove("active");
 
-        document.getElementById('successMsg').style.display = 'block';
-        form.reset();
-        steps[currentStep].classList.remove('active');
-        currentStep = 0;
-        steps[0].classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } catch (err) {
-        alert('Помилка при відправці. Спробуйте пізніше.');
-        console.error(err);
-      }
-    });
+      alert("✅ Ваша заявка успішно відправлена!");
+    } catch (err) {
+      console.error("❌ Помилка при відправці:", err);
+      alert("Помилка при відправці. Спробуйте пізніше.");
+    }
+  });
+});
