@@ -250,14 +250,27 @@ window.addEventListener("scroll", () => {
 
 
 
-// === Форма обратного зв’язку (універсальна для всіх форм) === //
+// === Відправка заявки (тільки Ім'я, Телефон, Коментар) ===
 document.querySelectorAll("form").forEach((form) => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(form).entries());
 
-    // Джерело форми (для Telegram повідомлення)
-    data.form_source = form.id || "Без назви форми";
+    const fd = new FormData(form);
+
+    const name = fd.get("name")?.trim() || "-";
+    const phone = fd.get("phone")?.trim() || "-";
+    const comment =
+      fd.get("message")?.trim() ||
+      fd.get("comment")?.trim() ||
+      fd.get("comments")?.trim() ||
+      "-";
+
+    const data = {
+      name,
+      contacts: phone,
+      comments: comment,
+      form_source: form.id || "Artyne Studio форма",
+    };
 
     try {
       const response = await fetch("https://telegrambot.shonraprince.workers.dev/", {
@@ -268,11 +281,9 @@ document.querySelectorAll("form").forEach((form) => {
 
       if (!response.ok) throw new Error("Network response error");
 
-      // === Успішна відправка ===
       console.log("✅ Заявка відправлена:", data);
       form.reset();
 
-      // Якщо це попап — закриваємо його
       const popup = form.closest(".popup-overlay");
       if (popup) popup.classList.remove("active");
 
@@ -283,3 +294,6 @@ document.querySelectorAll("form").forEach((form) => {
     }
   });
 });
+
+
+
