@@ -250,7 +250,7 @@ window.addEventListener("scroll", () => {
 
 
 
-// === Відправка заявки (тільки Ім'я, Телефон, Коментар) ===
+// === Відправка заявки (Ім'я, Телефон, Бюджет, Коментар) ===
 document.querySelectorAll("form").forEach((form) => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -259,6 +259,7 @@ document.querySelectorAll("form").forEach((form) => {
 
     const name = fd.get("name")?.trim() || "-";
     const phone = fd.get("phone")?.trim() || "-";
+    const budget = fd.get("budget")?.trim() || "-";
     const comment =
       fd.get("message")?.trim() ||
       fd.get("comment")?.trim() ||
@@ -268,6 +269,7 @@ document.querySelectorAll("form").forEach((form) => {
     const data = {
       name,
       contacts: phone,
+      budget,
       comments: comment,
       form_source: form.id || "Artyne Studio форма",
     };
@@ -294,6 +296,8 @@ document.querySelectorAll("form").forEach((form) => {
     }
   });
 });
+
+
 
 
 
