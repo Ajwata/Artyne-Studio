@@ -177,7 +177,7 @@ if (isMobile) {
 } else {
   // Для десктопа — ждём всё (видео, шрифты и т.д.)
   window.addEventListener("load", () => {
-    setTimeout(showContent, 3000);
+    setTimeout(showContent, 100);
   });
 }
 
@@ -329,5 +329,6 @@ function showSuccessPopup(message, isError = false) {
     }, 400);
   }, 3000);
 }
+
 
 
