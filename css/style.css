@@ -22,8 +22,7 @@ body {
 }
 
 :root {
-  --font-main: "PP Neue Montreal", Arial,
-    sans-serif;
+  --font-main: "PP Neue Montreal", Arial, sans-serif;
   --font-heading: "Benzin", sans-serif;
   --font-body: var(--font-main);
   --font-button: var(--font-main);
@@ -1146,6 +1145,9 @@ body {
   background-color: transparent;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
+  z-index: 10000; /* піднімає поверх фону й усіх шарів */
+  pointer-events: auto; /* дозволяє натискання */
 }
 
 .btn-outline:hover {
@@ -2308,4 +2310,268 @@ body {
   }
 }
 
+/* ===== ОБЩИЙ БЛОК ===== */
+.contact-full {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+}
 
+/* Видео фон */
+.contact-full .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+  z-index: 0;
+}
+
+/* Контент */
+.contact-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 5vw;
+  gap: 60px;
+  box-sizing: border-box;
+}
+
+/* ===== ЛЕВАЯ ЧАСТЬ (ФОРМА) ===== */
+.contact-left {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px 40px;
+  box-sizing: border-box;
+}
+
+.contact-left h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.contact-left h2 span {
+  background: linear-gradient(90deg, #b7003d, #0077ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.contact-left .subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Инпуты */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.contact-left input,
+.contact-left textarea {
+  flex: 1 1 48%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: #fff;
+  padding: 14px 16px;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+.contact-left input:focus,
+.contact-left textarea:focus {
+  border-color: #0077ff;
+  outline: none;
+}
+.contact-left textarea {
+  width: 100%;
+  resize: none;
+  height: 120px;
+}
+
+/* Кнопка */
+.btn-gradient {
+  position: relative;
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 40px;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+/* градиентная рамка */
+.btn-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(45deg, #b7003d, #b70000, #00327f);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+/* эффект при наведении */
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(183, 0, 61, 0.4);
+}
+
+/* ===== ПРАВАЯ ЧАСТЬ ===== */
+.contact-right {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 50px 40px;
+  color: #fff;
+  line-height: 1.8;
+}
+
+.contact-right .right-title {
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 600;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-right .lead {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 18px;
+}
+
+.contact-right p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 18px;
+}
+
+.contact-right ul.benefits {
+  list-style: none;
+  margin: 25px 0;
+  padding: 0;
+}
+
+.contact-right ul.benefits li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-right ul.benefits li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0077ff;
+  font-weight: bold;
+}
+
+.contact-right .closing {
+  margin-top: 30px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.contact-logo:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 1100px) {
+  .contact-inner {
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 4vw;
+  }
+
+  .contact-left,
+  .contact-right {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-left,
+  .contact-right {
+    padding: 30px 25px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .contact-left input {
+    min-width: 100%;
+  }
+
+  .btn-gradient {
+    width: 100%;
+  }
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.contact-logo {
+  width: clamp(70px, 10vw, 120px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.right-title {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 600;
+  line-height: 1.3;
+  background: linear-gradient(90deg, #b7003d, #0077ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 600px) {
+  .contact-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .right-title {
+    font-size: 20px;
+  }
+}
