@@ -251,12 +251,12 @@ window.addEventListener("scroll", () => {
 
 
 // === Відправка заявки (Ім'я, Телефон, Бюджет, Коментар) ===
+// === Відправка заявки (Ім'я, Телефон, Бюджет, Коментар) ===
 document.querySelectorAll("form").forEach((form) => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const fd = new FormData(form);
-
     const name = fd.get("name")?.trim() || "-";
     const phone = fd.get("phone")?.trim() || "-";
     const budget = fd.get("budget")?.trim() || "-";
@@ -266,12 +266,23 @@ document.querySelectorAll("form").forEach((form) => {
       fd.get("comments")?.trim() ||
       "-";
 
+    // === Формуємо текст заявки ===
+    const now = new Date();
+    const date = now.toLocaleString("uk-UA", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
     const data = {
       name,
       contacts: phone,
       budget,
       comments: comment,
       form_source: form.id || "Artyne Studio форма",
+      timestamp: date,
     };
 
     try {
@@ -283,19 +294,40 @@ document.querySelectorAll("form").forEach((form) => {
 
       if (!response.ok) throw new Error("Network response error");
 
-      console.log("✅ Заявка відправлена:", data);
+      // === Успішна відправка ===
       form.reset();
-
       const popup = form.closest(".popup-overlay");
       if (popup) popup.classList.remove("active");
 
-      alert("✅ Ваша заявка успішно відправлена!");
+      showSuccessMessage("✅ Ваша заявка успішно відправлена!");
     } catch (err) {
       console.error("❌ Помилка при відправці:", err);
-      alert("Помилка при відправці. Спробуйте пізніше.");
+      showSuccessMessage("❌ Помилка при відправці. Спробуйте пізніше.", true);
     }
   });
 });
+
+// === Красива стилізована анімація повідомлення ===
+function showSuccessMessage(message, isError = false) {
+  const existing = document.querySelector(".success-toast");
+  if (existing) existing.remove();
+
+  const toast = document.createElement("div");
+  toast.className = "success-toast";
+  toast.innerHTML = `<span>${message}</span>`;
+  if (isError) toast.classList.add("error");
+  document.body.appendChild(toast);
+
+  // Плавна поява
+  setTimeout(() => toast.classList.add("show"), 50);
+
+  // Зникнення через 4с
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 400);
+  }, 4000);
+}
+
 
 
 
