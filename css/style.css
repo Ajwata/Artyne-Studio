@@ -2264,10 +2264,11 @@ body {
   }
   .advantages-header {
     margin-left: 0;
-    text-align: center;
+    text-align: left;
+    padding: 5vw;
   }
   .advantages-grid {
-    padding: 0 6vw;
+    padding: 0 5vw;
   }
 }
 
