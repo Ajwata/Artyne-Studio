@@ -251,12 +251,12 @@ window.addEventListener("scroll", () => {
 
 
 // === Відправка заявки (Ім'я, Телефон, Бюджет, Коментар) ===
-// === Відправка заявки (Ім'я, Телефон, Бюджет, Коментар) ===
 document.querySelectorAll("form").forEach((form) => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const fd = new FormData(form);
+
     const name = fd.get("name")?.trim() || "-";
     const phone = fd.get("phone")?.trim() || "-";
     const budget = fd.get("budget")?.trim() || "-";
@@ -266,23 +266,12 @@ document.querySelectorAll("form").forEach((form) => {
       fd.get("comments")?.trim() ||
       "-";
 
-    // === Формуємо текст заявки ===
-    const now = new Date();
-    const date = now.toLocaleString("uk-UA", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-
     const data = {
       name,
       contacts: phone,
       budget,
       comments: comment,
       form_source: form.id || "Artyne Studio форма",
-      timestamp: date,
     };
 
     try {
@@ -294,42 +283,50 @@ document.querySelectorAll("form").forEach((form) => {
 
       if (!response.ok) throw new Error("Network response error");
 
-      // === Успішна відправка ===
+      console.log("✅ Заявка відправлена:", data);
       form.reset();
+
       const popup = form.closest(".popup-overlay");
       if (popup) popup.classList.remove("active");
 
-      showSuccessMessage("✅ Ваша заявка успішно відправлена!");
+      // Показуємо popup успішної відправки
+      showSuccessPopup("✅ Ваша заявка успішно відправлена!");
     } catch (err) {
       console.error("❌ Помилка при відправці:", err);
-      showSuccessMessage("❌ Помилка при відправці. Спробуйте пізніше.", true);
+      showSuccessPopup("❌ Помилка при відправці. Спробуйте пізніше.", true);
     }
   });
 });
 
-// === Красива стилізована анімація повідомлення ===
-function showSuccessMessage(message, isError = false) {
-  const existing = document.querySelector(".success-toast");
+
+// === Popup повідомлення ===
+function showSuccessPopup(message, isError = false) {
+  const existing = document.querySelector(".success-popup");
   if (existing) existing.remove();
 
-  const toast = document.createElement("div");
-  toast.className = "success-toast";
-  toast.innerHTML = `<span>${message}</span>`;
-  if (isError) toast.classList.add("error");
-  document.body.appendChild(toast);
+  const overlay = document.createElement("div");
+  overlay.className = "success-popup";
+  overlay.innerHTML = `
+    <div class="popup-box ${isError ? "error" : ""}">
+      <div class="popup-gradient"></div>
+      <div class="popup-inner">
+        <h2>${message}</h2>
+        <p>${isError ? "Виникла помилка, спробуйте пізніше." : "Ми зв’яжемось із вами найближчим часом."}</p>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
 
-  // Плавна поява
-  setTimeout(() => toast.classList.add("show"), 50);
+  // Плавне з’явлення
+  setTimeout(() => overlay.classList.add("show"), 50);
 
-  // Зникнення через 4с
+  // Закриття через 3 сек + перезавантаження
   setTimeout(() => {
-    toast.classList.remove("show");
-    setTimeout(() => toast.remove(), 400);
-  }, 4000);
+    overlay.classList.remove("show");
+    setTimeout(() => {
+      overlay.remove();
+      if (!isError) location.reload();
+    }, 400);
+  }, 3000);
 }
-
-
-
-
-
 
