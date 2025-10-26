@@ -2577,33 +2577,87 @@ body {
   }
 }
 
-/* === Стиль повідомлення про успішну відправку === */
-.success-toast {
+/* === Popup "Успішна відправка" у стилі Artyne Studio === */
+.success-popup {
   position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%) scale(0.95);
-  background: rgba(0, 0, 0, 0.75);
-  border: 1px solid;
-  border-image: linear-gradient(90deg, #b7003d, #0077ff) 1;
-  color: #fff;
-  padding: 18px 32px;
-  font-size: 16px;
-  font-weight: 500;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(183, 0, 61, 0.4), 0 0 25px rgba(0, 119, 255, 0.4);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
-  transition: all 0.4s ease;
+  visibility: hidden;
+  transition: all 0.5s ease;
   z-index: 9999;
-  backdrop-filter: blur(8px);
 }
 
-.success-toast.show {
+.success-popup.show {
   opacity: 1;
-  transform: translateX(-50%) scale(1);
+  visibility: visible;
 }
 
-.success-toast.error {
-  border-image: linear-gradient(90deg, #ff0000, #ff6a00) 1;
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4), 0 0 25px rgba(255, 106, 0, 0.4);
+.success-popup .popup-box {
+  position: relative;
+  padding: 50px 60px;
+  border-radius: 18px;
+  background: rgba(10, 10, 10, 0.95);
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(0, 119, 255, 0.2);
+  max-width: 420px;
+  width: 90%;
+  transform: translateY(40px);
+  transition: transform 0.4s ease;
+}
+
+.success-popup.show .popup-box {
+  transform: translateY(0);
+}
+
+.success-popup .popup-gradient {
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  border-image: linear-gradient(90deg, #0077ff, #b7003d) 1;
+  border-radius: 18px;
+  pointer-events: none;
+}
+
+.success-popup h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #b7003d, #0077ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.success-popup p {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* Стиль для помилки */
+.success-popup .popup-box.error .popup-gradient {
+  border-image: linear-gradient(90deg, #ff3c3c, #ff8a00) 1;
+}
+.success-popup .popup-box.error h2 {
+  background: linear-gradient(90deg, #ff3c3c, #ff8a00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Мобільна адаптація */
+@media (max-width: 600px) {
+  .success-popup .popup-box {
+    padding: 40px 25px;
+  }
+  .success-popup h2 {
+    font-size: 20px;
+  }
+  .success-popup p {
+    font-size: 14px;
+  }
 }
