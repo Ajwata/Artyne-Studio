@@ -2576,3 +2576,34 @@ body {
     font-size: 20px;
   }
 }
+
+/* === Стиль повідомлення про успішну відправку === */
+.success-toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid;
+  border-image: linear-gradient(90deg, #b7003d, #0077ff) 1;
+  color: #fff;
+  padding: 18px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(183, 0, 61, 0.4), 0 0 25px rgba(0, 119, 255, 0.4);
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+
+.success-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.success-toast.error {
+  border-image: linear-gradient(90deg, #ff0000, #ff6a00) 1;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4), 0 0 25px rgba(255, 106, 0, 0.4);
+}
