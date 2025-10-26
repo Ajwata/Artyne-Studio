@@ -232,7 +232,7 @@ window.addEventListener("load", () => {
 
 
 
-// === Эффект рыбьего глаза при скролле ===
+// === Эффект рыбьего глаза при скролле === //
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
   if (!header) return;
@@ -250,6 +250,51 @@ window.addEventListener("scroll", () => {
 
 
 
+// === Форма обратной связи === //
 
+   const steps = document.querySelectorAll('.step');
+    let currentStep = 0;
+    document.querySelectorAll('.next').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        if(currentStep < steps.length-1){
+          steps[currentStep].classList.remove('active');
+          steps[++currentStep].classList.add('active');
+          window.scrollTo({top:0,behavior:'smooth'});
+        }
+      });
+    });
+    document.querySelectorAll('.back').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        if(currentStep>0){
+          steps[currentStep].classList.remove('active');
+          steps[--currentStep].classList.add('active');
+          window.scrollTo({top:0,behavior:'smooth'});
+        }
+      });
+    });
 
+    const form = document.getElementById('briefForm');
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
 
+      try {
+        const response = await fetch('https://telegrambot.shonraprince.workers.dev/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (!response.ok) throw new Error('Network response error');
+
+        document.getElementById('successMsg').style.display = 'block';
+        form.reset();
+        steps[currentStep].classList.remove('active');
+        currentStep = 0;
+        steps[0].classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (err) {
+        alert('Помилка при відправці. Спробуйте пізніше.');
+        console.error(err);
+      }
+    });
