@@ -141,7 +141,10 @@ header > .header-line {
   color: #fff;
   letter-spacing: 1px;
 }
-
+.logo a {
+  text-decoration: none;
+  color: white;
+}
 .flag {
   display: flex;
   align-items: center;
@@ -2913,3 +2916,4 @@ body {
     margin-top: 40px;
   }
 }
+
