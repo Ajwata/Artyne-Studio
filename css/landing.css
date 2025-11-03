@@ -1,0 +1,125 @@
+body {
+  background: linear-gradient(120deg, #0a0a0a, #070b16);
+  background-size: 200% 200%;
+  animation: moveGradient 12s ease-in-out infinite;
+  color: #fff;
+}
+
+/* === Убираем задержку появления хедера для лендинга === */
+header {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.hero-landing {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  padding: 4vw;
+}
+
+.hero-content {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.2s ease forwards 0.3s;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DIGITAL GRADIENT */
+.digital-bg {
+  background: linear-gradient(120deg, #0a0a0a, #070b16);
+  background-size: 200% 200%;
+  animation: moveGradient 12s ease-in-out infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* GRID BACKGROUND */
+.grid-bg #lightGrid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.grid-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 60% 40%,
+    rgba(183, 0, 61, 0.15),
+    rgba(0, 119, 255, 0.05),
+    transparent 70%
+  );
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+}
+.hero-content h1 {
+  font-family: "Benzin", sans-serif;
+  font-size: clamp(38px, 4vw, 70px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #b7003d, #0077ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-content p {
+  font-size: 20px;
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+}
+.btn-outline {
+  padding: 14px 36px;
+  color: #fff;
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #b7003d, #0077ff) 1;
+  background: transparent;
+  transition: 0.3s;
+}
+.btn-outline:hover {
+  background: linear-gradient(90deg, #b7003d, #0077ff);
+  box-shadow: 0 0 20px rgba(183, 0, 61, 0.4);
+  transform: translateY(-2px);
+}
+
+.hero-landing::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, #b7003d, #0077ff);
+  opacity: 0.3;
+}
+
+#particleCloud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
