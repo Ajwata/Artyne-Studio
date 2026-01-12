@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Інтернет-магазин під ключ — Artyne Studio | eCommerce розробка</title>
+  <meta name="description" content="Створюємо інтернет-магазини з оплатою онлайн, каталогом товарів та CRM інтеграцією. Artyne Studio — eCommerce рішення для вашого бізнесу.">
+  <meta name="keywords" content="інтернет магазин, створення інтернет магазину, ecommerce, онлайн магазин, Artyne Studio, розробка магазину, інтеграція оплати, woocommerce">
+  <link rel="canonical" href="https://artynestudio.com/ecommerce.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="src/favicon.png" />
+</head>
+
+<body class="dark-page">
+
+  <!-- Canvas для анімації -->
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <!-- ===== Хедер ===== -->
+  <header>
+    
+    <div class="logo-block">
+      <div class="logo">
+        <a href="index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="Landing.html">Landing page</a>
+                  <a href="corporate.html">Корпоративний сайт</a>
+                  <a href="ecommerce.html">Інтернет-магазин</a>
+                  <a href="multipage.html">Багатосторінковий сайт</a>
+                  <a href="businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="uiux-design.html">UI/UX дизайн</a>
+                  <a href="redesign.html">Редизайн існуючого сайту</a>
+                  <a href="sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="google-ads.html">Google Ads налаштування</a>
+                  <a href="advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="content-optimization.html">Оптимізація контенту</a>
+                  <a href="seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="website-updates.html">Оновлення сайту</a>
+                  <a href="bug-fixes.html">Виправлення помилок</a>
+                  <a href="technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- === Прочее меню === -->
+        <li><a href="about.html">Хто ми</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="contacts.html">Контакти</a></li>
+      </ul>
+
+      <!-- Контакти в мобільному меню -->
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <!-- Соцсети в хедере -->
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <!-- Бургер -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <section class="hero-landing grid-bg">
+    <div class="hero-content">
+      <h1>Інтернет-магазин на HoroShop, <br> що продає 24/7</h1>
+      <p>Офіційні партнери HoroShop 🇺🇦 — створюємо інтернет-магазини на найкращій українській платформі. Швидкий запуск, зручна адмінка та інтеграції з усіма сервісами України.</p>
+      <div class="hero-cta">
+        <a href="#pricing" class="btn-outline">Дізнатись ціну</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">120+</span>
+          <span class="stat-label">Магазинів на HoroShop</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">7 днів</span>
+          <span class="stat-label">До запуску магазину</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">0%</span>
+          <span class="stat-label">Комісій за транзакції</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="advantages-section">
+    <div class="container">
+      <h2 class="section-title">Чому HoroShop — найкращий вибір?</h2>
+      <p class="section-subtitle">Ми офіційні партнери HoroShop 🇺🇦 — працюємо з українською платформою №1</p>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-flag"></i></div>
+          <h3>Українська платформа</h3>
+          <p>100% український продукт з підтримкою на рідній мові та адаптацією під український ринок</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-lightning-charge"></i></div>
+          <h3>Швидкий запуск</h3>
+          <p>Запускаємо магазин за 7-14 днів — готові рішення та шаблони прискорюють розробку</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-cash-coin"></i></div>
+          <h3>Без комісій</h3>
+          <p>0% комісії за транзакції! На відміну від Prom.ua та інших — весь прибуток ваш</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-boxes"></i></div>
+          <h3>Необмежені товари</h3>
+          <p>Додавайте скільки завгодно товарів, категорій, фільтрів — без доплат</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-truck"></i></div>
+          <h3>Інтеграції з НП і УП</h3>
+          <p>Автоматичний розрахунок вартості доставки Нова Пошта, УкрПошта, Делівері</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-credit-card"></i></div>
+          <h3>LiqPay і WayForPay</h3>
+          <p>Підключаємо всі популярні платіжні системи України за 1 день</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="included-section">
+    <div class="container">
+      <h2 class="section-title">Що входить у вартість?</h2>
+      <p class="section-subtitle">Повний пакет для запуску магазину на HoroShop</p>
+      <div class="included-grid">
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Налаштування HoroShop магазину</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Унікальний дизайн під ваш бренд</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Каталог з фільтрами та пошуком</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Інтеграція LiqPay або WayForPay</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Підключення Нова Пошта API</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Навчання роботі в адмінці</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Google Analytics + Meta Pixel</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>SEO налаштування та мета-теги</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>2 місяці технічної підтримки</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Тарифні плани на HoroShop</h2>
+      <p class="section-subtitle">Прозорі ціни без прихованих платежів — створюємо магазини під ключ</p>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Старт</h3>
+            <p class="pricing-desc">Швидкий запуск магазину</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">18 000₴</span>
+            <span class="price-period">одноразово</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Налаштування HoroShop</li>
+            <li><i class="bi bi-check"></i> Готовий шаблон дизайну</li>
+            <li><i class="bi bi-check"></i> До 50 товарів</li>
+            <li><i class="bi bi-check"></i> 1 спосіб оплати (LiqPay)</li>
+            <li><i class="bi bi-check"></i> Нова Пошта API</li>
+            <li><i class="bi bi-check"></i> Базове SEO</li>
+            <li><i class="bi bi-check"></i> Навчання адмінці</li>
+            <li><i class="bi bi-check"></i> Термін: 5-7 днів</li>
+          </ul>
+          <button class="btn-pricing cta-button">Обрати план</button>
+        </div>
+
+        <div class="pricing-card popular">
+          <div class="popular-badge">Хіт продажів</div>
+          <div class="pricing-header">
+            <h3>Оптимальний</h3>
+            <p class="pricing-desc">Найкраще співвідношення ціна/якість</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">35 000₴</span>
+            <span class="price-period">одноразово</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Унікальний дизайн</li>
+            <li><i class="bi bi-check"></i> До 300 товарів</li>
+            <li><i class="bi bi-check"></i> 2-3 способи оплати</li>
+            <li><i class="bi bi-check"></i> НП + УкрПошта + Делівері</li>
+            <li><i class="bi bi-check"></i> Google Analytics + Meta Pixel</li>
+            <li><i class="bi bi-check"></i> Розширене SEO</li>
+            <li><i class="bi bi-check"></i> Telegram сповіщення</li>
+            <li><i class="bi bi-check"></i> Термін: 10-14 днів</li>
+          </ul>
+          <button class="btn-pricing btn-popular cta-button">Обрати план</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Максимум</h3>
+            <p class="pricing-desc">Для серйозного бізнесу</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">65 000₴</span>
+            <span class="price-period">одноразово</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Преміум дизайн</li>
+            <li><i class="bi bi-check"></i> Необмежена к-сть товарів</li>
+            <li><i class="bi bi-check"></i> Всі платіжні системи</li>
+            <li><i class="bi bi-check"></i> Всі служби доставки</li>
+            <li><i class="bi bi-check"></i> CRM інтеграція (Bitrix24/KeyCRM)</li>
+            <li><i class="bi bi-check"></i> Імпорт товарів з Excel</li>
+            <li><i class="bi bi-check"></i> Багатомовність</li>
+            <li><i class="bi bi-check"></i> Термін: 14-21 день</li>
+          </ul>
+          <button class="btn-pricing cta-button">Обрати план</button>
+        </div>
+      </div>
+
+      <div class="pricing-note">
+        <p><i class="bi bi-info-circle"></i> Вартість підписки HoroShop (від 390₴/міс) оплачується окремо. Ми допоможемо обрати найкращий тариф.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div class="container">
+      <h2 class="section-title">Етапи розробки</h2>
+      <p class="section-subtitle">Покроковий процес створення вашого магазину</p>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Аналіз та ТЗ</h3>
+            <p>Вивчаємо нішу, конкурентів, складаємо структуру каталогу та функціонал.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Дизайн та UX</h3>
+            <p>Створюємо макети головної, каталогу, картки товару, кошика.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Розробка</h3>
+            <p>Верстаємо сайт, налаштовуємо платіжні системи та доставку.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Завантаження товарів</h3>
+            <p>Додаємо товари, категорії, описи, фото. Або навчаємо вас це робити.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h3>Тестування та запуск</h3>
+            <p>Перевіряємо процес покупки, оплати, доставки. Запускаємо!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cases-section">
+    <div class="container">
+      <h2 class="section-title">Наші магазини на HoroShop</h2>
+      <p class="section-subtitle">Реальні проекти, які працюють і приносять прибуток щодня</p>
+      
+      <div class="cases-grid">
+        <div class="case-card">
+          <div class="case-image">
+            <img src="src/4.png" alt="Babe Joy - магазин дитячого одягу" loading="lazy">
+          </div>
+          <div class="case-content">
+            <h3>Babe Joy — Дитячий одяг</h3>
+            <p>Інтернет-магазин якісного дитячого одягу на HoroShop. Повна інтеграція з LiqPay та Новою Поштою, зручна навігація за віком та розміром.</p>
+            <div class="case-stats">
+              <span><i class="bi bi-heart-fill"></i> Якісні матеріали</span>
+              <span><i class="bi bi-truck"></i> Швидка доставка</span>
+            </div>
+            <a href="https://babe-joy.com/" target="_blank" rel="noopener" class="case-link">Відвідати сайт <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-image">
+            <img src="src/5.png" alt="Vidlyry Jeans - магазин джинсового одягу" loading="lazy">
+          </div>
+          <div class="case-content">
+            <h3>Vidlyry Jeans — Преміум одяг</h3>
+            <p>Магазин преміум джинсового одягу з фільтрами за розміром, кольором та швидким оформленням замовлення на HoroShop.</p>
+            <div class="case-stats">
+              <span><i class="bi bi-star-fill"></i> Преміум якість</span>
+              <span><i class="bi bi-truck"></i> Безкоштовна доставка</span>
+            </div>
+            <a href="https://vidlyry-jeans.com/" target="_blank" rel="noopener" class="case-link">Відвідати сайт <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-image">
+            <img src="src/6.png" alt="Drinkins - магазин напоїв" loading="lazy">
+          </div>
+          <div class="case-content">
+            <h3>Drinkins — Напої та алкоголь</h3>
+            <p>Онлайн-магазин напоїв з програмою лояльності та швидкою доставкою по місту за 2 години. Система знижок на HoroShop.</p>
+            <div class="case-stats">
+              <span><i class="bi bi-lightning-charge-fill"></i> Доставка 2 год</span>
+              <span><i class="bi bi-gift"></i> Програма лояльності</span>
+            </div>
+            <a href="https://drinkins.com.ua/" target="_blank" rel="noopener" class="case-link">Відвідати сайт <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Часті питання про HoroShop</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Що таке HoroShop і чому він?</h3>
+          <p>HoroShop — українська платформа №1 для інтернет-магазинів. Без комісій, з усіма інтеграціями для України (НП, ЛікПей), зручною адмінкою українською мовою.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Скільки коштує створення магазину?</h3>
+          <p>Від 18 000₴ за базовий до 65 000₴ за преміум магазин. + підписка HoroShop від 390₴/міс (без комісій за продажі!).</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чим HoroShop кращий за Prom.ua?</h3>
+          <p>Ви не платите комісії за кожен продаж! На Prom.ua — 2-8% з кожної транзакції. На HoroShop — 0%. Ваш магазин, ваш прибуток.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Як швидко запустимо магазин?</h3>
+          <p>Базовий магазин за 5-7 днів, унікальний дизайн за 10-14 днів. Преміум з інтеграціями — 14-21 день.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи складно керувати магазином?</h3>
+          <p>Ні! HoroShop має найпростішу адмінку українською мовою. Ми навчимо вас за 30 хвилин + надамо відео-інструкції.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Що включено в ціну?</h3>
+          <p>Дизайн, налаштування, оплата, доставка, SEO, навчання, 2 місяці підтримки. Все під ключ — відкриваєте і продаєте!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-form-section">
+    <div class="container">
+      <div class="cta-form-wrapper">
+        <div class="cta-form-content">
+          <h2>Запустіть магазин на HoroShop 🇺🇦</h2>
+          <p>Офіційні партнери HoroShop — допоможемо створити прибутковий магазин за 7-14 днів</p>
+          <ul class="cta-benefits">
+            <li><i class="bi bi-check-circle-fill"></i> Консультація протягом 15 хвилин</li>
+            <li><i class="bi bi-check-circle-fill"></i> Розрахунок вартості та термінів</li>
+            <li><i class="bi bi-check-circle-fill"></i> Приклади магазинів на HoroShop</li>
+          </ul>
+        </div>
+        
+        <form class="cta-form" id="ecommerceForm">
+          <h3>Отримати консультацію</h3>
+          
+          <div class="form-group">
+            <label for="name">Ваше ім'я *</label>
+            <input type="text" id="name" name="name" required placeholder="Іван Іванович">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+38 (097) 123-45-67">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Опишіть ваш проект</label>
+            <textarea id="message" name="message" rows="4" placeholder="Яку нішу плануєте, скільки товарів..."></textarea>
+          </div>
+
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn-submit">
+            <span>Відправити заявку</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+          <p class="form-privacy">Натискаючи кнопку, ви погоджуєтесь з <a href="privacy.html">політикою конфіденційності</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="about.html">Хто ми</a></li>
+          <li><a href="blog.html">Блог</a></li>
+          <li><a href="#">Кейси</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+          <li><a href="privacy.html">Політика конфіденційності</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Послуги</h4>
+        <ul>
+          <li><a href="Landing.html">Landing Page</a></li>
+          <li><a href="corporate.html">Корпоративний сайт</a></li>
+          <li><a href="ecommerce.html">Інтернет-магазин</a></li>
+          <li><a href="multipage.html">Багатосторінковий сайт</a></li>
+          <li><a href="businesscard.html">Сайт-візитка</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Дизайн</h4>
+        <ul>
+          <li><a href="uiux-design.html">UI/UX Дизайн</a></li>
+          <li><a href="redesign.html">Редизайн сайту</a></li>
+          <li><a href="sections-design.html">Дизайн секцій</a></li>
+          <li><a href="logo-branding.html">Лого та айдентика</a></li>
+          <li><a href="seo-meta.html">SEO та мета-дані</a></li>
+          <li><a href="content-optimization.html">Оптимізація контенту</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="text-align:right;">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/corporate.js"></script>
+</body>
+</html>

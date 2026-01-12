@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Підключення форм і скриптів — Artyne Studio | Інтеграція функціоналу</title>
+  <meta name="description" content="Професійне підключення форм, скриптів та функціоналу. Artyne Studio — інтегруємо зворотний зв'язок, замовлення, калькулятори та інші інтерактивні елементи.">
+  <meta name="keywords" content="підключення форм, скрипти сайту, форми зворотного зв'язку, Artyne Studio, інтеграція">
+  <link rel="canonical" href="https://artynestudio.com/forms-scripts.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="src/favicon.png" />
+</head>
+
+<body class="dark-page">
+
+  <!-- Canvas для анімації -->
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-block">
+      <div class="logo">
+        <a href="index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="Landing.html">Landing page</a>
+                  <a href="corporate.html">Корпоративний сайт</a>
+                  <a href="ecommerce.html">Інтернет-магазин</a>
+                  <a href="multipage.html">Багатосторінковий сайт</a>
+                  <a href="businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="uiux-design.html">UI/UX дизайн</a>
+                  <a href="redesign.html">Редизайн існуючого сайту</a>
+                  <a href="sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="google-ads.html">Google Ads налаштування</a>
+                  <a href="advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="content-optimization.html">Оптимізація контенту</a>
+                  <a href="seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="website-updates.html">Оновлення сайту</a>
+                  <a href="bug-fixes.html">Виправлення помилок</a>
+                  <a href="technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="about.html">Хто ми</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-landing grid-bg">
+    <div class="hero-content">
+      <h1>Підключення форм і скриптів, <br> що працюють бездоганно</h1>
+      <p>Інтегруємо форми зв'язку, калькулятори, замовлення, валідацію та будь-який функціонал. Чистий код, без помилок.</p>
+      <div class="hero-cta">
+        <a href="#pricing" class="btn-outline">Дізнатись ціну</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Форм підключено</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">99.9%</span>
+          <span class="stat-label">Успішних відправок</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">від 1 500₴</span>
+          <span class="stat-label">За форму</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПЕРЕВАГИ -->
+  <section class="advantages-section">
+    <div class="container">
+      <h2 class="section-title">Які форми та скрипти підключаємо</h2>
+      <p class="section-subtitle">Весь функціонал для вашого сайту</p>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-envelope"></i></div>
+          <h3>Форми зворотного зв'язку</h3>
+          <p>Контактні форми з валідацією, відправкою на email, Telegram або CRM</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-calculator"></i></div>
+          <h3>Калькулятори вартості</h3>
+          <p>Інтерактивні калькулятори для розрахунку ціни послуг або товарів</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-cart-check"></i></div>
+          <h3>Форми замовлення</h3>
+          <p>Швидке замовлення товарів чи послуг з автоматичною обробкою</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-calendar-event"></i></div>
+          <h3>Запис онлайн</h3>
+          <p>Системи бронювання, запису на прийом або реєстрації на події</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-chat-dots"></i></div>
+          <h3>Онлайн-чати</h3>
+          <p>Інтеграція з Telegram, Viber, Facebook Messenger для миттєвого зв'язку</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-star"></i></div>
+          <h3>Відгуки та оцінки</h3>
+          <p>Системи відгуків, рейтингів та коментарів з модерацією</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЩО ВХОДИТЬ -->
+  <section class="included-section">
+    <div class="container">
+      <h2 class="section-title">Що входить в підключення</h2>
+      <p class="section-subtitle">Повний цикл інтеграції функціоналу</p>
+      <div class="included-grid">
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Розробка форми під дизайн сайту</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Валідація полів (email, телефон, тощо)</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Захист від спаму (captcha)</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Відправка на email або Telegram</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Повідомлення про успішну відправку</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Інтеграція з CRM (якщо потрібно)</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Тестування на всіх пристроях</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Документація та інструкція</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Технічна підтримка 30 днів</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЦІНИ -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Тарифні плани</h2>
+      <p class="section-subtitle">Обирайте пакет під ваші потреби</p>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Проста форма</h3>
+            <p class="pricing-desc">Базовий зв'язок</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">1 500₴</span>
+            <span class="price-period">за форму</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Контактна форма (ім'я, email, повідомлення)</li>
+            <li><i class="bi bi-check"></i> Валідація полів</li>
+            <li><i class="bi bi-check"></i> Відправка на email</li>
+            <li><i class="bi bi-check"></i> Захист від спаму</li>
+            <li><i class="bi bi-check"></i> Адаптивний дизайн</li>
+            <li><i class="bi bi-check"></i> Термін: 1-2 дні</li>
+            <li class="feature-disabled"><i class="bi bi-x"></i> Telegram інтеграція</li>
+            <li class="feature-disabled"><i class="bi bi-x"></i> CRM</li>
+          </ul>
+          <button class="btn-pricing cta-button">Замовити</button>
+        </div>
+
+        <div class="pricing-card popular">
+          <div class="popular-badge">Популярний</div>
+          <div class="pricing-header">
+            <h3>Розширена форма</h3>
+            <p class="pricing-desc">З інтеграціями</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">3 500₴</span>
+            <span class="price-period">за форму</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Складна форма (будь-які поля)</li>
+            <li><i class="bi bi-check"></i> Повна валідація</li>
+            <li><i class="bi bi-check"></i> Відправка на email + Telegram</li>
+            <li><i class="bi bi-check"></i> Завантаження файлів</li>
+            <li><i class="bi bi-check"></i> Captcha від ботів</li>
+            <li><i class="bi bi-check"></i> Автовідповідь клієнту</li>
+            <li><i class="bi bi-check"></i> Аналітика відправок</li>
+            <li><i class="bi bi-check"></i> Термін: 2-3 дні</li>
+          </ul>
+          <button class="btn-pricing btn-popular cta-button">Замовити</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Калькулятор</h3>
+            <p class="pricing-desc">Складні розрахунки</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">від 5 000₴</span>
+            <span class="price-period">за проект</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Калькулятор вартості</li>
+            <li><i class="bi bi-check"></i> Будь-яка складність розрахунків</li>
+            <li><i class="bi bi-check"></i> Інтерактивний інтерфейс</li>
+            <li><i class="bi bi-check"></i> Відправка результатів</li>
+            <li><i class="bi bi-check"></i> Інтеграція з CRM</li>
+            <li><i class="bi bi-check"></i> Збереження історії</li>
+            <li><i class="bi bi-check"></i> Експорт в PDF</li>
+            <li><i class="bi bi-check"></i> Термін: 3-5 днів</li>
+          </ul>
+          <button class="btn-pricing cta-button">Замовити</button>
+        </div>
+      </div>
+
+      <div class="pricing-note">
+        <p><i class="bi bi-info-circle"></i> Остаточна вартість залежить від кількості полів, складності валідації та інтеграцій.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРОЦЕС -->
+  <section class="process-section">
+    <div class="container">
+      <h2 class="section-title">Процес підключення</h2>
+      <p class="section-subtitle">Як ми інтегруємо форми та скрипти</p>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Аналіз вимог</h3>
+            <p>Визначаємо, які поля потрібні, куди відправляти дані та які інтеграції.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Розробка</h3>
+            <p>Створюємо форму, налаштовуємо валідацію та скрипти обробки.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Інтеграція</h3>
+            <p>Підключаємо відправку на email, Telegram, CRM або інші сервіси.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Тестування</h3>
+            <p>Перевіряємо всі сценарії: правильні дані, помилки, спам-атаки.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h3>Запуск</h3>
+            <p>Вводимо в експлуатацію, передаємо документацію та навчаємо.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Часті питання</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Скільки коштує підключення форми?</h3>
+          <p>Від 1 500₴ за просту контактну форму, 3 500₴ за розширену з інтеграціями, від 5 000₴ за калькулятор.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Куди приходять заявки з форми?</h3>
+          <p>На ваш email, у Telegram бота, або відразу в CRM систему — як вам зручніше.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Як швидко підключите форму?</h3>
+          <p>Проста форма — 1-2 дні, складна з інтеграціями — 2-3 дні, калькулятор — 3-5 днів.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи захищені форми від спаму?</h3>
+          <p>Так! Використовуємо Google reCAPTCHA, honeypot поля та інші методи захисту.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи можна інтегрувати з моєю CRM?</h3>
+          <p>Так, підключаємо до будь-яких CRM: Bitrix24, AmoCRM, Pipedrive та інших.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Що якщо форма не працює?</h3>
+          <p>Надаємо 30 днів технічної підтримки — виправимо будь-які проблеми безкоштовно.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ФОРМА -->
+  <section class="cta-form-section">
+    <div class="container">
+      <div class="cta-form-wrapper">
+        <div class="cta-form-content">
+          <h2>Підключимо форми та скрипти для вашого сайту</h2>
+          <p>Залиште заявку та отримайте безкоштовну консультацію, аналіз ваших потреб та розрахунок вартості</p>
+          <ul class="cta-benefits">
+            <li><i class="bi bi-check-circle-fill"></i> Консультація протягом 15 хвилин</li>
+            <li><i class="bi bi-check-circle-fill"></i> Безкоштовний аналіз вимог</li>
+            <li><i class="bi bi-check-circle-fill"></i> 30 днів технічної підтримки</li>
+          </ul>
+        </div>
+        
+        <form class="cta-form" id="formsForm">
+          <h3>Отримати консультацію</h3>
+          
+          <div class="form-group">
+            <label for="name">Ваше ім'я *</label>
+            <input type="text" id="name" name="name" required placeholder="Іван Іванович">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+38 (097) 123-45-67">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Які форми потрібні?</label>
+            <textarea id="message" name="message" rows="4" placeholder="Контактна форма, калькулятор вартості..."></textarea>
+          </div>
+
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn-submit">
+            <span>Відправити заявку</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+          <p class="form-privacy">Натискаючи кнопку, ви погоджуєтесь з <a href="privacy.html">політикою конфіденційності</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="#">Послуги</a></li>
+          <li><a href="#">Про компанію</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Категорії</h4>
+        <ul>
+          <li><a href="Landing.html">Landing Page</a></li>
+          <li><a href="corporate.html">Корпоративні сайти</a></li>
+          <li><a href="ecommerce.html">Інтернет-магазини</a></li>
+          <li><a href="multipage.html">Багатосторінкові</a></li>
+          <li><a href="businesscard.html">Сайт-візитка</a></li>
+          <li><a href="uiux-design.html">UI/UX Дизайн</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/corporate.js"></script>
+</body>
+</html>

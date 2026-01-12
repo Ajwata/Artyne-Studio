@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Як вибрати веб-студію: 10 критеріїв для правильного вибору | Artyne Studio</title>
+  <meta name="description" content="Детальний гід по вибору веб-студії для розробки сайту. 10 головних критеріїв, які допоможуть обрати надійного підрядника. Поради від професіоналів Artyne Studio.">
+  <meta name="keywords" content="як вибрати веб-студію, критерії вибору веб-студії, вибір підрядника для сайту, розробка сайту, веб-студія Україна, Artyne Studio">
+  <link rel="canonical" href="https://artynestudio.com/blog/yak-vybraty-veb-studiyu.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/landing.css">
+  <link rel="stylesheet" href="../css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="../src/favicon.png" />
+</head>
+
+<body>
+
+  <!-- Canvas для анімації -->
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-block">
+      <div class="logo">
+        <a href="../index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="../index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="../Landing.html">Landing page</a>
+                  <a href="../corporate.html">Корпоративний сайт</a>
+                  <a href="../ecommerce.html">Інтернет-магазин</a>
+                  <a href="../multipage.html">Багатосторінковий сайт</a>
+                  <a href="../businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="../uiux-design.html">UI/UX дизайн</a>
+                  <a href="../redesign.html">Редизайн існуючого сайту</a>
+                  <a href="../sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="../logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="../adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="../forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="../integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="../optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="../google-ads.html">Google Ads налаштування</a>
+                  <a href="../advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="../analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="../seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="../content-optimization.html">Оптимізація контенту</a>
+                  <a href="../seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="../website-updates.html">Оновлення сайту</a>
+                  <a href="../bug-fixes.html">Виправлення помилок</a>
+                  <a href="../technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="../about.html">Хто ми</a></li>
+        <li><a href="../blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <!-- Хлібні крихти -->
+  <section class="breadcrumbs" style="padding: 30px 0 0;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
+      <a href="../index.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Головна</a>
+      <span style="margin: 0 10px; color: rgba(255,255,255,0.3);">/</span>
+      <a href="../blog.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Блог</a>
+      <span style="margin: 0 10px; color: rgba(255,255,255,0.3);">/</span>
+      <span style="color: rgba(255,255,255,0.7);">Як вибрати веб-студію</span>
+    </div>
+  </section>
+
+  <!-- СТАТТЯ -->
+  <article class="blog-article" style="padding: 60px 0 100px;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
+      
+      <!-- Заголовок -->
+      <h1 style="font-size: 3.5rem; line-height: 1.25; margin: 0 0 30px 0; font-weight: 700; color: #fff;">Як вибрати веб-студію: 10 критеріїв для правильного вибору</h1>
+      
+      <!-- Підзаголовок -->
+      <p style="font-size: 1.25rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin: 0 0 30px 0;">Розробка сайту — це серйозна інвестиція в бізнес. Правильний вибір веб-студії визначає якість результату, дотримання термінів та загальну ефективність проєкту. Розповідаємо, на що звертати увагу, щоб не прогадати з підрядником.</p>
+      
+      <!-- Бейджики -->
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 80px;">
+        <span style="background: rgba(0, 212, 255, 0.15); color: #00d4ff; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 500;">Вибір веб-студії</span>
+        <span style="background: rgba(255, 255, 255, 0.05); color: rgba(255,255,255,0.6); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">12 січня 2026</span>
+        <span style="background: rgba(255, 255, 255, 0.05); color: rgba(255,255,255,0.6); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">8 хв читання</span>
+      </div>
+
+      <!-- Контент -->
+      <div class="article-content" style="line-height: 1.9; color: rgba(255,255,255,0.85); font-size: 1.1rem;">
+        
+        <h2 style="font-size: 2rem; margin: 60px 0 25px; color: #00d4ff; font-weight: 600;">Чому важливо обрати правильну веб-студію?</h2>
+        <p>Вибір веб-студії — це не просто пошук виконавця. Це вибір партнера, який розуміє ваш бізнес, вміє трансформувати ідеї в працюючий продукт і залишається на зв'язку після запуску. Непрофесійний підхід може призвести до зриву термінів, перевитрати бюджету і, найгірше, до сайту, який не приносить результату.</p>
+        
+        <p>За нашими спостереженнями, близько 40% клієнтів, які звертаються до нас, уже мали негативний досвід з іншими підрядниками. Найчастіші проблеми: невідповідність очікуванням, затримки в роботі, відсутність підтримки після запуску. Щоб уникнути цих помилок, варто ретельно підійти до вибору виконавця.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">10 критеріїв вибору надійної веб-студії</h2>
+
+        <h3 style="font-size: 1.6rem; margin: 45px 0 20px; color: #fff; font-weight: 600;">1. Портфоліо та кейси</h3>
+        <p style="margin-bottom: 20px;">Перше, на що варто звернути увагу — це реальні роботи студії. Портфоліо показує рівень дизайну, технічну експертизу та різноманітність проєктів. Але ще важливіше — детальні кейси з описом завдання, процесу роботи та досягнутих результатів.</p>
+        <p style="margin-bottom: 15px;"><strong style="color: #00d4ff;">На що дивитися:</strong></p>
+        <ul style="margin: 20px 0 30px; padding-left: 35px; line-height: 1.9;">
+          <li style="margin: 12px 0;">Чи є проєкти у вашій ніші або схожі за функціоналом?</li>
+          <li style="margin: 12px 0;">Чи вказані посилання на живі сайти (не просто скріншоти)?</li>
+          <li style="margin: 12px 0;">Чи розповідає студія про виклики та як їх вирішувала?</li>
+          <li style="margin: 12px 0;">Чи є відгуки клієнтів з тих проєктів?</li>
+        </ul>
+        <p style="margin-bottom: 20px;">У <a href="../Landing.html" style="color: #00d4ff; text-decoration: underline;">Artyne Studio</a> ми завжди показуємо реальні проєкти з описом бізнес-цілей та метрик успіху.</p>
+
+        <h3 style="font-size: 1.6rem; margin: 45px 0 20px; color: #fff; font-weight: 600;">2. Відгуки та репутація</h3>
+        <p style="margin-bottom: 20px;">Репутація студії — це її найцінніший актив. Шукайте відгуки на незалежних платформах: Google Reviews, DOU, Clutch, Facebook. Зверніть увагу на те, як студія реагує на критику — це показник клієнтоорієнтованості.</p>
+        <p style="margin-bottom: 20px;">Також корисно запитати контакти попередніх клієнтів та поспілкуватися з ними напряму. Надійна веб-студія завжди надасть такі контакти без вагань.</p>
+
+        <h3 style="font-size: 1.6rem; margin: 45px 0 20px; color: #fff; font-weight: 600;">3. Спеціалізація та експертиза</h3>
+        <p>Універсальні студії "робимо все" часто роблять щось посередньо. Краще обирати студію зі спеціалізацією у вашій галузі або типі проєкту. Наприклад, якщо вам потрібен інтернет-магазин, шукайте тих, хто спеціалізується на <a href="../ecommerce.html" style="color: #00d4ff;">e-commerce розробці</a>.</p>
+        <p>Artyne Studio спеціалізується на створенні <a href="../Landing.html" style="color: #00d4ff;">landing page</a>, <a href="../corporate.html" style="color: #00d4ff;">корпоративних сайтів</a> та складних багатофункціональних рішень з фокусом на конверсію та користувацький досвід.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">4. Прозорість процесів</h3>
+        <p>Професійна студія чітко описує всі етапи роботи, використовує договір з детальним технічним завданням (ТЗ) і регулярно звітує про прогрес. Якщо на першій зустрічі вам кажуть "зробимо швидко і недорого" без уточнення деталей — це червоний прапорець.</p>
+        <p><strong>Що має бути прозорим:</strong></p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;">Етапи проєкту та терміни кожного етапу</li>
+          <li style="margin: 10px 0;">Вартість та що входить у ціну</li>
+          <li style="margin: 10px 0;">Хто конкретно працюватиме над проєктом</li>
+          <li style="margin: 10px 0;">Що буде, якщо щось піде не за планом</li>
+        </ul>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">5. Технології та інструменти</h3>
+        <p>Уточніть, які технології використовує студія і чому саме їх. Сучасна веб-розробка — це не тільки HTML/CSS/JS, а й правильна архітектура, <a href="../optimization.html" style="color: #00d4ff;">оптимізація швидкості</a>, безпека, <a href="../adaptive-layout.html" style="color: #00d4ff;">адаптивність</a> та багато іншого.</p>
+        <p>Хороша студія пояснить вибір технологій простою мовою та покаже, як це вплине на продуктивність та масштабованість вашого сайту. Ми в Artyne Studio працюємо з найсучаснішим стеком технологій і завжди обираємо рішення, що найкраще підходять під ваші бізнес-цілі.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">6. Команда та комунікація</h3>
+        <p>Важливо розуміти, хто саме працюватиме над вашим проєктом. Чи є у студії штатні спеціалісти, чи вони працюють з фрілансерами? Хто буде вашою точкою контакту? Як швидко студія відповідає на питання?</p>
+        <p>Протестуйте комунікацію ще до підписання договору: напишіть кілька запитань, подивіться, як швидко і якісно відповідають. Це багато розкаже про майбутню співпрацю.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">7. Підхід до дизайну та UX</h3>
+        <p>Гарний дизайн — це не тільки про красу, а й про зручність та ефективність. Студія має розуміти принципи <a href="../uiux-design.html" style="color: #00d4ff;">UI/UX дизайну</a>, користувацьку поведінку та як дизайн впливає на конверсію.</p>
+        <p>Запитайте, чи проводять вони дослідження цільової аудиторії, чи тестують інтерфейси, чи аналізують поведінку користувачів після запуску. Професійна студія не просто малює красиві картинки — вона створює інструмент для досягнення ваших бізнес-цілей.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">8. SEO та маркетингова складова</h3>
+        <p>Сайт без SEO-оптимізації та маркетингової стратегії — це просто цифрова візитка. Важливо, щоб студія розуміла основи <a href="../seo-meta.html" style="color: #00d4ff;">SEO</a>, структурувала контент правильно, налаштовувала аналітику та закладала основу для майбутнього просування.</p>
+        <p>У Artyne Studio ми інтегруємо SEO-практики на всіх етапах розробки: від структури сайту до <a href="../content-optimization.html" style="color: #00d4ff;">оптимізації контенту</a> та технічних налаштувань для <a href="../seo-visibility.html" style="color: #00d4ff;">покращення видимості</a>.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">9. Підтримка після запуску</h3>
+        <p>Запуск сайту — це тільки початок. Важливо розуміти, що буде далі: чи надає студія <a href="../technical-support.html" style="color: #00d4ff;">технічну підтримку</a>, чи навчить вас працювати з системою управління контентом, чи допоможе з <a href="../website-updates.html" style="color: #00d4ff;">оновленням контенту</a>?</p>
+        <p>Уточніть умови гарантії та постпродакшн підтримки ще на етапі переговорів. Надійна студія завжди залишається на зв'язку та допомагає клієнтам навіть після завершення проєкту.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">10. Співвідношення ціна-якість</h3>
+        <p>Найдешевше не завжди означає найкраще. Занадто низька ціна часто сигналізує про низьку якість, використання готових шаблонів або відсутність досвіду. З іншого боку, висока ціна не гарантує результат.</p>
+        <p>Оцінюйте загальну пропозицію: що входить у вартість, які результати обіцяють, які гарантії надають. Порівняйте кілька пропозицій і обирайте оптимальне співвідношення ціни, якості та сервісу.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Червоні прапорці: коли варто відмовитися від студії</h2>
+        <p>Є ситуації, коли краще відмовитися від співпраці ще на етапі переговорів:</p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;"><strong>Відсутність договору або розмите ТЗ</strong> — без чітких домовленостей ви ризикуєте отримати зовсім не те, що очікували.</li>
+          <li style="margin: 10px 0;"><strong>Обіцянки "під ключ за 3 дні"</strong> — якісний сайт вимагає часу на аналіз, дизайн, розробку та тестування.</li>
+          <li style="margin: 10px 0;"><strong>100% передоплата</strong> — нормальна практика — поетапна оплата за виконану роботу.</li>
+          <li style="margin: 10px 0;"><strong>Нав'язування непотрібних послуг</strong> — професіонали пропонують тільки те, що дійсно потрібно вашому бізнесу.</li>
+          <li style="margin: 10px 0;"><strong>Погана комунікація вже на старті</strong> — якщо важко домовитися про зустріч, уявіть, як буде під час проєкту.</li>
+        </ul>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Як підготуватися до вибору веб-студії?</h2>
+        <p>Щоб зробити правильний вибір, варто заздалегідь підготуватися:</p>
+        
+        <div style="background: rgba(0, 212, 255, 0.05); border-left: 3px solid #00d4ff; padding: 20px; margin: 20px 0; border-radius: 5px;">
+          <p style="margin: 10px 0;"><strong>1. Сформулюйте цілі проєкту</strong> — навіщо вам сайт, які завдання він має вирішувати, які метрики успіху.</p>
+          <p style="margin: 10px 0;"><strong>2. Визначте бюджет</strong> — реалістична оцінка того, скільки ви готові інвестувати.</p>
+          <p style="margin: 10px 0;"><strong>3. Зберіть референси</strong> — приклади сайтів, які вам подобаються, та поясніть, що саме.</p>
+          <p style="margin: 10px 0;"><strong>4. Підготуйте контент</strong> — тексти, фото, відео, які будуть на сайті.</p>
+          <p style="margin: 10px 0;"><strong>5. Складіть список питань</strong> — що хочете уточнити у студії на першій зустрічі.</p>
+        </div>
+
+        <p>У Artyne Studio ми допомагаємо клієнтам на всіх етапах — від формування ідеї до запуску та просування. Заповніть <a href="../brief.html" style="color: #00d4ff;">бриф</a>, і ми підготуємо детальну пропозицію під ваш проєкт.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Висновок</h2>
+        <p>Вибір веб-студії — це важливе рішення, яке впливає на успіх вашого онлайн-проєкту. Використовуйте наші 10 критеріїв як чеклист, порівнюйте пропозиції, довіряйте інтуїції та не бійтеся задавати питання. Професійна студія завжди радо відповість на всі ваші запитання та надасть максимум інформації для прийняття рішення.</p>
+        <p>Artyne Studio — це прозорість, якість та фокус на результаті. Ми не просто розробляємо сайти, ми створюємо інструменти для зростання вашого бізнесу.</p>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-block" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 12px; padding: 40px; margin: 60px 0; text-align: center;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #00d4ff;">Готові розпочати свій проєкт?</h3>
+        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 30px;">Отримайте безкоштовну консультацію та детальну оцінку вашого проєкту від професіоналів Artyne Studio</p>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+          <a href="../brief.html" class="btn-primary" style="display: inline-block; padding: 15px 35px; background: linear-gradient(135deg, #00d4ff, #0099ff); color: #000; text-decoration: none; border-radius: 30px; font-weight: 600; transition: all 0.3s;">Заповнити бриф</a>
+          <a href="https://t.me/ArtyneStudio" class="btn-secondary" style="display: inline-block; padding: 15px 35px; background: rgba(0, 212, 255, 0.1); color: #00d4ff; text-decoration: none; border-radius: 30px; font-weight: 600; border: 1px solid #00d4ff; transition: all 0.3s;">Написати в Telegram</a>
+        </div>
+      </div>
+
+      <!-- Інші статті -->
+      <div class="related-articles" style="margin-top: 60px;">
+        <h3 style="font-size: 1.6rem; margin-bottom: 30px;">Читайте також:</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <a href="skilky-koshtuye-sait.html" style="display: block; padding: 20px; background: rgba(0, 212, 255, 0.03); border: 1px solid rgba(0, 212, 255, 0.1); border-radius: 10px; text-decoration: none; transition: all 0.3s;">
+            <h4 style="color: #00d4ff; margin-bottom: 10px;">Скільки коштує розробка сайту в 2026?</h4>
+            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Реальні ціни на розробку сайтів в Україні...</p>
+          </a>
+          <a href="landing-page-shcho-tse.html" style="display: block; padding: 20px; background: rgba(0, 212, 255, 0.03); border: 1px solid rgba(0, 212, 255, 0.1); border-radius: 10px; text-decoration: none; transition: all 0.3s;">
+            <h4 style="color: #00d4ff; margin-bottom: 10px;">Landing Page: що це і коли потрібен</h4>
+            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Все про одностор інкові сайти...</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="../src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="../index.html">Головна</a></li>
+          <li><a href="#">Послуги</a></li>
+          <li><a href="../about.html">Хто ми</a></li>
+          <li><a href="../blog.html">Блог</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Категорії</h4>
+        <ul>
+          <li><a href="../Landing.html">Landing Page</a></li>
+          <li><a href="../corporate.html">Корпоративні сайти</a></li>
+          <li><a href="../ecommerce.html">Інтернет-магазини</a></li>
+          <li><a href="../multipage.html">Багатосторінкові</a></li>
+          <li><a href="../businesscard.html">Сайт-візитка</a></li>
+          <li><a href="../uiux-design.html">UI/UX Дизайн</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/corporate.js"></script>
+</body>
+</html>

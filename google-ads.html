@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Налаштування Google Ads — Artyne Studio | Контекстна реклама</title>
+  <meta name="description" content="Професійне налаштування Google Ads. Artyne Studio — створюємо ефективні рекламні кампанії з мінімальною вартістю кліка та максимальною конверсією.">
+  <meta name="keywords" content="Google Ads, контекстна реклама, налаштування реклами, Artyne Studio, Google Реклама">
+  <link rel="canonical" href="https://artynestudio.com/google-ads.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="src/favicon.png" />
+</head>
+
+<body>
+
+  <!-- Canvas для анімації -->
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-block">
+      <div class="logo">
+        <a href="index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="Landing.html">Landing page</a>
+                  <a href="corporate.html">Корпоративний сайт</a>
+                  <a href="ecommerce.html">Інтернет-магазин</a>
+                  <a href="multipage.html">Багатосторінковий сайт</a>
+                  <a href="businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="uiux-design.html">UI/UX дизайн</a>
+                  <a href="redesign.html">Редизайн існуючого сайту</a>
+                  <a href="sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="google-ads.html">Google Ads налаштування</a>
+                  <a href="advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="content-optimization.html">Оптимізація контенту</a>
+                  <a href="seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="website-updates.html">Оновлення сайту</a>
+                  <a href="bug-fixes.html">Виправлення помилок</a>
+                  <a href="technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="about.html">Хто ми</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-landing grid-bg">
+    <div class="hero-content">
+      <h1>Налаштування Google Ads, <br> що приносить клієнтів</h1>
+      <p>Створюємо ефективні рекламні кампанії в Google. Мінімальна ціна кліка, максимум цільових клієнтів та продажів.</p>
+      <div class="hero-cta">
+        <a href="#pricing" class="btn-outline">Дізнатись ціну</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">200+</span>
+          <span class="stat-label">Кампаній запущено</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3-5x</span>
+          <span class="stat-label">Окупність реклами</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">від 5 000₴</span>
+          <span class="stat-label">За налаштування</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПЕРЕВАГИ -->
+  <section class="advantages-section">
+    <div class="container">
+      <h2 class="section-title">Чому Google Ads ефективна?</h2>
+      <p class="section-subtitle">Ваші клієнти бачать рекламу саме тоді, коли шукають ваші послуги</p>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-search"></i></div>
+          <h3>Цільова аудиторія</h3>
+          <p>Показуємо рекламу тільки тим, хто шукає саме ваші товари чи послуги</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-speedometer2"></i></div>
+          <h3>Швидкий результат</h3>
+          <p>Перші клієнти з'являються вже в перший день після запуску</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-graph-up"></i></div>
+          <h3>Вимірюваність</h3>
+          <p>Бачите кожен клік, дзвінок та покупку — контролюєте бюджет</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-geo-alt"></i></div>
+          <h3>Локальний таргетинг</h3>
+          <p>Показуємо рекламу тільки у вашому місті або регіоні</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-cash-coin"></i></div>
+          <h3>Оплата за результат</h3>
+          <p>Платите тільки за кліки на рекламу, а не за покази</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-sliders"></i></div>
+          <h3>Гнучке управління</h3>
+          <p>Можна змінювати бюджет, тексти та налаштування в будь-який момент</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЩО ВХОДИТЬ -->
+  <section class="included-section">
+    <div class="container">
+      <h2 class="section-title">Що входить в налаштування</h2>
+      <p class="section-subtitle">Повний цикл запуску контекстної реклами</p>
+      <div class="included-grid">
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Аналіз ніші та конкурентів</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Підбір ключових слів</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Створення Google Ads акаунту</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Написання рекламних текстів</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Налаштування таргетингу</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Встановлення відстеження конверсій</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Запуск та тестування</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Інструкція по керуванню</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Перший тиждень підтримки</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЦІНИ -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Тарифні плани</h2>
+      <p class="section-subtitle">Обирайте пакет під ваші потреби</p>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Базова кампанія</h3>
+            <p class="pricing-desc">Одна кампанія</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">5 000₴</span>
+            <span class="price-period">одноразово</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> 1 рекламна кампанія</li>
+            <li><i class="bi bi-check"></i> До 50 ключових слів</li>
+            <li><i class="bi bi-check"></i> 5 рекламних оголошень</li>
+            <li><i class="bi bi-check"></i> Базовий таргетинг</li>
+            <li><i class="bi bi-check"></i> Відстеження конверсій</li>
+            <li><i class="bi bi-check"></i> Інструкція</li>
+            <li><i class="bi bi-check"></i> 1 тиждень підтримки</li>
+            <li><i class="bi bi-check"></i> Термін: 2-3 дні</li>
+          </ul>
+          <button class="btn-pricing cta-button">Замовити</button>
+        </div>
+
+        <div class="pricing-card popular">
+          <div class="popular-badge">Популярний</div>
+          <div class="pricing-header">
+            <h3>Розширена</h3>
+            <p class="pricing-desc">Кілька кампаній</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">12 000₴</span>
+            <span class="price-period">одноразово</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> 2-3 рекламні кампанії</li>
+            <li><i class="bi bi-check"></i> До 150 ключових слів</li>
+            <li><i class="bi bi-check"></i> 15 рекламних оголошень</li>
+            <li><i class="bi bi-check"></i> Розширений таргетинг</li>
+            <li><i class="bi bi-check"></i> A/B тестування</li>
+            <li><i class="bi bi-check"></i> Ремаркетинг</li>
+            <li><i class="bi bi-check"></i> 2 тижні підтримки</li>
+            <li><i class="bi bi-check"></i> Термін: 3-5 днів</li>
+          </ul>
+          <button class="btn-pricing btn-popular cta-button">Замовити</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Повний пакет</h3>
+            <p class="pricing-desc">Максимум функцій</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">від 20 000₴</span>
+            <span class="price-period">одноразово</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Необмежена кількість кампаній</li>
+            <li><i class="bi bi-check"></i> Необмежені ключові слова</li>
+            <li><i class="bi bi-check"></i> Професійні тексти</li>
+            <li><i class="bi bi-check"></i> Геотаргетинг</li>
+            <li><i class="bi bi-check"></i> Пошук + КМБ + YouTube</li>
+            <li><i class="bi bi-check"></i> Розширений ремаркетинг</li>
+            <li><i class="bi bi-check"></i> 1 місяць підтримки</li>
+            <li><i class="bi bi-check"></i> Термін: 5-7 днів</li>
+          </ul>
+          <button class="btn-pricing cta-button">Замовити</button>
+        </div>
+      </div>
+
+      <div class="pricing-note">
+        <p><i class="bi bi-info-circle"></i> Рекламний бюджет оплачується окремо безпосередньо в Google Ads (від 100₴/день).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРОЦЕС -->
+  <section class="process-section">
+    <div class="container">
+      <h2 class="section-title">Процес налаштування</h2>
+      <p class="section-subtitle">Як ми запускаємо Google Ads</p>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Аналіз</h3>
+            <p>Вивчаємо вашу нішу, конкурентів, цільову аудиторію та підбираємо ключові слова.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Створення кампаній</h3>
+            <p>Налаштовуємо структуру кампаній, групи оголошень та таргетинг.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Написання оголошень</h3>
+            <p>Створюємо привабливі тексти, що збільшують клікабельність.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Налаштування відстеження</h3>
+            <p>Встановлюємо Google Analytics, відстеження дзвінків та конверсій.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h3>Запуск та оптимізація</h3>
+            <p>Запускаємо рекламу, аналізуємо перші результати та оптимізуємо.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Часті питання</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Скільки коштує налаштування Google Ads?</h3>
+          <p>Від 5 000₴ за базову кампанію, 12 000₴ за розширену, від 20 000₴ за повний пакет. Рекламний бюджет оплачується окремо.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Який бюджет потрібен на рекламу?</h3>
+          <p>Мінімум 3 000₴/місяць (100₴/день). Оптимально — від 10 000₴/місяць для кращих результатів.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Як швидко побачу результати?</h3>
+          <p>Перші кліки — вже в день запуску. Стабільні результати — через 1-2 тижні після оптимізації.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи гарантуєте продажі?</h3>
+          <p>Гарантуємо цільовий трафік. Продажі залежать від вашого сайту, пропозиції та менеджерів.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи потрібен мій акаунт Google?</h3>
+          <p>Так, створюємо Google Ads на вашому акаунті — ви маєте повний контроль.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи можу змінювати рекламу сам?</h3>
+          <p>Так! Передаємо повну інструкцію, можете керувати самостійно або замовити підтримку.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ФОРМА -->
+  <section class="cta-form-section">
+    <div class="container">
+      <div class="cta-form-wrapper">
+        <div class="cta-form-content">
+          <h2>Налаштуємо Google Ads для вашого бізнесу</h2>
+          <p>Залиште заявку та отримайте безкоштовний аудит ніші, підбір ключових слів та розрахунок бюджету</p>
+          <ul class="cta-benefits">
+            <li><i class="bi bi-check-circle-fill"></i> Безкоштовний аудит конкурентів</li>
+            <li><i class="bi bi-check-circle-fill"></i> Підбір ключових слів</li>
+            <li><i class="bi bi-check-circle-fill"></i> Консультація протягом 15 хвилин</li>
+          </ul>
+        </div>
+        
+        <form class="cta-form" id="googleAdsForm">
+          <h3>Отримати консультацію</h3>
+          
+          <div class="form-group">
+            <label for="name">Ваше ім'я *</label>
+            <input type="text" id="name" name="name" required placeholder="Іван Іванович">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+38 (097) 123-45-67">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Ваша ніша / товар</label>
+            <textarea id="message" name="message" rows="4" placeholder="Розкажіть про ваш бізнес..."></textarea>
+          </div>
+
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn-submit">
+            <span>Відправити заявку</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+          <p class="form-privacy">Натискаючи кнопку, ви погоджуєтесь з <a href="privacy.html">політикою конфіденційності</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="#">Послуги</a></li>
+          <li><a href="#">Про компанію</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Категорії</h4>
+        <ul>
+          <li><a href="Landing.html">Landing Page</a></li>
+          <li><a href="corporate.html">Корпоративні сайти</a></li>
+          <li><a href="ecommerce.html">Інтернет-магазини</a></li>
+          <li><a href="multipage.html">Багатосторінкові</a></li>
+          <li><a href="businesscard.html">Сайт-візитка</a></li>
+          <li><a href="uiux-design.html">UI/UX Дизайн</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/corporate.js"></script>
+</body>
+</html>

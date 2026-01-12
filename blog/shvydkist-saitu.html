@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Чому швидкість сайту — це важливо? Вплив на SEO та конверсію | Artyne Studio</title>
+  <meta name="description" content="Як швидкість завантаження сайту впливає на відвідувачів, SEO-рейтинг та конверсію. Практичні поради з оптимізації від Artyne Studio.">
+  <meta name="keywords" content="швидкість сайту, оптимізація швидкості, pagespeed, швидкість завантаження, Core Web Vitals, продуктивність сайту, Artyne Studio">
+  <link rel="canonical" href="https://artynestudio.com/blog/shvydkist-saitu.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/landing.css">
+  <link rel="stylesheet" href="../css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="../src/favicon.png" />
+</head>
+
+<body>
+
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <header>
+    <div class="logo-block">
+      <div class="logo">
+        <a href="../index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="../index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="../Landing.html">Landing page</a>
+                  <a href="../corporate.html">Корпоративний сайт</a>
+                  <a href="../ecommerce.html">Інтернет-магазин</a>
+                  <a href="../multipage.html">Багатосторінковий сайт</a>
+                  <a href="../businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="../uiux-design.html">UI/UX дизайн</a>
+                  <a href="../redesign.html">Редизайн існуючого сайту</a>
+                  <a href="../sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="../logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="../adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="../forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="../integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="../optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="../google-ads.html">Google Ads налаштування</a>
+                  <a href="../advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="../analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="../seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="../content-optimization.html">Оптимізація контенту</a>
+                  <a href="../seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="../website-updates.html">Оновлення сайту</a>
+                  <a href="../bug-fixes.html">Виправлення помилок</a>
+                  <a href="../technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="../about.html">Хто ми</a></li>
+        <li><a href="../blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <!-- Хлібні крихти -->
+  <section class="breadcrumbs" style="padding: 30px 0 0;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
+      <a href="../index.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Головна</a>
+      <span style="margin: 0 10px; color: rgba(255,255,255,0.3);">/</span>
+      <a href="../blog.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Блог</a>
+      <span style="margin: 0 10px; color: rgba(255,255,255,0.3);">/</span>
+      <span style="color: rgba(255,255,255,0.7);">Швидкість сайту</span>
+    </div>
+  </section>
+
+  <!-- СТАТТЯ -->
+  <article class="blog-article" style="padding: 60px 0 100px;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
+      
+      <!-- Заголовок -->
+      <h1 style="font-size: 3.5rem; line-height: 1.25; margin: 0 0 30px 0; font-weight: 700; color: #fff;">Чому швидкість сайту — це важливо для бізнесу</h1>
+      
+      <!-- Підзаголовок -->
+      <p style="font-size: 1.25rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin: 0 0 30px 0;">Розбираємо, як швидкість завантаження впливає на конверсії, відмови, SEO та враження користувачів. Плюс практичні поради щодо оптимізації.</p>
+      
+      <!-- Бейджики -->
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 80px;">
+        <span style="background: rgba(0, 212, 255, 0.15); color: #00d4ff; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 500;">Оптимізація</span>
+        <span style="background: rgba(255, 255, 255, 0.05); color: rgba(255,255,255,0.6); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">8 січня 2026</span>
+        <span style="background: rgba(255, 255, 255, 0.05); color: rgba(255,255,255,0.6); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">7 хв читання</span>
+      </div>
+
+      <div class="article-content" style="line-height: 1.9; color: rgba(255,255,255,0.85); font-size: 1.1rem;">
+        
+        <h2 style="font-size: 2rem; margin: 60px 0 25px; color: #00d4ff; font-weight: 600;">Вражаюча статистика про швидкість сайтів</h2>
+        <p style="margin-bottom: 20px;">Дослідження Google показують шокуючі цифри про вплив швидкості на поведінку користувачів:</p>
+        
+        <div style="background: rgba(255, 59, 48, 0.1); border-left: 3px solid #ff3b30; padding: 20px; margin: 20px 0; border-radius: 5px;">
+          <ul style="margin: 0; padding-left: 20px;">
+            <li style="margin: 10px 0;"><strong>53% користувачів</strong> залишають мобільний сайт, якщо він завантажується більше 3 секунд</li>
+            <li style="margin: 10px 0;">Кожна додаткова секунда завантаження знижує конверсію на <strong>7-12%</strong></li>
+            <li style="margin: 10px 0;">Затримка в 1 секунду може коштувати e-commerce сайту <strong>мільйони доларів</strong> втраченого доходу щорічно</li>
+            <li style="margin: 10px 0;">Сайти, що завантажуються за <strong>1-3 секунди</strong>, мають на 70% вищу конверсію</li>
+          </ul>
+        </div>
+
+        <p>Це не просто цифри — це реальні гроші та втрачені можливості. Уявіть: ваш конкурент з швидшим сайтом отримує тих клієнтів, які не дочекалися завантаження вашої сторінки.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Як швидкість впливає на бізнес-показники</h2>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">1. Конверсія та продажі</h3>
+        <p>Швидкість сайту безпосередньо впливає на ваш прибуток. Американський ритейлер Walmart виявив, що <strong>покращення швидкості на 1 секунду збільшує конверсію на 2%</strong>. Для великого бізнесу це мільйони доларів додаткового доходу.</p>
+        <p>Amazon підрахували, що затримка в 100 мілісекунд коштує їм 1% продажів. Якщо ваш сайт завантажується на 2-3 секунди довше, ніж у конкурентів, ви втрачаєте значну частину потенційних клієнтів.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">2. Поведінка користувачів</h3>
+        <p>Повільний сайт створює негативний досвід. Користувачі:</p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;">Швидше залишають сторінку (зростає показник відмов)</li>
+          <li style="margin: 10px 0;">Переглядають менше сторінок</li>
+          <li style="margin: 10px 0;">Рідше повертаються повторно</li>
+          <li style="margin: 10px 0;">Залишають негативні відгуки про бренд</li>
+          <li style="margin: 10px 0;">Йдуть до конкурентів</li>
+        </ul>
+        <p>Сучасні користувачі звикли до миттєвого результату. Якщо ваш сайт "думає" більше 2-3 секунд, вони сприймають це як технічну проблему.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">3. SEO та позиції в Google</h3>
+        <p>З 2010 року Google офіційно використовує швидкість сайту як фактор ранжування. У 2021 році вони запровадили <strong>Core Web Vitals</strong> — набір метрик, які оцінюють користувацький досвід:</p>
+        
+        <div style="background: rgba(0, 212, 255, 0.05); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 10px; padding: 25px; margin: 20px 0;">
+          <p style="margin: 15px 0;"><strong>LCP (Largest Contentful Paint)</strong><br>
+          <span style="color: rgba(255,255,255,0.7);">Час завантаження основного контенту. Норма: менше 2.5 секунд.</span></p>
+          
+          <p style="margin: 15px 0;"><strong>FID (First Input Delay)</strong><br>
+          <span style="color: rgba(255,255,255,0.7);">Час відгуку на першу взаємодію користувача. Норма: менше 100 мс.</span></p>
+          
+          <p style="margin: 15px 0;"><strong>CLS (Cumulative Layout Shift)</strong><br>
+          <span style="color: rgba(255,255,255,0.7);">Стабільність макета під час завантаження. Норма: менше 0.1.</span></p>
+        </div>
+
+        <p>Сайти з поганими показниками Core Web Vitals можуть втратити позиції в пошуковій видачі, навіть якщо мають якісний контент. У Artyne Studio ми завжди оптимізуємо сайти під ці метрики ще на етапі розробки. Дізнайтеся більше про нашу <a href="../optimization.html" style="color: #00d4ff;">послугу оптимізації швидкості</a>.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">4. Мобільний трафік</h3>
+        <p>Понад 60% веб-трафіку сьогодні — з мобільних пристроїв. І саме на мобільних телефонах швидкість критично важлива:</p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;">Мобільний інтернет часто повільніший за Wi-Fi</li>
+          <li style="margin: 10px 0;">Користувачі мобільних очікують ще швидшого завантаження</li>
+          <li style="margin: 10px 0;">Google використовує Mobile-First індексацію</li>
+          <li style="margin: 10px 0;">53% мобільних користувачів покидають повільні сайти</li>
+        </ul>
+        <p>Тому <a href="../adaptive-layout.html" style="color: #00d4ff;">адаптивна верстка</a> має бути не просто responsive, а й оптимізованою для швидкого завантаження на всіх пристроях.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Що уповільнює ваш сайт?</h2>
+        <p>Основні причини повільного завантаження:</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">1. Великі зображення</h3>
+        <p>Найчастіша проблема — нестиснуті або надто великі зображення. Фото з камери на 5-10 МБ — це катастрофа для сайту. Правильно:</p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;">Використовувати сучасні формати (WebP, AVIF)</li>
+          <li style="margin: 10px 0;">Стискати зображення без втрати якості</li>
+          <li style="margin: 10px 0;">Використовувати адаптивні зображення (різні розміри для різних екранів)</li>
+          <li style="margin: 10px 0;">Впроваджувати ледаче завантаження (lazy loading)</li>
+        </ul>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">2. Надмірний JavaScript</h3>
+        <p>Сучасні сайти часто завантажені скриптами, багато з яких не потрібні одразу. Великі JS-файли блокують рендеринг сторінки та збільшують час завантаження.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">3. Повільний хостинг</h3>
+        <p>Дешевий shared-хостинг може бути вузьким місцем навіть для оптимізованого сайту. Якісний хостинг з SSD-дисками та достатніми ресурсами — обов'язкова умова швидкого сайту.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">4. Відсутність кешування</h3>
+        <p>Кешування дозволяє зберігати статичні ресурси на пристрої користувача, щоб не завантажувати їх повторно. Без кешування сайт завантажується з нуля при кожному візиті.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">5. Зайві плагіни та віджети</h3>
+        <p>Кожен додатковий плагін, віджет соцмереж або чат-бот додає додаткові запити та збільшує час завантаження. Залишайте тільки те, що дійсно потрібно.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Як прискорити ваш сайт: практичні поради</h2>
+
+        <div style="background: rgba(52, 199, 89, 0.1); border-left: 3px solid #34c759; padding: 20px; margin: 20px 0; border-radius: 5px;">
+          <h3 style="font-size: 1.2rem; margin: 0 0 15px 0; color: #34c759;">Швидкі wins (можна зробити самостійно)</h3>
+          <ol style="margin: 0; padding-left: 20px;">
+            <li style="margin: 10px 0;">Стисніть всі зображення через TinyPNG або Squoosh</li>
+            <li style="margin: 10px 0;">Увімкніть кешування браузера через .htaccess</li>
+            <li style="margin: 10px 0;">Мінімізуйте CSS та JavaScript</li>
+            <li style="margin: 10px 0;">Видаліть непотрібні плагіни</li>
+            <li style="margin: 10px 0;">Використовуйте CDN для статичних файлів</li>
+          </ol>
+        </div>
+
+        <div style="background: rgba(255, 149, 0, 0.1); border-left: 3px solid #ff9500; padding: 20px; margin: 20px 0; border-radius: 5px;">
+          <h3 style="font-size: 1.2rem; margin: 0 0 15px 0; color: #ff9500;">Технічна оптимізація (потрібен фахівець)</h3>
+          <ol style="margin: 0; padding-left: 20px;">
+            <li style="margin: 10px 0;">Впровадження критичного CSS</li>
+            <li style="margin: 10px 0;">Асинхронне завантаження JS</li>
+            <li style="margin: 10px 0;">Оптимізація бази даних</li>
+            <li style="margin: 10px 0;">Налаштування серверного кешування</li>
+            <li style="margin: 10px 0;">Міграція на швидший хостинг</li>
+            <li style="margin: 10px 0;">Впровадження HTTP/2 або HTTP/3</li>
+          </ol>
+        </div>
+
+        <p>У Artyne Studio ми пропонуємо комплексну <a href="../optimization.html" style="color: #00d4ff;">оптимізацію швидкості сайту</a>. Ми аналізуємо ваш сайт, виявляємо вузькі місця та реалізуємо всі необхідні покращення для досягнення максимальної продуктивності.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Як перевірити швидкість вашого сайту</h2>
+        <p>Використовуйте ці безкоштовні інструменти для діагностики:</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+          <div style="background: rgba(0, 212, 255, 0.05); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 10px; padding: 20px;">
+            <h4 style="color: #00d4ff; margin-bottom: 10px;">Google PageSpeed Insights</h4>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; margin: 0;">Офіційний інструмент Google з оцінкою Core Web Vitals та рекомендаціями.</p>
+          </div>
+          <div style="background: rgba(0, 212, 255, 0.05); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 10px; padding: 20px;">
+            <h4 style="color: #00d4ff; margin-bottom: 10px;">GTmetrix</h4>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; margin: 0;">Детальний аналіз з водоспадною діаграмою завантаження та порівняннями.</p>
+          </div>
+          <div style="background: rgba(0, 212, 255, 0.05); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 10px; padding: 20px;">
+            <h4 style="color: #00d4ff; margin-bottom: 10px;">WebPageTest</h4>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; margin: 0;">Професійне тестування з різних локацій та пристроїв.</p>
+          </div>
+        </div>
+
+        <p>Ідеальні показники для 2026 року:</p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;"><strong>Час завантаження:</strong> до 2 секунд на десктопі, до 3 секунд на мобільному</li>
+          <li style="margin: 10px 0;"><strong>PageSpeed Score:</strong> 90+ (зелена зона)</li>
+          <li style="margin: 10px 0;"><strong>Розмір сторінки:</strong> до 1-2 МБ</li>
+          <li style="margin: 10px 0;"><strong>Кількість запитів:</strong> до 50-70</li>
+        </ul>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Швидкість і вартість розробки</h2>
+        <p>Часто клієнти запитують: "Чи не здорожчає розробка, якщо робити швидкий сайт?" Відповідь: якісна веб-студія закладає оптимізацію в процес розробки з самого початку. Це не додатковий етап, а стандартна практика.</p>
+        
+        <p>У Artyne Studio всі наші <a href="../Landing.html" style="color: #00d4ff;">Landing Page</a>, <a href="../corporate.html" style="color: #00d4ff;">корпоративні сайти</a> та <a href="../ecommerce.html" style="color: #00d4ff;">інтернет-магазини</a> оптимізовані "з коробки". Ми використовуємо сучасні технології та best practices, щоб кожен проєкт був швидким без додаткових витрат.</p>
+
+        <p>Окрема <a href="../optimization.html" style="color: #00d4ff;">оптимізація швидкості</a> потрібна тільки для вже існуючих сайтів, які розроблялися без урахування продуктивності.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Висновок</h2>
+        <p>Швидкість сайту — це не просто технічний показник. Це фундаментальна частина користувацького досвіду, яка впливає на кожен аспект вашого онлайн-бізнесу: від SEO-позицій до конверсії та лояльності клієнтів.</p>
+
+        <p>Інвестиції в швидкість окупаються через:</p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;">Вищу конверсію та більше продажів</li>
+          <li style="margin: 10px 0;">Кращі позиції в Google</li>
+          <li style="margin: 10px 0;">Нижчий показник відмов</li>
+          <li style="margin: 10px 0;">Позитивний досвід користувачів</li>
+          <li style="margin: 10px 0;">Конкурентну перевагу на ринку</li>
+        </ul>
+
+        <p>Не дозволяйте повільному сайту коштувати вам клієнтів та грошей. Зверніться до Artyne Studio за професійною оптимізацією або розробкою нового швидкого сайту під ключ.</p>
+
+      </div>
+
+      <div class="cta-block" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 12px; padding: 40px; margin: 60px 0; text-align: center;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #00d4ff;">Прискорте свій сайт</h3>
+        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 30px;">Замовте аудит швидкості та отримайте детальний план оптимізації від професіоналів</p>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+          <a href="../optimization.html" class="btn-primary" style="display: inline-block; padding: 15px 35px; background: linear-gradient(135deg, #00d4ff, #0099ff); color: #000; text-decoration: none; border-radius: 30px; font-weight: 600;">Замовити оптимізацію</a>
+          <a href="../brief.html" class="btn-secondary" style="display: inline-block; padding: 15px 35px; background: rgba(0, 212, 255, 0.1); color: #00d4ff; text-decoration: none; border-radius: 30px; font-weight: 600; border: 1px solid #00d4ff;">Аудит швидкості</a>
+        </div>
+      </div>
+
+      <div class="related-articles" style="margin-top: 60px;">
+        <h3 style="font-size: 1.6rem; margin-bottom: 30px;">Читайте також:</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <a href="seo-dlya-pochatkivtsiv.html" style="display: block; padding: 20px; background: rgba(0, 212, 255, 0.03); border: 1px solid rgba(0, 212, 255, 0.1); border-radius: 10px; text-decoration: none;">
+            <h4 style="color: #00d4ff; margin-bottom: 10px;">SEO для початківців: з чого почати</h4>
+            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Базові принципи SEO-оптимізації...</p>
+          </a>
+          <a href="trendy-veb-dyzainu-2026.html" style="display: block; padding: 20px; background: rgba(0, 212, 255, 0.03); border: 1px solid rgba(0, 212, 255, 0.1); border-radius: 10px; text-decoration: none;">
+            <h4 style="color: #00d4ff; margin-bottom: 10px;">Тренди веб-дизайну 2026 року</h4>
+            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Актуальні тенденції в дизайні...</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="../src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="../index.html">Головна</a></li>
+          <li><a href="#">Послуги</a></li>
+          <li><a href="../about.html">Хто ми</a></li>
+          <li><a href="../blog.html">Блог</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Категорії</h4>
+        <ul>
+          <li><a href="../Landing.html">Landing Page</a></li>
+          <li><a href="../corporate.html">Корпоративні сайти</a></li>
+          <li><a href="../ecommerce.html">Інтернет-магазини</a></li>
+          <li><a href="../multipage.html">Багатосторінкові</a></li>
+          <li><a href="../businesscard.html">Сайт-візитка</a></li>
+          <li><a href="../uiux-design.html">UI/UX Дизайн</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/corporate.js"></script>
+</body>
+</html>

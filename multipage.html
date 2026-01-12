@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Багатосторінковий сайт під ключ — Artyne Studio | Розробка складних проектів</title>
+  <meta name="description" content="Створюємо багатосторінкові сайти з розширеним функціоналом — для компаній, сервісів, порталів. Artyne Studio — професійна розробка складних веб-проектів.">
+  <meta name="keywords" content="багатосторінковий сайт, розробка сайту з багатьма сторінками, веб студія, складний сайт, Artyne Studio, корпоративний портал, веб-платформа">
+  <link rel="canonical" href="https://artynestudio.com/multipage.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="src/favicon.png" />
+</head>
+
+<body class="dark-page">
+
+  <!-- Canvas для анімації -->
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <!-- ===== Хедер ===== -->
+  <header>
+    
+    <div class="logo-block">
+      <div class="logo">
+        <a href="index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="Landing.html">Landing page</a>
+                  <a href="corporate.html">Корпоративний сайт</a>
+                  <a href="ecommerce.html">Інтернет-магазин</a>
+                  <a href="multipage.html">Багатосторінковий сайт</a>
+                  <a href="businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="uiux-design.html">UI/UX дизайн</a>
+                  <a href="redesign.html">Редизайн існуючого сайту</a>
+                  <a href="sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="google-ads.html">Google Ads налаштування</a>
+                  <a href="advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="content-optimization.html">Оптимізація контенту</a>
+                  <a href="seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="website-updates.html">Оновлення сайту</a>
+                  <a href="bug-fixes.html">Виправлення помилок</a>
+                  <a href="technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- === Прочее меню === -->
+        <li><a href="about.html">Хто ми</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="contacts.html">Контакти</a></li>
+      </ul>
+
+      <!-- Контакти в мобільному меню -->
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <!-- Соцсети в хедере -->
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <!-- Бургер -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-landing grid-bg">
+    <div class="hero-content">
+      <h1>Багатосторінковий сайт, <br> що розкриває ваш бізнес повністю</h1>
+      <p>Створюємо комплексні веб-рішення з десятками сторінок — для компаній, сервісів та порталів. Повна структура, зручна навігація та масштабованість.</p>
+      <div class="hero-cta">
+        <a href="#pricing" class="btn-outline">Дізнатись ціну</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">90+</span>
+          <span class="stat-label">Складних проектів</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Сторінок у середньому</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">21 день</span>
+          <span class="stat-label">Середній термін</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПЕРЕВАГИ -->
+  <section class="advantages-section">
+    <div class="container">
+      <h2 class="section-title">Переваги багатосторінкових сайтів</h2>
+      <p class="section-subtitle">Ідеальне рішення для компаній з широким спектром послуг та інформації</p>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-files"></i></div>
+          <h3>Розширений контент</h3>
+          <p>Необмежена кількість сторінок для повного розкриття інформації про компанію, послуги та продукти</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-diagram-3"></i></div>
+          <h3>Структурована навігація</h3>
+          <p>Логічна ієрархія сторінок з меню, підменю та внутрішніми посиланнями для зручності користувачів</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-search"></i></div>
+          <h3>Покращене SEO</h3>
+          <p>Більше сторінок = більше ключових слів та кращі позиції в пошукових системах Google та Bing</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-person-lines-fill"></i></div>
+          <h3>Особисті кабінети</h3>
+          <p>Можливість створення авторизації, кабінетів клієнтів, адміністраторів та модераторів</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-newspaper"></i></div>
+          <h3>Блог та новини</h3>
+          <p>Розділи для публікації статей, новин компанії, кейсів та корисного контенту для аудиторії</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-arrows-angle-expand"></i></div>
+          <h3>Масштабованість</h3>
+          <p>Легко додавати нові розділи, сторінки та функціонал у міру розвитку бізнесу</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЩО ВХОДИТЬ -->
+  <section class="included-section">
+    <div class="container">
+      <h2 class="section-title">Що входить у вартість?</h2>
+      <p class="section-subtitle">Комплексна розробка багатосторінкового сайту під ключ</p>
+      <div class="included-grid">
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Структура та карта сайту (до 100 сторінок)</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Унікальний дизайн всіх сторінок</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Адаптивна верстка під всі пристрої</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Власна система керування контентом</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Складна навігація з меню та підменю</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Блог / Новини з системою категорій</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Форми зворотного зв'язку на кожній сторінці</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Повна SEO оптимізація всіх сторінок</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>2 місяці технічної підтримки</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЦІНИ -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Тарифні плани</h2>
+      <p class="section-subtitle">Обирайте оптимальний пакет для вашого проекту</p>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Базовий</h3>
+            <p class="pricing-desc">Для невеликих компаній</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">від 30 000₴</span>
+            <span class="price-period">одноразово</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> До 20 сторінок</li>
+            <li><i class="bi bi-check"></i> Базовий дизайн</li>
+            <li><i class="bi bi-check"></i> Панель керування</li>
+            <li><i class="bi bi-check"></i> Адаптивна верстка</li>
+            <li><i class="bi bi-check"></i> Контактні форми</li>
+            <li><i class="bi bi-check"></i> Базове SEO</li>
+            <li><i class="bi bi-check"></i> Термін: 14-21 день</li>
+            <li class="feature-disabled"><i class="bi bi-x"></i> Блог / Новини</li>
+          </ul>
+          <button class="btn-pricing cta-button">Обрати план</button>
+        </div>
+
+        <div class="pricing-card popular">
+          <div class="popular-badge">Популярний</div>
+          <div class="pricing-header">
+            <h3>Стандарт</h3>
+            <p class="pricing-desc">Для середнього бізнесу</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">від 50 000₴</span>
+            <span class="price-period">одноразово</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> До 50 сторінок</li>
+            <li><i class="bi bi-check"></i> Унікальний дизайн</li>
+            <li><i class="bi bi-check"></i> Кастомна система керування</li>
+            <li><i class="bi bi-check"></i> Повна адаптивність</li>
+            <li><i class="bi bi-check"></i> Блог / Новини</li>
+            <li><i class="bi bi-check"></i> Розширене SEO</li>
+            <li><i class="bi bi-check"></i> Google Analytics</li>
+            <li><i class="bi bi-check"></i> Термін: 21-30 днів</li>
+          </ul>
+          <button class="btn-pricing btn-popular cta-button">Обрати план</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Преміум</h3>
+            <p class="pricing-desc">Для великих компаній</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">від 80 000₴</span>
+            <span class="price-period">одноразово</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> 50+ сторінок</li>
+            <li><i class="bi bi-check"></i> Преміум дизайн</li>
+            <li><i class="bi bi-check"></i> Custom CMS / Portal</li>
+            <li><i class="bi bi-check"></i> Особисті кабінети</li>
+            <li><i class="bi bi-check"></i> CRM інтеграція</li>
+            <li><i class="bi bi-check"></i> Багатомовність</li>
+            <li><i class="bi bi-check"></i> Повна SEO стратегія</li>
+            <li><i class="bi bi-check"></i> Термін: 30-45 днів</li>
+          </ul>
+          <button class="btn-pricing cta-button">Обрати план</button>
+        </div>
+      </div>
+
+      <div class="pricing-note">
+        <p><i class="bi bi-info-circle"></i> Остаточна вартість залежить від кількості сторінок, складності дизайну та додаткового функціоналу.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРОЦЕС -->
+  <section class="process-section">
+    <div class="container">
+      <h2 class="section-title">Етапи розробки</h2>
+      <p class="section-subtitle">Покроковий процес створення багатосторінкового сайту</p>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Аналіз та структура</h3>
+            <p>Вивчаємо ваш бізнес, створюємо карту сайту з усіма розділами та сторінками, плануємо навігацію.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Прототипування</h3>
+            <p>Створюємо інтерактивний прототип з усіма сторінками для узгодження структури та UX.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Дизайн сторінок</h3>
+            <p>Розробляємо унікальний дизайн для головної та всіх внутрішніх сторінок.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Розробка та CMS</h3>
+            <p>Верстаємо всі сторінки, інтегруємо CMS для зручного керування контентом.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h3>Тестування та запуск</h3>
+            <p>Перевіряємо всі сторінки, посилання, форми. SEO налаштування та запуск!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КЕЙСИ -->
+  <section class="cases-section">
+    <div class="container">
+      <h2 class="section-title">Наші багатосторінкові проекти</h2>
+      <p class="section-subtitle">Складні сайти з десятками сторінок та розширеним функціоналом</p>
+      
+      <div class="cases-grid">
+        <div class="case-card">
+          <div class="case-image">
+            <img src="src/8.png" alt="Скріншот сайту Puzzle 24" loading="lazy">
+          </div>
+          <div class="case-content">
+            <h3>Puzzle 24 — Служба доставки</h3>
+            <p>Багатосторінковий корпоративний портал служби доставки. Калькулятор вартості, відстеження замовлень, особисті кабінети клієнтів та водіїв, 40+ сторінок.</p>
+            <div class="case-stats">
+              <span><i class="bi bi-files"></i> 40+ сторінок</span>
+              <span><i class="bi bi-person-circle"></i> Особисті кабінети</span>
+            </div>
+            <a href="https://puzzle-24.com/?lang=uk" target="_blank" class="case-link">Переглянути проект <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-image">
+            <img src="src/7.png" alt="Скріншот сайту Chistiy Dom" loading="lazy">
+          </div>
+          <div class="case-content">
+            <h3>Chistiy Dom — Клінінгові послуги</h3>
+            <p>Багатосторінковий сайт клінінгової компанії з описом 20+ видів послуг, онлайн калькулятором, галереєю робіт, блогом та формами замовлення на кожній сторінці.</p>
+            <div class="case-stats">
+              <span><i class="bi bi-calculator"></i> Онлайн калькулятор</span>
+              <span><i class="bi bi-images"></i> Галерея робіт</span>
+            </div>
+            <a href="https://chistiy-dom.com/" target="_blank" class="case-link">Переглянути проект <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-image">
+            <img src="src/2.png" alt="Скріншот сайту Galerie Lorec" loading="lazy">
+          </div>
+          <div class="case-content">
+            <h3>Galerie Lorec — Викуп коштовностей</h3>
+            <p>Багатосторінковий сайт для австрійської компанії. Окремі сторінки для золота, срібла, годинників, хутра. Live ticker цін, форми з фото, багатомовність (DE/EN/UK).</p>
+            <div class="case-stats">
+              <span><i class="bi bi-translate"></i> 3 мови</span>
+              <span><i class="bi bi-graph-up"></i> Live ціни</span>
+            </div>
+            <a href="https://galerie-lorec.at/" target="_blank" class="case-link">Переглянути проект <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Часті питання</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Скільки коштує багатосторінковий сайт?</h3>
+          <p>Від 30 000₴ за базовий (до 20 сторінок) до 80 000₴+ за преміум проект з особистими кабінетами та CRM інтеграцією.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Скільки сторінок можна створити?</h3>
+          <p>Необмежена кількість! У базовому тарифі до 20 сторінок, у стандарті до 50, у преміум — скільки потрібно для вашого проекту.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи зможу я додавати сторінки самостійно?</h3>
+          <p>Так! Створюємо власну панель керування, навчаємо роботі та надаємо інструкції для створення нових сторінок.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Що краще: багатосторінковий чи Landing?</h3>
+          <p>Landing — для одного продукту/послуги. Багатосторінковий — для компаній з різними послугами, статтями, новинами.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи можна додати блог?</h3>
+          <p>Так! Створюємо розділ для блогу з категоріями, тегами, пошуком та можливістю публікації статей через адмінку.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Як працює особистий кабінет?</h3>
+          <p>Користувачі реєструються, входять в особистий кабінет де можуть переглядати історію, керувати даними тощо.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ФОРМА -->
+  <section class="cta-form-section">
+    <div class="container">
+      <div class="cta-form-wrapper">
+        <div class="cta-form-content">
+          <h2>Створимо багатосторінковий сайт для вашого бізнесу</h2>
+          <p>Залиште заявку та отримайте безкоштовну консультацію, розрахунок вартості та структуру вашого проекту</p>
+          <ul class="cta-benefits">
+            <li><i class="bi bi-check-circle-fill"></i> Консультація протягом 15 хвилин</li>
+            <li><i class="bi bi-check-circle-fill"></i> Розробка структури сайту</li>
+            <li><i class="bi bi-check-circle-fill"></i> Приклади наших проектів</li>
+          </ul>
+        </div>
+        
+        <form class="cta-form" id="multipageForm">
+          <h3>Отримати консультацію</h3>
+          
+          <div class="form-group">
+            <label for="name">Ваше ім'я *</label>
+            <input type="text" id="name" name="name" required placeholder="Іван Іванович">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+38 (097) 123-45-67">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Опишіть ваш проект</label>
+            <textarea id="message" name="message" rows="4" placeholder="Скільки сторінок планується, який функціонал..."></textarea>
+          </div>
+
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn-submit">
+            <span>Відправити заявку</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+          <p class="form-privacy">Натискаючи кнопку, ви погоджуєтесь з <a href="privacy.html">політикою конфіденційності</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="about.html">Хто ми</a></li>
+          <li><a href="blog.html">Блог</a></li>
+          <li><a href="#">Кейси</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+          <li><a href="privacy.html">Політика конфіденційності</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Послуги</h4>
+        <ul>
+          <li><a href="Landing.html">Landing Page</a></li>
+          <li><a href="corporate.html">Корпоративний сайт</a></li>
+          <li><a href="ecommerce.html">Інтернет-магазин</a></li>
+          <li><a href="multipage.html">Багатосторінковий сайт</a></li>
+          <li><a href="businesscard.html">Сайт-візитка</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Дизайн</h4>
+        <ul>
+          <li><a href="uiux-design.html">UI/UX Дизайн</a></li>
+          <li><a href="redesign.html">Редизайн сайту</a></li>
+          <li><a href="sections-design.html">Дизайн секцій</a></li>
+          <li><a href="logo-branding.html">Лого та айдентика</a></li>
+          <li><a href="seo-meta.html">SEO та мета-дані</a></li>
+          <li><a href="content-optimization.html">Оптимізація контенту</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="text-align:right;">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/corporate.js"></script>
+</body>
+</html>

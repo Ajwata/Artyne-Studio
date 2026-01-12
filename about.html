@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Хто ми — Artyne Studio | Веб-студія розробки сайтів</title>
+  <meta name="description" content="Artyne Studio — професійна веб-студія з розробки сайтів. Наша команда, цінності, досвід та підхід до створення якісних веб-рішень.">
+  <meta name="keywords" content="Artyne Studio, веб-студія, про нас, команда, розробка сайтів">
+  <link rel="canonical" href="https://artynestudio.com/about.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="src/favicon.png" />
+</head>
+
+<body>
+
+  <!-- Canvas для анімації -->
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-block">
+      <div class="logo">
+        <a href="index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="Landing.html">Landing page</a>
+                  <a href="corporate.html">Корпоративний сайт</a>
+                  <a href="ecommerce.html">Інтернет-магазин</a>
+                  <a href="multipage.html">Багатосторінковий сайт</a>
+                  <a href="businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="uiux-design.html">UI/UX дизайн</a>
+                  <a href="redesign.html">Редизайн існуючого сайту</a>
+                  <a href="sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="google-ads.html">Google Ads налаштування</a>
+                  <a href="advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="content-optimization.html">Оптимізація контенту</a>
+                  <a href="seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="website-updates.html">Оновлення сайту</a>
+                  <a href="bug-fixes.html">Виправлення помилок</a>
+                  <a href="technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="about.html">Хто ми</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="contacts.html">Контакти</a></li>
+      </ul>
+
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-landing grid-bg">
+    <div class="hero-content">
+      <h1>Хто ми — Artyne Studio</h1>
+      <p>Команда професіоналів, яка створює сайти що працюють на результат вашого бізнесу</p>
+    </div>
+  </section>
+
+  <!-- ПРО НАС -->
+  <section class="advantages-section">
+    <div class="container">
+      <h2 class="section-title">Про Artyne Studio</h2>
+      <p class="section-subtitle">Веб-студія повного циклу</p>
+      
+      <div style="max-width: 800px; margin: 0 auto 60px; text-align: center; line-height: 1.8;">
+        <p style="margin-bottom: 20px; font-size: 1.1rem;">
+          Artyne Studio — це команда досвідчених розробників, дизайнерів та маркетологів, 
+          які створюють сучасні веб-рішення для бізнесу будь-якого масштабу.
+        </p>
+        <p style="margin-bottom: 20px; font-size: 1.1rem;">
+          Ми не просто розробляємо сайти — ми створюємо інструменти для росту вашого бізнесу. 
+          Кожен проект для нас — це можливість реалізувати унікальне рішення, яке працює на ваші цілі.
+        </p>
+        <p style="font-size: 1.1rem;">
+          Працюємо виключно на чистому коді, без конструкторів та шаблонів. 
+          Це дає максимальну швидкість, безпеку та гнучкість у розвитку вашого проекту.
+        </p>
+      </div>
+
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-code-slash"></i></div>
+          <h3>Чистий код</h3>
+          <p>Пишемо код з нуля, без WordPress та конструкторів. Максимальна продуктивність та безпека.</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-speedometer2"></i></div>
+          <h3>Швидкість завантаження</h3>
+          <p>Наші сайти завантажуються за 1-2 секунди. Google PageSpeed 90+.</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-phone"></i></div>
+          <h3>Адаптивність</h3>
+          <p>Кожен сайт ідеально відображається на всіх пристроях — від смартфона до 4K моніторів.</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-search"></i></div>
+          <h3>SEO-оптимізація</h3>
+          <p>Всі сайти розробляються з урахуванням вимог пошукових систем для швидкого виходу в ТОП.</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-shield-check"></i></div>
+          <h3>Безпека</h3>
+          <p>Захист від зломів, регулярні оновлення, резервні копії.</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-headset"></i></div>
+          <h3>Підтримка 24/7</h3>
+          <p>Завжди на зв'язку. Відповідаємо протягом години, вирішуємо проблеми в день звернення.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- НАШІ ЦІННОСТІ -->
+  <section class="included-section">
+    <div class="container">
+      <h2 class="section-title">Наші цінності</h2>
+      <p class="section-subtitle">Що для нас важливо</p>
+      <div class="included-grid">
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Чесність і прозорість</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Якість без компромісів</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Дотримання термінів</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Індивідуальний підхід</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Постійний розвиток</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Підтримка після запуску</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ДОСВІД -->
+  <section class="advantages-section">
+    <div class="container">
+      <h2 class="section-title">Наш досвід</h2>
+      <p class="section-subtitle">Цифри, які говорять самі за себе</p>
+      
+      <div class="advantages-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); max-width: 900px; margin: 0 auto;">
+        <div class="advantage-card" style="text-align: center;">
+          <div style="font-size: 3rem; font-weight: bold; color: #00d4ff; margin-bottom: 10px;">200+</div>
+          <h3 style="font-size: 1.2rem;">Завершених проектів</h3>
+          <p>Landing, інтернет-магазини, корпоративні сайти</p>
+        </div>
+
+        <div class="advantage-card" style="text-align: center;">
+          <div style="font-size: 3rem; font-weight: bold; color: #00d4ff; margin-bottom: 10px;">7 днів</div>
+          <h3 style="font-size: 1.2rem;">Середній термін</h3>
+          <p>Швидка розробка без втрати якості</p>
+        </div>
+
+        <div class="advantage-card" style="text-align: center;">
+          <div style="font-size: 3rem; font-weight: bold; color: #00d4ff; margin-bottom: 10px;">98%</div>
+          <h3 style="font-size: 1.2rem;">Задоволених клієнтів</h3>
+          <p>Повертаються до нас знову і рекомендують друзям</p>
+        </div>
+
+        <div class="advantage-card" style="text-align: center;">
+          <div style="font-size: 3rem; font-weight: bold; color: #00d4ff; margin-bottom: 10px;">24/7</div>
+          <h3 style="font-size: 1.2rem;">Технічна підтримка</h3>
+          <p>Завжди на зв'язку та готові допомогти</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЯК МИ ПРАЦЮЄМО -->
+  <section class="process-section">
+    <div class="container">
+      <h2 class="section-title">Як ми працюємо</h2>
+      <p class="section-subtitle">Простий та зрозумілий процес</p>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Знайомство та аналіз</h3>
+            <p>Вивчаємо ваш бізнес, цільову аудиторію, конкурентів. Визначаємо цілі та завдання проекту.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Планування</h3>
+            <p>Створюємо структуру сайту, складаємо технічне завдання, узгоджуємо бюджет та терміни.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Дизайн</h3>
+            <p>Розробляємо унікальний дизайн, який відображає вашу айдентику та працює на конверсію.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Розробка</h3>
+            <p>Пишемо чистий код, інтегруємо всі необхідні сервіси, тестуємо на всіх пристроях.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h3>Запуск та підтримка</h3>
+            <p>Виводимо сайт в продакшн, налаштовуємо аналітику, надаємо постійну підтримку.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-form-section">
+    <div class="container">
+      <div class="cta-form-wrapper">
+        <div class="cta-form-content">
+          <h2>Готові почати співпрацю?</h2>
+          <p>Залиште заявку і ми зв'яжемося з вами протягом години для обговорення вашого проекту</p>
+          <ul class="cta-benefits">
+            <li><i class="bi bi-check-circle-fill"></i> Безкоштовна консультація</li>
+            <li><i class="bi bi-check-circle-fill"></i> Аналіз вашої ніші</li>
+            <li><i class="bi bi-check-circle-fill"></i> Комерційна пропозиція за 24 години</li>
+          </ul>
+        </div>
+        
+        <form class="cta-form" id="aboutForm">
+          <h3>Зв'язатися з нами</h3>
+          
+          <div class="form-group">
+            <label for="name">Ваше ім'я *</label>
+            <input type="text" id="name" name="name" required placeholder="Іван Іванович">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+38 (097) 123-45-67">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Повідомлення</label>
+            <textarea id="message" name="message" rows="4" placeholder="Розкажіть про ваш проект..."></textarea>
+          </div>
+
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn-submit">
+            <span>Відправити заявку</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+          <p class="form-privacy">Натискаючи кнопку, ви погоджуєтесь з <a href="privacy.html">політикою конфіденційності</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="about.html">Хто ми</a></li>
+          <li><a href="blog.html">Блог</a></li>
+          <li><a href="#">Кейси</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+          <li><a href="privacy.html">Політика конфіденційності</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Послуги</h4>
+        <ul>
+          <li><a href="Landing.html">Landing Page</a></li>
+          <li><a href="corporate.html">Корпоративний сайт</a></li>
+          <li><a href="ecommerce.html">Інтернет-магазин</a></li>
+          <li><a href="multipage.html">Багатосторінковий сайт</a></li>
+          <li><a href="businesscard.html">Сайт-візитка</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Дизайн</h4>
+        <ul>
+          <li><a href="uiux-design.html">UI/UX Дизайн</a></li>
+          <li><a href="redesign.html">Редизайн сайту</a></li>
+          <li><a href="sections-design.html">Дизайн секцій</a></li>
+          <li><a href="logo-branding.html">Лого та айдентика</a></li>
+          <li><a href="seo-meta.html">SEO та мета-дані</a></li>
+          <li><a href="content-optimization.html">Оптимізація контенту</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="text-align:right;">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/corporate.js"></script>
+</body>
+</html>

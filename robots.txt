@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://artynestudio.com/sitemap.xml
+
+# Основні правила
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+
+# Дозволяємо індексацію важливих сторінок
+Allow: /index.html
+Allow: /Landing.html
+Allow: /brief.html

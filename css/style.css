@@ -165,8 +165,8 @@ nav.active {
 }
 
 @media (max-width: 768px) {
-  nav {
-    backdrop-filter: blur(8px) saturate(120%);
+  nav a {
+    font-size: 18px;
   }
 }
 
@@ -269,7 +269,8 @@ nav a:hover::after {
   max-height: 80vh;
 }
 
-nav ul li:hover > .submenu-grid-wide {
+nav ul li:hover > .submenu-grid-wide,
+.submenu-grid-wide.active {
   display: block;
   opacity: 1;
   visibility: visible;
@@ -483,6 +484,7 @@ nav ul li:hover > .submenu-grid-wide {
     transition: right 0.4s ease;
     z-index: 3;
     overflow-y: auto;
+    backdrop-filter: blur(8px) saturate(120%);
   }
 
   nav.active {
@@ -2738,6 +2740,13 @@ body {
 }
 
 .footer-inner {
+  /* Универсальное выравнивание контактов и соцсетей справа для всех страниц */
+  .footer-col:last-child {
+    text-align: right;
+  }
+  .footer-col:last-child .footer-socials {
+    justify-content: flex-end;
+  }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 60px;
@@ -2854,62 +2863,61 @@ body {
   .footer-inner {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 35px;
-    display: contents;
-  }
-
-  .footer {
-    padding: 50px 4vw;
-  }
-  .footer-col ul {
-    display: none;
-  }
-
-  .footer-col h4 {
-    display: none;
-  }
-  .footer-brand {
+    gap: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
+  .footer-col:not(.footer-brand) {
+    display: none !important;
+  }
+  @media (min-width: 769px) {
+  @media (min-width: 769px) {
+    .footer-inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 60px;
+      margin: 0 auto;
+      z-index: 2;
+      position: relative;
+      text-align: left;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .footer-col {
+      display: block !important;
+    }
+  }
+  .footer {
+    padding: 50px 4vw;
+  }
   .footer-logo {
     width: 150px;
     margin-bottom: 16px;
   }
-
   .footer-brand p {
     max-width: 340px;
     text-align: center;
     display: none;
   }
-
-  /* Телефон под логотипом */
   .footer-phone {
-    font-size: 25px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 600;
     color: #fff;
     text-decoration: none;
-    transition: 0.3s;
-    display: none;
+    margin-bottom: 12px;
+    display: block !important;
   }
-  .footer-phone:hover {
-    color: #b7003d;
-  }
-
-  /* Соцсети под телефоном */
   .footer-socials {
     justify-content: center;
     margin-top: 16px;
+    display: flex !important;
   }
-
   .footer-socials a {
     width: 46px;
     height: 46px;
     font-size: 22px;
   }
-
   .footer-bottom {
     text-align: center;
     font-size: 13px;

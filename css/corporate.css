@@ -1,0 +1,73 @@
+/* === CORPORATE PAGE SPECIFIC STYLES === */
+
+/* Full width sections */
+body {
+  overflow-x: hidden;
+}
+
+section {
+  padding: 80px 4vw;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero section uses same styles as Landing - hero-landing from landing.css */
+
+/* Canvas background for geometric shapes */
+#lightGrid,
+#particleCloud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* All content above canvas */
+header {
+  position: relative;
+  z-index: 100;
+}
+
+section,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Sections backgrounds */
+.advantages-section {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.included-section {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.pricing-section {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.process-section {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.faq-section {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.cta-form-section {
+  background: linear-gradient(135deg, rgba(183, 0, 61, 0.1), rgba(0, 119, 255, 0.1));
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 20px;
+  }
+}

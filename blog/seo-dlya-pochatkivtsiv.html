@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEO для початківців: покроковий гід з чого почати оптимізацію | Artyne Studio</title>
+  <meta name="description" content="Повний гід з SEO для початківців. Покрокова інструкція з просування сайту в Google: від основ до практичних порад. Базові принципи оптимізації від Artyne Studio.">
+  <meta name="keywords" content="SEO для початківців, як просувати сайт, оптимізація сайту, SEO оптимізація, просування в Google, Artyne Studio, основи SEO">
+  <link rel="canonical" href="https://artynestudio.com/blog/seo-dlya-pochatkivtsiv.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/landing.css">
+  <link rel="stylesheet" href="../css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="../src/favicon.png" />
+</head>
+
+<body>
+
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <header>
+    <div class="logo-block">
+      <div class="logo">
+        <a href="../index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="../index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="../Landing.html">Landing page</a>
+                  <a href="../corporate.html">Корпоративний сайт</a>
+                  <a href="../ecommerce.html">Інтернет-магазин</a>
+                  <a href="../multipage.html">Багатосторінковий сайт</a>
+                  <a href="../businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="../uiux-design.html">UI/UX дизайн</a>
+                  <a href="../redesign.html">Редизайн існуючого сайту</a>
+                  <a href="../sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="../logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="../adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="../forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="../integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="../optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="../google-ads.html">Google Ads налаштування</a>
+                  <a href="../advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="../analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="../seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="../content-optimization.html">Оптимізація контенту</a>
+                  <a href="../seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="../website-updates.html">Оновлення сайту</a>
+                  <a href="../bug-fixes.html">Виправлення помилок</a>
+                  <a href="../technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="../about.html">Хто ми</a></li>
+        <li><a href="../blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <!-- Хлібні крихти -->
+  <section class="breadcrumbs" style="padding: 30px 0 0;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
+      <a href="../index.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Головна</a>
+      <span style="margin: 0 10px; color: rgba(255,255,255,0.3);">/</span>
+      <a href="../blog.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Блог</a>
+      <span style="margin: 0 10px; color: rgba(255,255,255,0.3);">/</span>
+      <span style="color: rgba(255,255,255,0.7);">SEO для початківців</span>
+    </div>
+  </section>
+
+  <!-- СТАТТЯ -->
+  <article class="blog-article" style="padding: 60px 0 100px;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
+      
+      <!-- Заголовок -->
+      <h1 style="font-size: 3.5rem; line-height: 1.25; margin: 0 0 30px 0; font-weight: 700; color: #fff;">SEO для початківців: з чого почати просування сайту</h1>
+      
+      <!-- Підзаголовок -->
+      <p style="font-size: 1.25rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin: 0 0 30px 0;">Покроковий гід для тих, хто хоче розібратися в SEO. Пояснюємо базові поняття, інструменти та алгоритм дій без зайвої технічної мови.</p>
+      
+      <!-- Бейджики -->
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 80px;">
+        <span style="background: rgba(0, 212, 255, 0.15); color: #00d4ff; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 500;">SEO</span>
+        <span style="background: rgba(255, 255, 255, 0.05); color: rgba(255,255,255,0.6); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">5 січня 2026</span>
+        <span style="background: rgba(255, 255, 255, 0.05); color: rgba(255,255,255,0.6); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">9 хв читання</span>
+      </div>
+
+      <div class="article-content" style="line-height: 1.9; color: rgba(255,255,255,0.85); font-size: 1.1rem;">
+        
+        <h2 style="font-size: 2rem; margin: 60px 0 25px; color: #00d4ff; font-weight: 600;">Що таке SEO і навіщо воно потрібно?</h2>
+        <p style="margin-bottom: 20px;"><strong style="color: #00d4ff;">SEO (Search Engine Optimization)</strong> — це комплекс заходів для покращення видимості сайту в пошукових системах. Простіше кажучи, це мистецтво зробити так, щоб Google показував ваш сайт на першій сторінці результатів пошуку.</p>
+        
+        <p style="margin-bottom: 15px;">Чому це важливо? За статистикою:</p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;"><strong>75% користувачів</strong> ніколи не гортають далі першої сторінки Google</li>
+          <li style="margin: 10px 0;"><strong>Перші 5 результатів</strong> отримують 67% всіх кліків</li>
+          <li style="margin: 10px 0;"><strong>Органічний пошук</strong> генерує в середньому 53% всього трафіку сайту</li>
+          <li style="margin: 10px 0;"><strong>SEO має ROI 5-12x</strong> вищий, ніж контекстна реклама в довгостроковій перспективі</li>
+        </ul>
+
+        <p>Якщо вашого сайту немає в топі Google — вас просто не існує для більшості потенційних клієнтів.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Як працює Google: основи ранжування</h2>
+        <p>Щоб оптимізувати сайт, потрібно розуміти, як Google визначає, які сайти показувати першими. Основні фактори ранжування:</p>
+
+        <div style="background: rgba(0, 212, 255, 0.05); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 10px; padding: 25px; margin: 20px 0;">
+          <p style="margin: 15px 0;"><strong>1. Релевантність контенту</strong><br>
+          <span style="color: rgba(255,255,255,0.7);">Чи відповідає ваш контент запиту користувача? Чи містить ключові слова?</span></p>
+          
+          <p style="margin: 15px 0;"><strong>2. Якість контенту</strong><br>
+          <span style="color: rgba(255,255,255,0.7);">Чи корисний, унікальний та глибокий ваш контент? Чи довго користувачі залишаються на сторінці?</span></p>
+          
+          <p style="margin: 15px 0;"><strong>3. Технічна оптимізація</strong><br>
+          <span style="color: rgba(255,255,255,0.7);">Швидкість завантаження, мобільна адаптивність, правильна структура коду.</span></p>
+          
+          <p style="margin: 15px 0;"><strong>4. Авторитетність</strong><br>
+          <span style="color: rgba(255,255,255,0.7);">Скільки якісних зовнішніх посилань веде на ваш сайт? Яка ваша репутація?</span></p>
+          
+          <p style="margin: 15px 0;"><strong>5. Досвід користувачів (UX)</strong><br>
+          <span style="color: rgba(255,255,255,0.7);">Чи зручно користуватися сайтом? Низький показник відмов, висока тривалість сесії.</span></p>
+        </div>
+
+        <p>Google використовує понад 200 факторів ранжування, але ці п'ять — найважливіші для початку.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Покрокова інструкція: з чого почати SEO</h2>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">Крок 1: Дослідження ключових слів</h3>
+        <p>Ключові слова — це запити, які користувачі вводять в Google. Правильний вибір ключових слів — основа успішного SEO.</p>
+        
+        <p><strong>Як знайти ключові слова:</strong></p>
+        <ol style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;">Подумайте, які запити вводили б ваші клієнти</li>
+          <li style="margin: 10px 0;">Використайте Google Keyword Planner (безкоштовно)</li>
+          <li style="margin: 10px 0;">Подивіться на підказки Google (автодоповнення в пошуку)</li>
+          <li style="margin: 10px 0;">Проаналізуйте конкурентів через Ahrefs або SEMrush</li>
+          <li style="margin: 10px 0;">Шукайте довгі ключові фрази (long-tail keywords) — вони менш конкурентні</li>
+        </ol>
+
+        <div style="background: rgba(52, 199, 89, 0.1); border-left: 3px solid #34c759; padding: 20px; margin: 20px 0; border-radius: 5px;">
+          <p style="margin: 0;"><strong>Приклад:</strong> замість загального "розробка сайту" (висока конкуренція) краще таргетувати "розробка landing page для стоматології в Києві" (нижча конкуренція, вища конверсія).</p>
+        </div>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">Крок 2: Оптимізація мета-тегів</h3>
+        <p>Мета-теги — це те, що бачать користувачі в результатах пошуку. Вони критично важливі для кліків.</p>
+        
+        <p><strong>Title (заголовок сторінки):</strong></p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;">Довжина: 50-60 символів</li>
+          <li style="margin: 10px 0;">Включає головне ключове слово на початку</li>
+          <li style="margin: 10px 0;">Унікальний для кожної сторінки</li>
+          <li style="margin: 10px 0;">Інформативний та привабливий</li>
+        </ul>
+
+        <p><strong>Description (опис сторінки):</strong></p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;">Довжина: 150-160 символів</li>
+          <li style="margin: 10px 0;">Містить 1-2 ключові слова природно</li>
+          <li style="margin: 10px 0;">Чіткий call-to-action</li>
+          <li style="margin: 10px 0;">Описує унікальну цінність сторінки</li>
+        </ul>
+
+        <p>У Artyne Studio ми завжди включаємо професійну <a href="../seo-meta.html" style="color: #00d4ff;">оптимізацію мета-тегів</a> у вартість розробки.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">Крок 3: Створення якісного контенту</h3>
+        <p>Контент — це король SEO. Google любить сайти з корисним, унікальним та регулярно оновлюваним контентом.</p>
+
+        <p><strong>Принципи якісного SEO-контенту:</strong></p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;"><strong>Унікальність</strong> — ніякого копіпасту, тільки оригінальні тексти</li>
+          <li style="margin: 10px 0;"><strong>Глибина</strong> — мінімум 1000-1500 слів для важливих сторінок</li>
+          <li style="margin: 10px 0;"><strong>Структурованість</strong> — використання H1, H2, H3, списків, таблиць</li>
+          <li style="margin: 10px 0;"><strong>Ключові слова</strong> — природно вплетені в текст (щільність 1-2%)</li>
+          <li style="margin: 10px 0;"><strong>Корисність</strong> — текст вирішує проблему користувача</li>
+          <li style="margin: 10px 0;"><strong>Читабельність</strong> — короткі абзаци, простамова, візуальне оформлення</li>
+        </ul>
+
+        <p>Потрібна допомога з контентом? Замовте послугу <a href="../content-optimization.html" style="color: #00d4ff;">оптимізації контенту</a> від Artyne Studio.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">Крок 4: Технічна SEO-оптимізація</h3>
+        <p>Навіть найкращий контент не допоможе, якщо сайт технічно неоптимізований.</p>
+
+        <p><strong>Технічний чеклист:</strong></p>
+        <div style="background: rgba(0, 212, 255, 0.05); padding: 20px; margin: 20px 0; border-radius: 8px;">
+          <p style="margin: 10px 0;">✓ <strong>Швидкість завантаження</strong> — до 3 секунд (<a href="shvydkist-saitu.html" style="color: #00d4ff;">читайте деталі</a>)</p>
+          <p style="margin: 10px 0;">✓ <strong>Мобільна адаптивність</strong> — сайт має коректно відображатися на всіх пристроях</p>
+          <p style="margin: 10px 0;">✓ <strong>HTTPS</strong> — SSL-сертифікат обов'язковий</p>
+          <p style="margin: 10px 0;">✓ <strong>Файл robots.txt</strong> — вказує, які сторінки індексувати</p>
+          <p style="margin: 10px 0;">✓ <strong>Карта сайту (sitemap.xml)</strong> — допомагає Google краще індексувати сайт</p>
+          <p style="margin: 10px 0;">✓ <strong>Канонічні URL</strong> — уникнення дублів контенту</p>
+          <p style="margin: 10px 0;">✓ <strong>Структуровані дані</strong> — Schema.org розмітка для багатих сніпетів</p>
+        </div>
+
+        <p>При розробці сайтів з нуля Artyne Studio реалізує всі ці елементи автоматично. Для існуючих сайтів ми пропонуємо <a href="../optimization.html" style="color: #00d4ff;">комплексну оптимізацію</a>.</p>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">Крок 5: Внутрішня перелінковка</h3>
+        <p>Внутрішні посилання допомагають Google розуміти структуру сайту та розподіляти "вагу" між сторінками.</p>
+
+        <p><strong>Правила внутрішньої перелінковки:</strong></p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;">Посилайтеся на релевантні сторінки природно в тексті</li>
+          <li style="margin: 10px 0;">Використовуйте описові анкори (текст посилання)</li>
+          <li style="margin: 10px 0;">Важливі сторінки мають отримувати більше посилань</li>
+          <li style="margin: 10px 0;">Уникайте "сирітських" сторінок без посилань</li>
+          <li style="margin: 10px 0;">Створіть логічну ієрархію: головна → розділи → підрозділи → статті</li>
+        </ul>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">Крок 6: Зовнішні посилання (беклінки)</h3>
+        <p>Беклінки — це посилання на ваш сайт з інших сайтів. Вони як "голоси довіри" для Google. Чим якісніших беклінків більше, тим вище ваші позиції.</p>
+
+        <p><strong>Як отримати якісні беклінки:</strong></p>
+        <ol style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;"><strong>Гостьові пости</strong> — пишіть статті для авторитетних блогів у вашій ніші</li>
+          <li style="margin: 10px 0;"><strong>PR-статті</strong> — публікації в онлайн-ЗМІ та галузевих виданнях</li>
+          <li style="margin: 10px 0;"><strong>Каталоги та довідники</strong> — реєстрація в тематичних каталогах</li>
+          <li style="margin: 10px 0;"><strong>Контент-маркетинг</strong> — створення вірусного контенту, на який посилаються самі</li>
+          <li style="margin: 10px 0;"><strong>Партнерства</strong> — обмін посиланнями з партнерами (обережно!)</li>
+        </ol>
+
+        <div style="background: rgba(255, 59, 48, 0.1); border-left: 3px solid #ff3b30; padding: 20px; margin: 20px 0; border-radius: 5px;">
+          <p style="margin: 0;"><strong>Увага!</strong> Купівля беклінків на біржах або спам-коментарі можуть призвести до санкцій від Google. Фокусуйтеся на якості, а не кількості.</p>
+        </div>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">Крок 7: Локальне SEO</h3>
+        <p>Якщо ваш бізнес працює в конкретному місті чи регіоні, локальне SEO — ваш найкращий друг.</p>
+
+        <p><strong>Що зробити:</strong></p>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;">Створіть Google Business Profile (колишній Google My Business)</li>
+          <li style="margin: 10px 0;">Додайте точну адресу, телефон, години роботи</li>
+          <li style="margin: 10px 0;">Зберіть відгуки від клієнтів</li>
+          <li style="margin: 10px 0;">Використовуйте локальні ключові слова ("веб-студія Київ", "розробка сайтів Львів")</li>
+          <li style="margin: 10px 0;">Зареєструйтеся в місцевих каталогах</li>
+        </ul>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Інструменти для SEO (безкоштовні та платні)</h2>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">Безкоштовні інструменти</h3>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;"><strong>Google Search Console</strong> — моніторинг позицій, помилок індексації, трафіку</li>
+          <li style="margin: 10px 0;"><strong>Google Analytics</strong> — аналіз відвідувачів та їх поведінки</li>
+          <li style="margin: 10px 0;"><strong>Google Keyword Planner</strong> — дослідження ключових слів</li>
+          <li style="margin: 10px 0;"><strong>Ubersuggest</strong> — альтернатива для пошуку ключів (обмежений безкоштовний план)</li>
+          <li style="margin: 10px 0;"><strong>Answer The Public</strong> — ідеї для контенту на основі запитів користувачів</li>
+        </ul>
+
+        <h3 style="font-size: 1.4rem; margin: 30px 0 15px; color: #fff;">Платні інструменти (для серйозного SEO)</h3>
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;"><strong>Ahrefs</strong> — комплексний інструмент для аналізу беклінків та конкурентів</li>
+          <li style="margin: 10px 0;"><strong>SEMrush</strong> — все-в-одному: аудит, дослідження, моніторинг позицій</li>
+          <li style="margin: 10px 0;"><strong>Moz Pro</strong> — інструменти для трекінгу ранжування та аналізу</li>
+          <li style="margin: 10px 0;"><strong>Screaming Frog</strong> — технічний аудит сайту</li>
+        </ul>
+
+        <p>Artyne Studio використовує професійні інструменти для аналізу та просування сайтів наших клієнтів.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Скільки часу потрібно для результатів?</h2>
+        <p>SEO — це марафон, а не спринт. Реалістичні очікування:</p>
+
+        <div style="background: rgba(0, 212, 255, 0.05); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 10px; padding: 25px; margin: 20px 0;">
+          <p style="margin: 15px 0;"><strong>1-3 місяці</strong><br>
+          <span style="color: rgba(255,255,255,0.7);">Індексація сайту, перші позиції за низькоконкурентними запитами</span></p>
+          
+          <p style="margin: 15px 0;"><strong>3-6 місяців</strong><br>
+          <span style="color: rgba(255,255,255,0.7);">Зростання органічного трафіку, топ-10 за середньоконкурентними запитами</span></p>
+          
+          <p style="margin: 15px 0;"><strong>6-12 місяців</strong><br>
+          <span style="color: rgba(255,255,255,0.7);">Стабільні позиції в топ-5, значний органічний трафік</span></p>
+          
+          <p style="margin: 15px 0;"><strong>12+ місяців</strong><br>
+          <span style="color: rgba(255,255,255,0.7);">Домінування в ніші, топ-3 за більшістю релевантних запитів</span></p>
+        </div>
+
+        <p>Важливо: результати залежать від конкуренції в ніші, якості контенту та регулярності оптимізації.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Типові помилки початківців в SEO</h2>
+        <p>Уникайте цих помилок, щоб не витрачати час даремно:</p>
+
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;"><strong>Переоптимізація ключовими словами</strong> — текст має читатися природно</li>
+          <li style="margin: 10px 0;"><strong>Ігнорування мобільної версії</strong> — 60%+ трафіку з мобільних</li>
+          <li style="margin: 10px 0;"><strong>Копіювання контенту</strong> — Google карає за дублікати</li>
+          <li style="margin: 10px 0;"><strong>Купівля спамних беклінків</strong> — може призвести до бану</li>
+          <li style="margin: 10px 0;"><strong>Відсутність аналітики</strong> — не можна покращити те, що не вимірюється</li>
+          <li style="margin: 10px 0;"><strong>Очікування миттєвих результатів</strong> — SEO потребує часу та терпіння</li>
+        </ul>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">SEO при створенні нового сайту</h2>
+        <p>Найкраща SEO-стратегія — закладати оптимізацію з самого початку. Коли ми в Artyne Studio розробляємо <a href="../Landing.html" style="color: #00d4ff;">Landing Page</a>, <a href="../corporate.html" style="color: #00d4ff;">корпоративний сайт</a> або <a href="../ecommerce.html" style="color: #00d4ff;">інтернет-магазин</a>, ми одразу:</p>
+
+        <ul style="margin: 15px 0; padding-left: 30px;">
+          <li style="margin: 10px 0;">Проводимо дослідження ключових слів</li>
+          <li style="margin: 10px 0;">Створюємо SEO-оптимізовану структуру сайту</li>
+          <li style="margin: 10px 0;">Прописуємо унікальні мета-теги для кожної сторінки</li>
+          <li style="margin: 10px 0;">Налаштовуємо технічні аспекти (швидкість, мобільність, індексація)</li>
+          <li style="margin: 10px 0;">Створюємо контент з урахуванням SEO-вимог</li>
+          <li style="margin: 10px 0;">Підключаємо аналітику та інструменти моніторингу</li>
+        </ul>
+
+        <p>Це коштує не дорожче, ніж розробка без SEO, але заощаджує місяці роботи та тисячі гривень на подальшу оптимізацію. Дізнайтеся більше про нашу послугу <a href="../seo-visibility.html" style="color: #00d4ff;">покращення видимості сайту</a>.</p>
+
+        <h2 style="font-size: 1.8rem; margin: 40px 0 20px; color: #00d4ff;">Висновок: ваш план дій</h2>
+        <p>SEO — це не складно, якщо рухатися покроково. Ось ваш чеклист на перші 30 днів:</p>
+
+        <div style="background: rgba(52, 199, 89, 0.1); border: 1px solid #34c759; border-radius: 10px; padding: 25px; margin: 20px 0;">
+          <p style="margin: 10px 0;"><strong>Тиждень 1:</strong> Дослідження ключових слів, налаштування Google Search Console та Analytics</p>
+          <p style="margin: 10px 0;"><strong>Тиждень 2:</strong> Оптимізація мета-тегів, створення файлів robots.txt та sitemap.xml</p>
+          <p style="margin: 10px 0;"><strong>Тиждень 3:</strong> Технічний аудит та виправлення критичних помилок</p>
+          <p style="margin: 10px 0;"><strong>Тиждень 4:</strong> Створення/оптимізація контенту, налаштування внутрішньої перелінковки</p>
+        </div>
+
+        <p>Пам'ятайте: SEO — це постійний процес. Алгоритми Google змінюються, конкуренти не сплять, тренди еволюціонують. Регулярно оновлюйте контент, моніторте позиції, адаптуйте стратегію.</p>
+
+        <p>Якщо відчуваєте, що це занадто складно або не маєте часу — довірте SEO професіоналам. Artyne Studio надає повний спектр послуг з просування сайтів від базової оптимізації до комплексного маркетингу.</p>
+
+      </div>
+
+      <div class="cta-block" style="background: linear-gradient(135deg, rgba(250, 112, 154, 0.1) 0%, rgba(254, 225, 64, 0.1) 100%); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 12px; padding: 40px; margin: 60px 0; text-align: center;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: #00d4ff;">Потрібна допомога з SEO?</h3>
+        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 30px;">Замовте безкоштовний SEO-аудит вашого сайту та отримайте план оптимізації від експертів</p>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+          <a href="../seo-visibility.html" class="btn-primary" style="display: inline-block; padding: 15px 35px; background: linear-gradient(135deg, #00d4ff, #0099ff); color: #000; text-decoration: none; border-radius: 30px; font-weight: 600;">Замовити SEO-просування</a>
+          <a href="../brief.html" class="btn-secondary" style="display: inline-block; padding: 15px 35px; background: rgba(0, 212, 255, 0.1); color: #00d4ff; text-decoration: none; border-radius: 30px; font-weight: 600; border: 1px solid #00d4ff;">Безкоштовний аудит</a>
+        </div>
+      </div>
+
+      <div class="related-articles" style="margin-top: 60px;">
+        <h3 style="font-size: 1.6rem; margin-bottom: 30px;">Читайте також:</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <a href="shvydkist-saitu.html" style="display: block; padding: 20px; background: rgba(0, 212, 255, 0.03); border: 1px solid rgba(0, 212, 255, 0.1); border-radius: 10px; text-decoration: none;">
+            <h4 style="color: #00d4ff; margin-bottom: 10px;">Чому швидкість сайту — це важливо</h4>
+            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Вплив швидкості на SEO та конверсію...</p>
+          </a>
+          <a href="yak-vybraty-veb-studiyu.html" style="display: block; padding: 20px; background: rgba(0, 212, 255, 0.03); border: 1px solid rgba(0, 212, 255, 0.1); border-radius: 10px; text-decoration: none;">
+            <h4 style="color: #00d4ff; margin-bottom: 10px;">Як вибрати веб-студію</h4>
+            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">10 критеріїв правильного вибору...</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="../src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="../index.html">Головна</a></li>
+          <li><a href="#">Послуги</a></li>
+          <li><a href="../about.html">Хто ми</a></li>
+          <li><a href="../blog.html">Блог</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Категорії</h4>
+        <ul>
+          <li><a href="../Landing.html">Landing Page</a></li>
+          <li><a href="../corporate.html">Корпоративні сайти</a></li>
+          <li><a href="../ecommerce.html">Інтернет-магазини</a></li>
+          <li><a href="../multipage.html">Багатосторінкові</a></li>
+          <li><a href="../businesscard.html">Сайт-візитка</a></li>
+          <li><a href="../uiux-design.html">UI/UX Дизайн</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/corporate.js"></script>
+</body>
+</html>

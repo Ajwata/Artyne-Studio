@@ -64,6 +64,122 @@ function animateCloud() {
 }
 animateCloud();
 
+// === CTA BUTTONS - SCROLL TO FORM ===
+document.querySelectorAll('.cta-button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const form = document.getElementById('landingForm');
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Фокус на перше поле через 500мс після скролу
+      setTimeout(() => {
+        const firstInput = form.querySelector('input[name="name"]');
+        if (firstInput) firstInput.focus();
+      }, 500);
+    }
+  });
+});
+
+// === SMOOTH SCROLL FOR ANCHOR LINKS ===
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// === LANDING FORM SUBMISSION ===
+const landingForm = document.getElementById('landingForm');
+if (landingForm) {
+  landingForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const fd = new FormData(landingForm);
+    
+    // Honeypot перевірка
+    if (fd.get('website')) {
+      console.warn('⚠️ Спам-бот заблоковано');
+      return;
+    }
+
+    const submitBtn = landingForm.querySelector('.btn-submit');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<span>Відправляємо...</span>';
+    submitBtn.disabled = true;
+
+    const name = fd.get('name');
+    const phone = fd.get('phone');
+    const message = fd.get('message') || 'не вказано';
+
+    const text = `
+🆕 Нова заявка з Landing Page!
+
+👤 Ім'я: ${name}
+📞 Телефон: ${phone}
+💬 Повідомлення: ${message}
+
+📄 Сторінка: Landing Page
+🌐 URL: ${window.location.href}
+`;
+
+    try {
+      // ЗАМІНІТЬ URL на ваш Cloudflare Worker URL
+      const response = await fetch('https://telegrambot.shonraprince.workers.dev/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text })
+      });
+
+      if (response.ok) {
+        submitBtn.innerHTML = '<span>✓ Відправлено!</span>';
+        submitBtn.style.background = 'linear-gradient(90deg, #00d084, #0077ff)';
+        landingForm.reset();
+        
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+        }, 3000);
+      } else {
+        throw new Error('Помилка відправки');
+      }
+    } catch (err) {
+      console.error('❌ Помилка:', err);
+      submitBtn.innerHTML = '<span>❌ Помилка. Спробуйте ще раз</span>';
+      submitBtn.disabled = false;
+      
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+      }, 3000);
+    }
+  });
+}
+
+// === BACK TO TOP BUTTON ===
+const backToTopBtn = document.getElementById('backToTop');
+
+if (backToTopBtn) {
+  // Показати кнопку після прокрутки 300px
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  });
+
+  // Клік — скрол вгору
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+
 
 
 

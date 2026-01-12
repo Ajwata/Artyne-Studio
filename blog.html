@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Блог про веб-розробку — Artyne Studio | Поради та статті</title>
+  <meta name="description" content="Блог Artyne Studio — корисні статті про веб-розробку, дизайн, SEO та digital-маркетинг. Поради від професіоналів.">
+  <meta name="keywords" content="блог веб-розробка, статті про сайти, SEO поради, веб-дизайн, Artyne Studio">
+  <link rel="canonical" href="https://artynestudio.com/blog.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="src/favicon.png" />
+</head>
+
+<body>
+
+  <!-- Canvas для анімації -->
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-block">
+      <div class="logo">
+        <a href="index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="Landing.html">Landing page</a>
+                  <a href="corporate.html">Корпоративний сайт</a>
+                  <a href="ecommerce.html">Інтернет-магазин</a>
+                  <a href="multipage.html">Багатосторінковий сайт</a>
+                  <a href="businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="uiux-design.html">UI/UX дизайн</a>
+                  <a href="redesign.html">Редизайн існуючого сайту</a>
+                  <a href="sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="google-ads.html">Google Ads налаштування</a>
+                  <a href="advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="content-optimization.html">Оптимізація контенту</a>
+                  <a href="seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="website-updates.html">Оновлення сайту</a>
+                  <a href="bug-fixes.html">Виправлення помилок</a>
+                  <a href="technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="about.html">Хто ми</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="contacts.html">Контакти</a></li>
+      </ul>
+
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <!-- СПИСОК СТАТЕЙ -->
+  <section class="advantages-section" style="padding-top: 80px;">
+    <div class="container">
+      <h1 style="text-align: center; font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; color: #fff;">Блог Artyne Studio</h1>
+      <p style="text-align: center; font-size: 1.3rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">Корисні статті про веб-розробку, дизайн, SEO та digital-маркетинг</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Стаття 1 -->
+        <article class="advantage-card" style="cursor: pointer; transition: transform 0.3s;" onclick="location.href='blog/yak-vybraty-veb-studiyu.html'">
+          <div style="width: 100%; height: 200px; border-radius: 12px; margin-bottom: 20px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop" alt="Вибір веб-студії" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 0 10px;">
+            <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+              <span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Вибір веб-студії</span>
+              <span style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">12 січня 2026</span>
+            </div>
+            <h3 style="margin-bottom: 15px; font-size: 1.4rem;">Як вибрати веб-студію: 10 критеріїв</h3>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Детальний гід по вибору підрядника для розробки сайту. Що важливо враховувати, на що звертати увагу...</p>
+            <div style="display: flex; align-items: center; gap: 10px; color: #00d4ff;">
+              <span>Читати далі</span>
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Стаття 2 -->
+        <article class="advantage-card" style="cursor: pointer; transition: transform 0.3s;" onclick="location.href='blog/skilky-koshtuye-sait.html'">
+          <div style="width: 100%; height: 200px; border-radius: 12px; margin-bottom: 20px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop" alt="Ціноутворення" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 0 10px;">
+            <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+              <span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Ціноутворення</span>
+              <span style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">10 січня 2026</span>
+            </div>
+            <h3 style="margin-bottom: 15px; font-size: 1.4rem;">Скільки коштує розробка сайту в 2026?</h3>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Реальні ціни на розробку сайтів в Україні. Від чого залежить вартість, як формується ціна...</p>
+            <div style="display: flex; align-items: center; gap: 10px; color: #00d4ff;">
+              <span>Читати далі</span>
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Стаття 3 -->
+        <article class="advantage-card" style="cursor: pointer; transition: transform 0.3s;" onclick="location.href='blog/shvydkist-saitu.html'">
+          <div style="width: 100%; height: 200px; border-radius: 12px; margin-bottom: 20px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Швидкість сайту" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 0 10px;">
+            <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+              <span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Оптимізація</span>
+              <span style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">8 січня 2026</span>
+            </div>
+            <h3 style="margin-bottom: 15px; font-size: 1.4rem;">Чому швидкість сайту — це важливо</h3>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Як швидкість завантаження впливає на конверсію, SEO та поведінку користувачів. Практичні поради...</p>
+            <div style="display: flex; align-items: center; gap: 10px; color: #00d4ff;">
+              <span>Читати далі</span>
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Стаття 4 -->
+        <article class="advantage-card" style="cursor: pointer; transition: transform 0.3s;" onclick="location.href='blog/seo-dlya-pochatkivtsiv.html'">
+          <div style="width: 100%; height: 200px; border-radius: 12px; margin-bottom: 20px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=600&h=400&fit=crop" alt="SEO оптимізація" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 0 10px;">
+            <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+              <span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">SEO</span>
+              <span style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">5 січня 2026</span>
+            </div>
+            <h3 style="margin-bottom: 15px; font-size: 1.4rem;">SEO для початківців: з чого почати</h3>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Базові принципи SEO-оптимізації. Покрокова інструкція для просування сайту в Google...</p>
+            <div style="display: flex; align-items: center; gap: 10px; color: #00d4ff;">
+              <span>Читати далі</span>
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Стаття 5 -->
+        <article class="advantage-card" style="cursor: pointer; transition: transform 0.3s;" onclick="location.href='blog/trendy-veb-dyzainu-2026.html'">
+          <div style="width: 100%; height: 200px; border-radius: 12px; margin-bottom: 20px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" alt="Тренди веб-дизайну" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 0 10px;">
+            <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+              <span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Дизайн</span>
+              <span style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">3 січня 2026</span>
+            </div>
+            <h3 style="margin-bottom: 15px; font-size: 1.4rem;">Тренди веб-дизайну 2026 року</h3>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Актуальні тенденції в дизайні сайтів. Що в моді, які стилі використовувати для сучасного сайту...</p>
+            <div style="display: flex; align-items: center; gap: 10px; color: #00d4ff;">
+              <span>Читати далі</span>
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Стаття 6 -->
+        <article class="advantage-card" style="cursor: pointer; transition: transform 0.3s;" onclick="location.href='blog/landing-page-shcho-tse.html'">
+          <div style="width: 100%; height: 200px; border-radius: 12px; margin-bottom: 20px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop" alt="Landing Page" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="padding: 0 10px;">
+            <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+              <span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem;">Landing Page</span>
+              <span style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">1 січня 2026</span>
+            </div>
+            <h3 style="margin-bottom: 15px; font-size: 1.4rem;">Landing Page: що це і коли потрібен</h3>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Все про одностор інкові сайти. Переваги, структура, як створити ефективний лендінг...</p>
+            <div style="display: flex; align-items: center; gap: 10px; color: #00d4ff;">
+              <span>Читати далі</span>
+              <i class="bi bi-arrow-right"></i>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="about.html">Хто ми</a></li>
+          <li><a href="blog.html">Блог</a></li>
+          <li><a href="#">Кейси</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+          <li><a href="privacy.html">Політика конфіденційності</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Послуги</h4>
+        <ul>
+          <li><a href="Landing.html">Landing Page</a></li>
+          <li><a href="corporate.html">Корпоративний сайт</a></li>
+          <li><a href="ecommerce.html">Інтернет-магазин</a></li>
+          <li><a href="multipage.html">Багатосторінковий сайт</a></li>
+          <li><a href="businesscard.html">Сайт-візитка</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Дизайн</h4>
+        <ul>
+          <li><a href="uiux-design.html">UI/UX Дизайн</a></li>
+          <li><a href="redesign.html">Редизайн сайту</a></li>
+          <li><a href="sections-design.html">Дизайн секцій</a></li>
+          <li><a href="logo-branding.html">Лого та айдентика</a></li>
+          <li><a href="seo-meta.html">SEO та мета-дані</a></li>
+          <li><a href="content-optimization.html">Оптимізація контенту</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" style="text-align:right;">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/corporate.js"></script>
+</body>
+</html>

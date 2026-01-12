@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI/UX дизайн сайтів — Artyne Studio | Дизайн інтерфейсів</title>
+  <meta name="description" content="Професійний UI/UX дизайн сайтів та додатків. Artyne Studio — створюємо зручні та красиві інтерфейси, що підвищують конверсію.">
+  <meta name="keywords" content="UI UX дизайн, дизайн інтерфейсів, веб-дизайн, Artyne Studio, дизайн сайту, користувацький інтерфейс, user experience">
+  <link rel="canonical" href="https://artynestudio.com/uiux-design.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="src/favicon.png" />
+</head>
+
+<body class="dark-page">
+
+  <!-- Canvas для анімації -->
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-block">
+      <div class="logo">
+        <a href="index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="Landing.html">Landing page</a>
+                  <a href="corporate.html">Корпоративний сайт</a>
+                  <a href="ecommerce.html">Інтернет-магазин</a>
+                  <a href="multipage.html">Багатосторінковий сайт</a>
+                  <a href="businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="uiux-design.html">UI/UX дизайн</a>
+                  <a href="redesign.html">Редизайн існуючого сайту</a>
+                  <a href="sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="google-ads.html">Google Ads налаштування</a>
+                  <a href="advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="content-optimization.html">Оптимізація контенту</a>
+                  <a href="seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="website-updates.html">Оновлення сайту</a>
+                  <a href="bug-fixes.html">Виправлення помилок</a>
+                  <a href="technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="about.html">Хто ми</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-landing grid-bg">
+    <div class="hero-content">
+      <h1>UI/UX дизайн, <br> що перетворює відвідувачів на клієнтів</h1>
+      <p>Створюємо інтуїтивні інтерфейси з високою конверсією. Дизайн, який не лише красивий, а й працює на результат вашого бізнесу.</p>
+      <div class="hero-cta">
+        <a href="#pricing" class="btn-outline">Дізнатись ціну</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">180+</span>
+          <span class="stat-label">Дизайнів створено</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">+35%</span>
+          <span class="stat-label">Ріст конверсії в середньому</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">7-10 днів</span>
+          <span class="stat-label">Термін розробки</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПЕРЕВАГИ -->
+  <section class="advantages-section">
+    <div class="container">
+      <h2 class="section-title">Що включає UI/UX дизайн?</h2>
+      <p class="section-subtitle">Комплексний підхід до створення зручних інтерфейсів</p>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-people"></i></div>
+          <h3>Аналіз аудиторії</h3>
+          <p>Вивчаємо вашу цільову аудиторію, її потреби, поведінку та очікування від сайту чи додатку</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-diagram-3"></i></div>
+          <h3>Прототипування</h3>
+          <p>Створюємо інтерактивні прототипи для тестування логіки та навігації до початку дизайну</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-palette"></i></div>
+          <h3>Візуальний дизайн</h3>
+          <p>Розробляємо унікальний стиль з врахуванням трендів, психології кольорів та вашого бренду</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-phone"></i></div>
+          <h3>Адаптивність</h3>
+          <p>Дизайн для всіх пристроїв — від смартфонів до великих моніторів з ідеальною читабельністю</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-hand-index"></i></div>
+          <h3>Інтерактивні елементи</h3>
+          <p>Продумуємо анімації, hover-ефекти та мікроінтеракції для покращення користувацького досвіду</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-graph-up-arrow"></i></div>
+          <h3>Фокус на конверсії</h3>
+          <p>Розташування елементів, кнопок та контенту орієнтоване на досягнення ваших бізнес-цілей</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЩО ВХОДИТЬ -->
+  <section class="included-section">
+    <div class="container">
+      <h2 class="section-title">Що входить у розробку дизайну?</h2>
+      <p class="section-subtitle">Повний цикл створення UI/UX дизайну</p>
+      <div class="included-grid">
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Аналіз конкурентів та ринку</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>User Research та персонажі</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Інформаційна архітектура</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Wireframes (каркаси сторінок)</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Інтерактивні прототипи Figma</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Дизайн всіх сторінок та станів</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>UI Kit та дизайн-система</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Адаптивні версії (Desktop/Tablet/Mobile)</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>2 раунди правок</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЦІНИ -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Тарифні плани</h2>
+      <p class="section-subtitle">Обирайте пакет під ваші завдання</p>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Базовий</h3>
+            <p class="pricing-desc">Для невеликих проектів</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">від 12 000₴</span>
+            <span class="price-period">за проект</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> До 5 унікальних екранів</li>
+            <li><i class="bi bi-check"></i> Базовий User Research</li>
+            <li><i class="bi bi-check"></i> Wireframes</li>
+            <li><i class="bi bi-check"></i> Дизайн Desktop + Mobile</li>
+            <li><i class="bi bi-check"></i> Базовий UI Kit</li>
+            <li><i class="bi bi-check"></i> 1 раунд правок</li>
+            <li><i class="bi bi-check"></i> Термін: 7-10 днів</li>
+            <li class="feature-disabled"><i class="bi bi-x"></i> Інтерактивний прототип</li>
+          </ul>
+          <button class="btn-pricing cta-button">Обрати план</button>
+        </div>
+
+        <div class="pricing-card popular">
+          <div class="popular-badge">Популярний</div>
+          <div class="pricing-header">
+            <h3>Стандарт</h3>
+            <p class="pricing-desc">Для середніх проектів</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">від 25 000₴</span>
+            <span class="price-period">за проект</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> До 15 унікальних екранів</li>
+            <li><i class="bi bi-check"></i> Повний User Research</li>
+            <li><i class="bi bi-check"></i> Інтерактивний прототип Figma</li>
+            <li><i class="bi bi-check"></i> Дизайн Desktop + Tablet + Mobile</li>
+            <li><i class="bi bi-check"></i> Повний UI Kit та стилі</li>
+            <li><i class="bi bi-check"></i> Анімації та мікроінтеракції</li>
+            <li><i class="bi bi-check"></i> 2 раунди правок</li>
+            <li><i class="bi bi-check"></i> Термін: 10-14 днів</li>
+          </ul>
+          <button class="btn-pricing btn-popular cta-button">Обрати план</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Преміум</h3>
+            <p class="pricing-desc">Для складних проектів</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">від 45 000₴</span>
+            <span class="price-period">за проект</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Необмежена кількість екранів</li>
+            <li><i class="bi bi-check"></i> Глибокий UX аудит</li>
+            <li><i class="bi bi-check"></i> User Testing на реальних користувачах</li>
+            <li><i class="bi bi-check"></i> Повна дизайн-система</li>
+            <li><i class="bi bi-check"></i> Складні анімації та 3D</li>
+            <li><i class="bi bi-check"></i> A/B тестування дизайну</li>
+            <li><i class="bi bi-check"></i> Необмежені правки</li>
+            <li><i class="bi bi-check"></i> Термін: 14-21 день</li>
+          </ul>
+          <button class="btn-pricing cta-button">Обрати план</button>
+        </div>
+      </div>
+
+      <div class="pricing-note">
+        <p><i class="bi bi-info-circle"></i> Вартість фінальна і включає всі етапи: від дослідження до передачі файлів в Figma.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРОЦЕС -->
+  <section class="process-section">
+    <div class="container">
+      <h2 class="section-title">Етапи роботи</h2>
+      <p class="section-subtitle">Системний підхід до створення UI/UX дизайну</p>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Дослідження</h3>
+            <p>Аналіз аудиторії, конкурентів, трендів. Визначаємо цілі проекту та метрики успіху.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>UX Стратегія</h3>
+            <p>Створюємо User Flow, інформаційну архітектуру та карту подорожі користувача.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Wireframes</h3>
+            <p>Малюємо каркаси сторінок, продумуємо розташування блоків та логіку навігації.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>UI Дизайн</h3>
+            <p>Створюємо візуальний дизайн: кольори, шрифти, іконки, фотографії, стилі.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h3>Прототип та передача</h3>
+            <p>Створюємо інтерактивний прототип, тестуємо та передаємо макети розробникам.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Часті питання</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Скільки коштує UI/UX дизайн?</h3>
+          <p>Від 12 000₴ за базовий дизайн (до 5 екранів) до 45 000₴+ за складний проект з повною дизайн-системою.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи потрібен окремо розробник?</h3>
+          <p>Ми можемо як створити лише дизайн, так і зверстати його під ключ. Обирайте зручний варіант.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Скільки часу займає розробка?</h3>
+          <p>Базовий дизайн — 7-10 днів, стандарт — 10-14 днів, преміум проект — 14-21 день.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> У якому форматі отримую дизайн?</h3>
+          <p>Передаємо макети в Figma з можливістю редагування, а також експортовані зображення в потрібних форматах.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Що таке UI та UX?</h3>
+          <p>UX — це зручність та логіка сайту. UI — візуальна складова (кольори, кнопки, стилі). Ми робимо обидва.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи можна змінити дизайн після узгодження?</h3>
+          <p>Так, в тарифи включені раунди правок: 1 в базовому, 2 в стандарті, необмежено в преміум.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ФОРМА -->
+  <section class="cta-form-section">
+    <div class="container">
+      <div class="cta-form-wrapper">
+        <div class="cta-form-content">
+          <h2>Створимо UI/UX дизайн для вашого проекту</h2>
+          <p>Залиште заявку та отримайте безкоштовну консультацію, аналіз вашого проекту та приклади наших робіт</p>
+          <ul class="cta-benefits">
+            <li><i class="bi bi-check-circle-fill"></i> Консультація протягом 15 хвилин</li>
+            <li><i class="bi bi-check-circle-fill"></i> Приклади UI/UX дизайнів</li>
+            <li><i class="bi bi-check-circle-fill"></i> Аналіз вашого проекту безкоштовно</li>
+          </ul>
+        </div>
+        
+        <form class="cta-form" id="uiuxForm">
+          <h3>Отримати консультацію</h3>
+          
+          <div class="form-group">
+            <label for="name">Ваше ім'я *</label>
+            <input type="text" id="name" name="name" required placeholder="Іван Іванович">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+38 (097) 123-45-67">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Опишіть ваш проект</label>
+            <textarea id="message" name="message" rows="4" placeholder="Який тип сайту, скільки екранів потрібно..."></textarea>
+          </div>
+
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn-submit">
+            <span>Відправити заявку</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+          <p class="form-privacy">Натискаючи кнопку, ви погоджуєтесь з <a href="privacy.html">політикою конфіденційності</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="#">Послуги</a></li>
+          <li><a href="#">Про компанію</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Категорії</h4>
+        <ul>
+          <li><a href="Landing.html">Landing Page</a></li>
+          <li><a href="corporate.html">Корпоративні сайти</a></li>
+          <li><a href="ecommerce.html">Інтернет-магазини</a></li>
+          <li><a href="multipage.html">Багатосторінкові</a></li>
+          <li><a href="businesscard.html">Сайт-візитка</a></li>
+          <li><a href="uiux-design.html">UI/UX Дизайн</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/corporate.js"></script>
+</body>
+</html>

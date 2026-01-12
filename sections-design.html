@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Дизайн секцій та блоків — Artyne Studio | Окремі елементи сайту</title>
+  <meta name="description" content="Розробка дизайну окремих секцій, блоків та елементів сайту. Artyne Studio — створюємо унікальні секції для вашого проекту.">
+  <meta name="keywords" content="дизайн секцій, блоки сайту, Artyne Studio, дизайн елементів, секції landing page">
+  <link rel="canonical" href="https://artynestudio.com/sections-design.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="src/favicon.png" />
+</head>
+
+<body class="dark-page">
+
+  <!-- Canvas для анімації -->
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-block">
+      <div class="logo">
+        <a href="index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="Landing.html">Landing page</a>
+                  <a href="corporate.html">Корпоративний сайт</a>
+                  <a href="ecommerce.html">Інтернет-магазин</a>
+                  <a href="multipage.html">Багатосторінковий сайт</a>
+                  <a href="businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="uiux-design.html">UI/UX дизайн</a>
+                  <a href="redesign.html">Редизайн існуючого сайту</a>
+                  <a href="sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="google-ads.html">Google Ads налаштування</a>
+                  <a href="advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="content-optimization.html">Оптимізація контенту</a>
+                  <a href="seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="website-updates.html">Оновлення сайту</a>
+                  <a href="bug-fixes.html">Виправлення помилок</a>
+                  <a href="technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="about.html">Хто ми</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-landing grid-bg">
+    <div class="hero-content">
+      <h1>Дизайн секцій та блоків, <br> що виділяють ваш сайт</h1>
+      <p>Створюємо унікальні секції для Landing Page, блоки для магазинів та окремі елементи. Швидко, стильно та готові до верстки.</p>
+      <div class="hero-cta">
+        <a href="#pricing" class="btn-outline">Дізнатись ціну</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">300+</span>
+          <span class="stat-label">Секцій створено</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2-3 дні</span>
+          <span class="stat-label">Швидка розробка</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">від 1 500₴</span>
+          <span class="stat-label">За секцію</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПЕРЕВАГИ -->
+  <section class="advantages-section">
+    <div class="container">
+      <h2 class="section-title">Які секції ми розробляємо?</h2>
+      <p class="section-subtitle">Дизайн будь-яких блоків для вашого сайту</p>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-star"></i></div>
+          <h3>Hero секції</h3>
+          <p>Перший екран з яскравим заголовком, кнопками CTA та фоновими ефектами для максимальної уваги</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-list-check"></i></div>
+          <h3>Блоки переваг</h3>
+          <p>Секції з іконками, картками та описами ваших переваг, послуг чи продуктів</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-tag"></i></div>
+          <h3>Прайси та тарифи</h3>
+          <p>Стильні таблиці цін з популярними тарифами, кнопками замовлення та виділеними пакетами</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-card-image"></i></div>
+          <h3>Портфоліо та кейси</h3>
+          <p>Галереї робіт, карточки проектів з описом, статистикою та посиланнями</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-chat-quote"></i></div>
+          <h3>Відгуки клієнтів</h3>
+          <p>Секції з відгуками, рейтингами, фото клієнтів та їх історіями успіху</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-envelope-paper"></i></div>
+          <h3>Форми зв'язку</h3>
+          <p>Контактні форми, форми замовлення, підписки на розсилку зі стильним дизайном</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЩО ВХОДИТЬ -->
+  <section class="included-section">
+    <div class="container">
+      <h2 class="section-title">Що входить у розробку секції?</h2>
+      <p class="section-subtitle">Повний цикл від ідеї до готового макету</p>
+      <div class="included-grid">
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Концепція та ідея секції</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Дизайн в Figma</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Адаптивні версії (Desktop + Mobile)</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Підбір іконок та елементів</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Кольорова схема</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Типографіка та стилі</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Підготовка до верстки</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Експорт всіх ресурсів</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>1 раунд правок</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЦІНИ -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Вартість розробки секцій</h2>
+      <p class="section-subtitle">Прозорі ціни за кожен тип блоку</p>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Одна секція</h3>
+            <p class="pricing-desc">Простий блок</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">1 500₴</span>
+            <span class="price-period">за секцію</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> 1 унікальна секція</li>
+            <li><i class="bi bi-check"></i> Desktop + Mobile</li>
+            <li><i class="bi bi-check"></i> Готовий дизайн Figma</li>
+            <li><i class="bi bi-check"></i> Базові елементи</li>
+            <li><i class="bi bi-check"></i> 1 раунд правок</li>
+            <li><i class="bi bi-check"></i> Термін: 1-2 дні</li>
+            <li class="feature-disabled"><i class="bi bi-x"></i> Складні анімації</li>
+            <li class="feature-disabled"><i class="bi bi-x"></i> Інтерактивні елементи</li>
+          </ul>
+          <button class="btn-pricing cta-button">Замовити</button>
+        </div>
+
+        <div class="pricing-card popular">
+          <div class="popular-badge">Популярний</div>
+          <div class="pricing-header">
+            <h3>Пакет секцій</h3>
+            <p class="pricing-desc">5 секцій для лендінгу</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">6 000₴</span>
+            <span class="price-period">за пакет</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> 5 унікальних секцій</li>
+            <li><i class="bi bi-check"></i> Повна адаптивність</li>
+            <li><i class="bi bi-check"></i> Єдиний стиль та UI Kit</li>
+            <li><i class="bi bi-check"></i> Іконки та елементи</li>
+            <li><i class="bi bi-check"></i> Анімації та ефекти</li>
+            <li><i class="bi bi-check"></i> 2 раунди правок</li>
+            <li><i class="bi bi-check"></i> Експорт ресурсів</li>
+            <li><i class="bi bi-check"></i> Термін: 3-5 днів</li>
+          </ul>
+          <button class="btn-pricing btn-popular cta-button">Замовити</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Преміум пакет</h3>
+            <p class="pricing-desc">10+ секцій</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">від 10 000₴</span>
+            <span class="price-period">за проект</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> 10+ унікальних секцій</li>
+            <li><i class="bi bi-check"></i> Складні інтерактивні блоки</li>
+            <li><i class="bi bi-check"></i> 3D елементи та анімації</li>
+            <li><i class="bi bi-check"></i> Повна дизайн-система</li>
+            <li><i class="bi bi-check"></i> Прототипи в Figma</li>
+            <li><i class="bi bi-check"></i> Необмежені правки</li>
+            <li><i class="bi bi-check"></i> Консультації при верстці</li>
+            <li><i class="bi bi-check"></i> Термін: 5-7 днів</li>
+          </ul>
+          <button class="btn-pricing cta-button">Замовити</button>
+        </div>
+      </div>
+
+      <div class="pricing-note">
+        <p><i class="bi bi-info-circle"></i> Можливе замовлення окремих секцій чи цілих сторінок. Знижка при замовленні 10+ блоків.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРОЦЕС -->
+  <section class="process-section">
+    <div class="container">
+      <h2 class="section-title">Як ми працюємо</h2>
+      <p class="section-subtitle">Простий процес створення секцій</p>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Обговорення</h3>
+            <p>З'ясовуємо які секції потрібні, яка їх мета та стиль проекту.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Концепція</h3>
+            <p>Підбираємо референси, продумуємо структуру та елементи кожної секції.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Дизайн</h3>
+            <p>Створюємо макет в Figma з усіма деталями, кольорами та стилями.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Передача</h3>
+            <p>Надаємо доступ до Figma, експортуємо ресурси та готуємо до верстки.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Часті питання</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Скільки коштує одна секція?</h3>
+          <p>Від 1 500₴ за просту секцію. Пакет з 5 секцій — 6 000₴. Складні інтерактивні блоки — індивідуально.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи можна замовити лише верстку?</h3>
+          <p>Так! Ми можемо зверстати секції після дизайну. Верстка однієї секції від 800₴.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Як швидко готовий дизайн?</h3>
+          <p>Одна секція — 1-2 дні, пакет з 5 секцій — 3-5 днів, 10+ секцій — 5-7 днів.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> У якому форматі отримую макет?</h3>
+          <p>Figma файл з можливістю редагування + експортовані PNG/SVG ресурси.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи можна додати секцію до існуючого сайту?</h3>
+          <p>Так! Створюємо секції в стилі вашого сайту або пропонуємо новий дизайн.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Які секції найпопулярніші?</h3>
+          <p>Hero, переваги, прайси, відгуки, портфоліо, FAQ, контактні форми — найчастіше замовляють.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ФОРМА -->
+  <section class="cta-form-section">
+    <div class="container">
+      <div class="cta-form-wrapper">
+        <div class="cta-form-content">
+          <h2>Замовте дизайн секцій для вашого сайту</h2>
+          <p>Залиште заявку та отримайте безкоштовну консультацію, приклади секцій та розрахунок вартості</p>
+          <ul class="cta-benefits">
+            <li><i class="bi bi-check-circle-fill"></i> Відповідь протягом 15 хвилин</li>
+            <li><i class="bi bi-check-circle-fill"></i> Приклади готових секцій</li>
+            <li><i class="bi bi-check-circle-fill"></i> Готовий дизайн за 1-5 днів</li>
+          </ul>
+        </div>
+        
+        <form class="cta-form" id="sectionsForm">
+          <h3>Отримати консультацію</h3>
+          
+          <div class="form-group">
+            <label for="name">Ваше ім'я *</label>
+            <input type="text" id="name" name="name" required placeholder="Іван Іванович">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+38 (097) 123-45-67">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Які секції потрібні?</label>
+            <textarea id="message" name="message" rows="4" placeholder="Hero, прайси, відгуки..."></textarea>
+          </div>
+
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn-submit">
+            <span>Відправити заявку</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+          <p class="form-privacy">Натискаючи кнопку, ви погоджуєтесь з <a href="privacy.html">політикою конфіденційності</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="#">Послуги</a></li>
+          <li><a href="#">Про компанію</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Категорії</h4>
+        <ul>
+          <li><a href="Landing.html">Landing Page</a></li>
+          <li><a href="corporate.html">Корпоративні сайти</a></li>
+          <li><a href="ecommerce.html">Інтернет-магазини</a></li>
+          <li><a href="multipage.html">Багатосторінкові</a></li>
+          <li><a href="businesscard.html">Сайт-візитка</a></li>
+          <li><a href="uiux-design.html">UI/UX Дизайн</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/corporate.js"></script>
+</body>
+</html>

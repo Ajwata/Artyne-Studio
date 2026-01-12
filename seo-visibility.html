@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Покращення видимості сайту в Google — Artyne Studio | Технічне SEO просування</title>
+  <meta name="description" content="Комплексне SEO просування сайту. Artyne Studio — підвищуємо видимість в Google через технічну оптимізацію, лінкбілдінг та стратегію.">
+  <meta name="keywords" content="SEO просування, видимість сайту, Artyne Studio, технічне SEO, лінкбілдінг">
+  <link rel="canonical" href="https://artynestudio.com/seo-visibility.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="src/favicon.png" />
+</head>
+
+<body>
+
+  <!-- Canvas для анімації -->
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-block">
+      <div class="logo">
+        <a href="index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="Landing.html">Landing page</a>
+                  <a href="corporate.html">Корпоративний сайт</a>
+                  <a href="ecommerce.html">Інтернет-магазин</a>
+                  <a href="multipage.html">Багатосторінковий сайт</a>
+                  <a href="businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="uiux-design.html">UI/UX дизайн</a>
+                  <a href="redesign.html">Редизайн існуючого сайту</a>
+                  <a href="sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="google-ads.html">Google Ads налаштування</a>
+                  <a href="advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="content-optimization.html">Оптимізація контенту</a>
+                  <a href="seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="website-updates.html">Оновлення сайту</a>
+                  <a href="bug-fixes.html">Виправлення помилок</a>
+                  <a href="technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="about.html">Хто ми</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-landing grid-bg">
+    <div class="hero-content">
+      <h1>Комплексне SEO просування, <br> вихід в топ Google за 3-6 місяців</h1>
+      <p>Повний цикл SEO оптимізації: технічний аудит, контент, лінкбілдінг та моніторинг позицій для стабільного зростання.</p>
+      <div class="hero-cta">
+        <a href="#pricing" class="btn-outline">Дізнатись ціну</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">80+</span>
+          <span class="stat-label">Проектів в топі</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">+300%</span>
+          <span class="stat-label">Зростання трафіку</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">від 8 000₴</span>
+          <span class="stat-label">На місяць</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПЕРЕВАГИ -->
+  <section class="advantages-section">
+    <div class="container">
+      <h2 class="section-title">Переваги SEO просування</h2>
+      <p class="section-subtitle">Чому варто інвестувати в SEO</p>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-graph-up"></i></div>
+          <h3>Органічний трафік</h3>
+          <p>Безкоштовні відвідувачі з Google щодня, які шукають саме ваші послуги</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-piggy-bank"></i></div>
+          <h3>Низька ціна ліда</h3>
+          <p>SEO трафік дешевший за рекламу в 5-10 разів при тій самій конверсії</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-infinity"></i></div>
+          <h3>Довготривалий ефект</h3>
+          <p>Результат SEO зберігається роками, навіть якщо зупинити просування</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-shield-check"></i></div>
+          <h3>Довіра клієнтів</h3>
+          <p>Топ позиції в Google сприймаються як підтвердження якості та надійності</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-pie-chart"></i></div>
+          <h3>Конкурентна перевага</h3>
+          <p>Обходите конкурентів які покладаються тільки на платну рекламу</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-bar-chart-line"></i></div>
+          <h3>Вимірюваність</h3>
+          <p>Бачите динаміку позицій, трафіку та конверсій в режимі реального часу</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЩО ВХОДИТЬ -->
+  <section class="included-section">
+    <div class="container">
+      <h2 class="section-title">Що робимо</h2>
+      <p class="section-subtitle">Повний комплекс SEO робіт</p>
+      <div class="included-grid">
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Технічний SEO аудит</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Аналіз конкурентів</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Семантичне ядро</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Оптимізація швидкості</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Виправлення помилок</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Контент-стратегія</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Лінкбілдінг</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Моніторинг позицій</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Щомісячні звіти</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЦІНИ -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Тарифні плани</h2>
+      <p class="section-subtitle">Просування від 8 000₴/місяць</p>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Базове просування</h3>
+            <p class="pricing-desc">До 50 запитів</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">8 000₴</span>
+            <span class="price-period">на місяць</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Технічний аудит та виправлення</li>
+            <li><i class="bi bi-check"></i> Семантичне ядро (до 50 запитів)</li>
+            <li><i class="bi bi-check"></i> Оптимізація існуючих сторінок</li>
+            <li><i class="bi bi-check"></i> Базовий лінкбілдінг</li>
+            <li><i class="bi bi-check"></i> Моніторинг позицій</li>
+            <li><i class="bi bi-check"></i> Щомісячні звіти</li>
+            <li class="feature-disabled"><i class="bi bi-x"></i> Створення контенту</li>
+            <li class="feature-disabled"><i class="bi bi-x"></i> Розширений лінкбілдінг</li>
+          </ul>
+          <button class="btn-pricing cta-button">Замовити</button>
+        </div>
+
+        <div class="pricing-card popular">
+          <div class="popular-badge">Популярний</div>
+          <div class="pricing-header">
+            <h3>Стандарт</h3>
+            <p class="pricing-desc">До 150 запитів</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">15 000₴</span>
+            <span class="price-period">на місяць</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Повний технічний аудит</li>
+            <li><i class="bi bi-check"></i> Семантичне ядро (до 150 запитів)</li>
+            <li><i class="bi bi-check"></i> Оптимізація + новий контент</li>
+            <li><i class="bi bi-check"></i> 4 SEO статті на місяць</li>
+            <li><i class="bi bi-check"></i> Активний лінкбілдінг</li>
+            <li><i class="bi bi-check"></i> Local SEO оптимізація</li>
+            <li><i class="bi bi-check"></i> Детальні звіти 2 рази/місяць</li>
+            <li><i class="bi bi-check"></i> Особистий менеджер</li>
+          </ul>
+          <button class="btn-pricing btn-popular cta-button">Замовити</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Максимум</h3>
+            <p class="pricing-desc">Необмежено</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">від 30 000₴</span>
+            <span class="price-period">на місяць</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Розширене семантичне ядро</li>
+            <li><i class="bi bi-check"></i> 10+ SEO статей на місяць</li>
+            <li><i class="bi bi-check"></i> Агресивний лінкбілдінг</li>
+            <li><i class="bi bi-check"></i> Конкурентна розвідка</li>
+            <li><i class="bi bi-check"></i> Міжнародне SEO</li>
+            <li><i class="bi bi-check"></i> Технічні доопрацювання</li>
+            <li><i class="bi bi-check"></i> Виділена команда</li>
+            <li><i class="bi bi-check"></i> Щотижневі звіти</li>
+          </ul>
+          <button class="btn-pricing cta-button">Замовити</button>
+        </div>
+      </div>
+
+      <div class="pricing-note">
+        <p><i class="bi bi-info-circle"></i> Перший місяць — аудит та налаштування. Результати починаються з 2-3 місяця роботи.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРОЦЕС -->
+  <section class="process-section">
+    <div class="container">
+      <h2 class="section-title">Як ми працюємо</h2>
+      <p class="section-subtitle">Процес SEO просування</p>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Аудит</h3>
+            <p>Глибокий технічний та контентний аудит сайту, аналіз конкурентів.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Стратегія</h3>
+            <p>Розробляємо план просування з пріоритетами та прогнозом.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Виправлення</h3>
+            <p>Усуваємо технічні помилки, оптимізуємо швидкість та структуру.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Контент та посилання</h3>
+            <p>Створюємо якісний контент та будуємо природний профіль посилань.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h3>Моніторинг</h3>
+            <p>Відстежуємо позиції, аналізуємо результати та коригуємо стратегію.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Часті питання</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Скільки коштує SEO просування?</h3>
+          <p>Від 8 000₴/місяць за базове, 15 000₴ за стандарт, від 30 000₴ за максимальний пакет.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Коли будуть перші результати?</h3>
+          <p>Перші зміни через 1-2 місяці, стабільні топ позиції через 3-6 місяців залежно від конкуренції.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Гарантуєте топ в Google?</h3>
+          <p>Гарантуємо зростання позицій та трафіку. Точні позиції залежать від багатьох факторів та конкуренції.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Який мінімальний термін роботи?</h3>
+          <p>Рекомендуємо мінімум 6 місяців для оцінки повного ефекту від SEO.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Що таке лінкбілдінг?</h3>
+          <p>Отримання якісних зовнішніх посилань на ваш сайт — важливий фактор ранжування Google.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи працюєте з будь-якими нішами?</h3>
+          <p>Так, маємо досвід в різних галузях: від ecommerce до B2B послуг.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ФОРМА -->
+  <section class="cta-form-section">
+    <div class="container">
+      <div class="cta-form-wrapper">
+        <div class="cta-form-content">
+          <h2>Виведемо ваш сайт в топ Google</h2>
+          <p>Залиште заявку та отримайте безкоштовний технічний аудит сайту з планом просування</p>
+          <ul class="cta-benefits">
+            <li><i class="bi bi-check-circle-fill"></i> Безкоштовний SEO аудит</li>
+            <li><i class="bi bi-check-circle-fill"></i> Аналіз конкурентів</li>
+            <li><i class="bi bi-check-circle-fill"></i> Прогноз трафіку</li>
+          </ul>
+        </div>
+        
+        <form class="cta-form" id="seoVisibilityForm">
+          <h3>Отримати консультацію</h3>
+          
+          <div class="form-group">
+            <label for="name">Ваше ім'я *</label>
+            <input type="text" id="name" name="name" required placeholder="Іван Іванович">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+38 (097) 123-45-67">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Адреса сайту</label>
+            <textarea id="message" name="message" rows="4" placeholder="https://вашсайт.com"></textarea>
+          </div>
+
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn-submit">
+            <span>Відправити заявку</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+          <p class="form-privacy">Натискаючи кнопку, ви погоджуєтесь з <a href="privacy.html">політикою конфіденційності</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="#">Послуги</a></li>
+          <li><a href="#">Про компанію</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Категорії</h4>
+        <ul>
+          <li><a href="Landing.html">Landing Page</a></li>
+          <li><a href="corporate.html">Корпоративні сайти</a></li>
+          <li><a href="ecommerce.html">Інтернет-магазини</a></li>
+          <li><a href="multipage.html">Багатосторінкові</a></li>
+          <li><a href="businesscard.html">Сайт-візитка</a></li>
+          <li><a href="uiux-design.html">UI/UX Дизайн</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/corporate.js"></script>
+</body>
+</html>

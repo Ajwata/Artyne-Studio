@@ -1,39 +1,41 @@
-// === Меню ===
-const toggle = document.getElementById("menu-toggle");
-const nav = document.querySelector("nav");
-const overlay = document.querySelector(".overlay");
+// === Ініціалізація навігації ===
+function initNavigation() {
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.querySelector("nav");
+  const overlay = document.querySelector(".overlay");
 
-// === Бургер ===
-toggle.addEventListener("click", () => {
-  const isActive = nav.classList.toggle("active");
-  toggle.classList.toggle("active");
-  overlay.classList.toggle("active");
-  document.body.classList.toggle("menu-open", isActive);
-});
+  if (!toggle || !nav || !overlay) return;
 
-// === Клик по overlay — закрывает меню ===
-overlay.addEventListener("click", closeMenu);
+  // === Бургер ===
+  toggle.addEventListener("click", () => {
+    const isActive = nav.classList.toggle("active");
+    toggle.classList.toggle("active");
+    overlay.classList.toggle("active");
+    document.body.classList.toggle("menu-open", isActive);
+  });
 
-// === Клик вне меню — закрывает меню в мобилке ===
-document.addEventListener("click", (e) => {
-  if (
-    window.innerWidth <= 1199 &&
-    !e.target.closest("nav") &&
-    !e.target.closest("#menu-toggle")
-  ) {
-    closeMenu();
+  // === Клик по overlay — закрывает меню ===
+  overlay.addEventListener("click", closeMenu);
+
+  // === Клик вне меню — закрывает меню в мобилке ===
+  document.addEventListener("click", (e) => {
+    if (
+      window.innerWidth <= 1199 &&
+      !e.target.closest("nav") &&
+      !e.target.closest("#menu-toggle")
+    ) {
+      closeMenu();
+    }
+  });
+
+  function closeMenu() {
+    nav.classList.remove("active");
+    toggle.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.classList.remove("menu-open");
   }
-});
 
-function closeMenu() {
-  nav.classList.remove("active");
-  toggle.classList.remove("active");
-  overlay.classList.remove("active");
-  document.body.classList.remove("menu-open");
-}
-
-// === Контроллер подменю ===
-(function () {
+  // === Контроллер подменю ===
   const mqDesktop = window.matchMedia("(min-width:1200px)");
   let cleanup = () => {};
 
@@ -145,7 +147,31 @@ function closeMenu() {
 
   mqDesktop.addEventListener("change", apply);
   apply();
-})();
+}
+
+// Автоматична ініціалізація при завантаженні
+document.addEventListener('DOMContentLoaded', function() {
+  // Якщо header вже є на сторінці
+  const header = document.querySelector('header');
+  if (header) {
+    initNavigation();
+    
+    // Ініціалізація sticky header одразу
+    function updateHeaderOnScroll() {
+      if (window.scrollY > 10) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    }
+    
+    // Додаємо слухача скролу
+    window.addEventListener("scroll", updateHeaderOnScroll);
+    
+    // Викликаємо одразу, щоб перевірити поточну позицію
+    updateHeaderOnScroll();
+  }
+});
 
 // === Повтор видео ===
 const video = document.querySelector(".bg-video video");
@@ -222,20 +248,20 @@ window.addEventListener("load", () => {
   });
 });
 
-// === Эффект рыбьего глаза при скролле ===
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
-  if (!header) return;
-  if (window.scrollY > 10) header.classList.add("scrolled");
-  else header.classList.remove("scrolled");
-});
-
-// === Отправка заявки ===
+// === Відправка заявки ===
 document.querySelectorAll("form").forEach((form) => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const fd = new FormData(form);
+    
+    // Honeypot захист: якщо поле "website" заповнене - це бот
+    if (fd.get("website")) {
+      console.warn("⚠️ Спам-бот заблоковано");
+      showSuccessPopup("✅ Заявка відправлена", false);
+      return; // не відправляємо
+    }
+
     const name = fd.get("name")?.trim() || "-";
     const phone = fd.get("phone")?.trim() || "-";
     const budget = fd.get("budget")?.trim() || "-";

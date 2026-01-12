@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Виправлення помилок на сайті — Artyne Studio | Швидке усунення багів</title>
+  <meta name="description" content="Виправлення помилок та багів на сайті. Artyne Studio — усуваємо технічні проблеми, ламані функції, відображення.">
+  <meta name="keywords" content="виправлення помилок, Artyne Studio, баги сайту, технічна підтримка">
+  <link rel="canonical" href="https://artynestudio.com/bug-fixes.html">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/benzin" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/corporate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="src/favicon.png" />
+</head>
+
+<body>
+
+  <!-- Canvas для анімації -->
+  <canvas id="lightGrid"></canvas>
+  <canvas id="particleCloud"></canvas>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-block">
+      <div class="logo">
+        <a href="index.html">ARTYNE STUDIO</a>
+      </div>
+      <div class="flag"><span></span>Ми працюємо!</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li>
+          <a class="has-submenu" role="button" tabindex="0">Послуги</a>
+          <div class="submenu submenu-grid-wide">
+            <div class="submenu-inner">
+              <div class="submenu-sections">
+                <div class="section">
+                  <h4>Розробка сайтів</h4>
+                  <a href="Landing.html">Landing page</a>
+                  <a href="corporate.html">Корпоративний сайт</a>
+                  <a href="ecommerce.html">Інтернет-магазин</a>
+                  <a href="multipage.html">Багатосторінковий сайт</a>
+                  <a href="businesscard.html">Сайт-візитка</a>
+                </div>
+
+                <div class="section">
+                  <h4>Веб-дизайн</h4>
+                  <a href="uiux-design.html">UI/UX дизайн</a>
+                  <a href="redesign.html">Редизайн існуючого сайту</a>
+                  <a href="sections-design.html">Дизайн секцій та блоків</a>
+                  <a href="logo-branding.html">Створення лого та айдентики</a>
+                </div>
+
+                <div class="section">
+                  <h4>Технічна реалізація</h4>
+                  <a href="adaptive-layout.html">Адаптивна верстка</a>
+                  <a href="forms-scripts.html">Підключення форм і скриптів</a>
+                  <a href="integrations.html">Google Maps / Telegram / Viber</a>
+                  <a href="optimization.html">Швидкість та оптимізація</a>
+                </div>
+
+                <div class="section">
+                  <h4>Реклама</h4>
+                  <a href="google-ads.html">Google Ads налаштування</a>
+                  <a href="advertising-campaigns.html">Рекламні кампанії під ключ</a>
+                  <a href="analytics.html">Аналіз ефективності</a>
+                </div>
+
+                <div class="section">
+                  <h4>SEO та структура</h4>
+                  <a href="seo-meta.html">Заголовки / мета-дані</a>
+                  <a href="content-optimization.html">Оптимізація контенту</a>
+                  <a href="seo-visibility.html">Покращення видимості сайту</a>
+                </div>
+
+                <div class="section">
+                  <h4>Підтримка</h4>
+                  <a href="website-updates.html">Оновлення сайту</a>
+                  <a href="bug-fixes.html">Виправлення помилок</a>
+                  <a href="technical-support.html">Технічна допомога клієнтам</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="about.html">Хто ми</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="#">Кейси</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+
+      <div class="mobile-contacts">
+        <a href="tel:+380970312970" class="phone"><i class="bi bi-telephone"></i> +38 (097) 031-29-70</a>
+        <div class="socials">
+          <a href="https://t.me/ArtyneStudio" target="_blank" class="tg"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber"><i class="bi bi-chat-dots"></i></a>
+          <a href="https://wa.me/380970312970" target="_blank" class="wa"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="socials-header">
+      <a href="https://t.me/ArtyneStudio" target="_blank" class="call-btn"><i class="bi bi-telegram"></i></a>
+      <a href="viber://chat?number=%2B380970312970" class="call-btn"><i class="bi bi-chat-dots"></i></a>
+      <a href="https://wa.me/380970312970" target="_blank" class="call-btn"><i class="bi bi-whatsapp"></i></a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="process-line header-line"></div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-landing grid-bg">
+    <div class="hero-content">
+      <h1>Виправлення помилок на сайті, <br> швидке усунення багів та збоїв</h1>
+      <p>Діагностуємо та виправляємо будь-які технічні проблеми: ламані форми, неправильне відображення, помилки скриптів.</p>
+      <div class="hero-cta">
+        <a href="#pricing" class="btn-outline">Дізнатись ціну</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Помилок виправлено</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">1-24 год</span>
+          <span class="stat-label">Термін виправлення</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">від 800₴</span>
+          <span class="stat-label">За одну помилку</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПЕРЕВАГИ -->
+  <section class="advantages-section">
+    <div class="container">
+      <h2 class="section-title">Які помилки виправляємо</h2>
+      <p class="section-subtitle">Будь-які технічні проблеми</p>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-envelope-x"></i></div>
+          <h3>Не працюють форми</h3>
+          <p>Форми не відправляються, не приходять листи, помилки валідації</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-display"></i></div>
+          <h3>Неправильне відображення</h3>
+          <p>Зламаний дизайн, елементи накладаються, проблеми на мобільних</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-exclamation-triangle"></i></div>
+          <h3>Помилки JavaScript</h3>
+          <p>Не працюють кнопки, анімації, слайдери, спливаючі вікна</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-hourglass-split"></i></div>
+          <h3>Повільна робота</h3>
+          <p>Сайт довго завантажується, зависає, повільно відкриваються сторінки</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-link-45deg"></i></div>
+          <h3>Битті посилання</h3>
+          <p>Помилки 404, неправильні редіректи, недоступні сторінки</p>
+        </div>
+
+        <div class="advantage-card">
+          <div class="advantage-icon"><i class="bi bi-shield-x"></i></div>
+          <h3>Проблеми безпеки</h3>
+          <p>Злам сайту, віруси, спам, підозріла активність</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЩО ВХОДИТЬ -->
+  <section class="included-section">
+    <div class="container">
+      <h2 class="section-title">Процес виправлення</h2>
+      <p class="section-subtitle">Системний підхід до усунення проблем</p>
+      <div class="included-grid">
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Діагностика проблеми</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Пошук причини бага</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Виправлення коду</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Тестування на всіх браузерах</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Перевірка на мобільних</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Оптимізація після виправлення</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Документування змін</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Рекомендації по запобіганню</span></div>
+        <div class="included-item"><i class="bi bi-check-circle-fill"></i> <span>Гарантія на виправлення</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЦІНИ -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Тарифні плани</h2>
+      <p class="section-subtitle">Виправлення від 800₴</p>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Дрібні помилки</h3>
+            <p class="pricing-desc">Швидкі виправлення</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">800₴</span>
+            <span class="price-period">за помилку</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Виправлення CSS стилів</li>
+            <li><i class="bi bi-check"></i> Виправлення відступів</li>
+            <li><i class="bi bi-check"></i> Виправлення тексту</li>
+            <li><i class="bi bi-check"></i> Дрібні правки JS</li>
+            <li><i class="bi bi-check"></i> Виправлення посилань</li>
+            <li><i class="bi bi-check"></i> Термін: 1-3 години</li>
+            <li class="feature-disabled"><i class="bi bi-x"></i> Складні баги</li>
+            <li class="feature-disabled"><i class="bi bi-x"></i> Безпека</li>
+          </ul>
+          <button class="btn-pricing cta-button">Замовити</button>
+        </div>
+
+        <div class="pricing-card popular">
+          <div class="popular-badge">Популярний</div>
+          <div class="pricing-header">
+            <h3>Середні помилки</h3>
+            <p class="pricing-desc">Функціональні баги</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">2 500₴</span>
+            <span class="price-period">за помилку</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Виправлення форм</li>
+            <li><i class="bi bi-check"></i> Проблеми адаптивності</li>
+            <li><i class="bi bi-check"></i> Помилки JavaScript</li>
+            <li><i class="bi bi-check"></i> Інтеграції не працюють</li>
+            <li><i class="bi bi-check"></i> Битті посилання</li>
+            <li><i class="bi bi-check"></i> Діагностика причин</li>
+            <li><i class="bi bi-check"></i> Термін: 3-12 годин</li>
+            <li><i class="bi bi-check"></i> Тестування</li>
+          </ul>
+          <button class="btn-pricing btn-popular cta-button">Замовити</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Складні проблеми</h3>
+            <p class="pricing-desc">Критичні баги</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount">від 5 000₴</span>
+            <span class="price-period">за завдання</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="bi bi-check"></i> Проблеми безпеки</li>
+            <li><i class="bi bi-check"></i> Злам сайту</li>
+            <li><i class="bi bi-check"></i> Видалення вірусів</li>
+            <li><i class="bi bi-check"></i> Критичні помилки</li>
+            <li><i class="bi bi-check"></i> Відновлення після збою</li>
+            <li><i class="bi bi-check"></i> Міграція даних</li>
+            <li><i class="bi bi-check"></i> Термін: 1-2 дні</li>
+            <li><i class="bi bi-check"></i> Превентивний захист</li>
+          </ul>
+          <button class="btn-pricing cta-button">Замовити</button>
+        </div>
+      </div>
+
+      <div class="pricing-note">
+        <p><i class="bi bi-info-circle"></i> Термінове виправлення (протягом 1-3 годин) +50% до вартості. Доступно цілодобово.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРОЦЕС -->
+  <section class="process-section">
+    <div class="container">
+      <h2 class="section-title">Як ми працюємо</h2>
+      <p class="section-subtitle">Процес виправлення помилок</p>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Заявка</h3>
+            <p>Описуєте проблему або надсилаєте скріншот/відео бага.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Діагностика</h3>
+            <p>Аналізуємо сайт, знаходимо причину проблеми.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Оцінка</h3>
+            <p>Називаємо вартість виправлення та термін роботи.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Виправлення</h3>
+            <p>Усуваємо помилку та тестуємо на всіх пристроях.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h3>Перевірка</h3>
+            <p>Підтверджуєте що все працює, надаємо гарантію.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Часті питання</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Скільки коштує виправлення?</h3>
+          <p>800₴ за дрібні правки, 2 500₴ за функціональні баги, від 5 000₴ за критичні проблеми.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Як швидко виправите?</h3>
+          <p>Дрібні помилки — 1-3 години, середні — 3-12 годин, складні — 1-2 дні. Термінові +50%.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи даєте гарантію?</h3>
+          <p>Так, 1 місяць гарантії на виправлені помилки. Якщо баг повторюється — виправляємо безкоштовно.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Що потрібно для діагностики?</h3>
+          <p>Опис проблеми, скріншот або відео, доступ до адмінки (по можливості).</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи працюєте цілодобово?</h3>
+          <p>Так, приймаємо заявки 24/7. Термінові виправлення доступні в будь-який час.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3><i class="bi bi-question-circle"></i> Чи працюєте з будь-якими сайтами?</h3>
+          <p>Так, виправляємо помилки на сайтах будь-якої складності та платформи.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ФОРМА -->
+  <section class="cta-form-section">
+    <div class="container">
+      <div class="cta-form-wrapper">
+        <div class="cta-form-content">
+          <h2>Виправимо вашу помилку швидко</h2>
+          <p>Залиште заявку та отримайте безкоштовну діагностику проблеми з оцінкою вартості</p>
+          <ul class="cta-benefits">
+            <li><i class="bi bi-check-circle-fill"></i> Безкоштовна діагностика</li>
+            <li><i class="bi bi-check-circle-fill"></i> Швидке виправлення</li>
+            <li><i class="bi bi-check-circle-fill"></i> Гарантія 1 місяць</li>
+          </ul>
+        </div>
+        
+        <form class="cta-form" id="bugFixesForm">
+          <h3>Отримати консультацію</h3>
+          
+          <div class="form-group">
+            <label for="name">Ваше ім'я *</label>
+            <input type="text" id="name" name="name" required placeholder="Іван Іванович">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+38 (097) 123-45-67">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Опис проблеми</label>
+            <textarea id="message" name="message" rows="4" placeholder="Що саме не працює?"></textarea>
+          </div>
+
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn-submit">
+            <span>Відправити заявку</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+          <p class="form-privacy">Натискаючи кнопку, ви погоджуєтесь з <a href="privacy.html">політикою конфіденційності</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <button id="backToTop" class="back-to-top" aria-label="Повернутися вгору">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand">
+        <img src="src/logo.png" alt="Artyne Studio — Веб-студія розробки сайтів" class="footer-logo" />
+      </div>
+
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="#">Послуги</a></li>
+          <li><a href="#">Про компанію</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Категорії</h4>
+        <ul>
+          <li><a href="Landing.html">Landing Page</a></li>
+          <li><a href="corporate.html">Корпоративні сайти</a></li>
+          <li><a href="ecommerce.html">Інтернет-магазини</a></li>
+          <li><a href="multipage.html">Багатосторінкові</a></li>
+          <li><a href="businesscard.html">Сайт-візитка</a></li>
+          <li><a href="uiux-design.html">UI/UX Дизайн</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Контакти</h4>
+        <p><i class="bi bi-telephone"></i> +38 (097) 031-29-70</p>
+        <div class="footer-socials">
+          <a href="https://t.me/ArtyneStudioBot" class="tg" target="_blank"><i class="bi bi-telegram"></i></a>
+          <a href="viber://chat?number=%2B380970312970" class="viber" target="_blank"><i class="bi bi-telephone-fill"></i></a>
+          <a href="https://wa.me/380970312970" class="wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Artyne Studio — створюємо сайти, які приносять результат.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/corporate.js"></script>
+</body>
+</html>
