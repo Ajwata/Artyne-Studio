@@ -740,6 +740,7 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 40px;
+  box-sizing: border-box;
 }
 
 .cta-form h3 {
@@ -750,6 +751,7 @@ section {
 
 .form-group {
   margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .form-group label {
@@ -771,6 +773,7 @@ section {
   font-size: 16px;
   transition: 0.3s;
   font-family: inherit;
+  box-sizing: border-box;
 }
 
 .form-group select {
@@ -949,5 +952,38 @@ section {
     height: 45px;
     font-size: 20px;
   }
+
+  /* Fix form inputs overflow on mobile */
+  .cta-form {
+    padding: 30px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-group {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
 }
 
+@media (max-width: 480px) {
+  .cta-form {
+    padding: 25px 15px;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 10px;
+  }
+}

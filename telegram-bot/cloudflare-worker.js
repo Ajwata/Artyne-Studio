@@ -74,17 +74,30 @@ async function handleRequest(request) {
 }
 
 function formatMessage(data) {
-  const { name, contacts, budget, comments, form_source } = data;
+  const { name, contacts, purpose, pages, examples, budget, comments, form_source } = data;
   
   return `
-🔔 <b>Нова заявка з сайту!</b>
+🔔 <b>Нова заявка з сайту - БРИФ!</b>
 
 👤 <b>Ім'я:</b> ${name || 'Не вказано'}
-📞 <b>Контакт:</b> ${contacts || 'Не вказано'}
-💰 <b>Бюджет:</b> ${budget || 'Не вказано'}
-📝 <b>Коментар:</b> ${comments || 'Не вказано'}
+📞 <b>Контакти:</b> ${contacts || 'Не вказано'}
 
-📍 <b>Джерело:</b> ${form_source || 'Сайт'}
+📋 <b>ІНФОРМАЦІЯ ПРО ПРОЕКТ:</b>
+🎯 <b>Для чого потрібен сайт:</b> 
+${purpose || 'Не вказано'}
+
+📄 <b>Потрібні сторінки/розділи:</b> 
+${pages || 'Не вказано'}
+
+💡 <b>Приклади сайтів:</b> 
+${examples || 'Не вказано'}
+
+💰 <b>Бюджет:</b> ${budget || 'Не вказано'}
+
+📝 <b>Додаткові коментарі:</b> 
+${comments || 'Не вказано'}
+
+📍 <b>Джерело:</b> ${form_source || 'Бриф на сайті'}
 ⏰ <b>Час:</b> ${new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Kyiv' })}
   `.trim();
 }
