@@ -1,7 +1,11 @@
 User-agent: *
 Allow: /
 
+# Разрешаем favicon
+Allow: /favicon.ico
+
 # Sitemap
+Sitemap: https://artyne-studio.online/sitemap.xml
 Sitemap: https://artynestudio.com/sitemap.xml
 
 # Основні правила

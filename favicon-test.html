@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Test - Artyne Studio</title>
+    
+    <!-- Все возможные варианты favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.ico">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #b7003d; }
+        .check { color: green; font-weight: bold; }
+        .fail { color: red; font-weight: bold; }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        img {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Тест Favicon для Artyne Studio</h1>
+    
+    <div class="test-box">
+        <h2>1. Прямая ссылка на favicon</h2>
+        <p>Попробуйте открыть: <a href="favicon.ico" target="_blank"><code>favicon.ico</code></a></p>
+        <p>Если файл открывается - ✅ favicon существует</p>
+    </div>
+    
+    <div class="test-box">
+        <h2>2. Визуальная проверка</h2>
+        <p>Favicon должен отображаться в табе браузера ⬆️</p>
+        <img src="favicon.ico" alt="Favicon" width="64" height="64">
+    </div>
+    
+    <div class="test-box">
+        <h2>3. Проверка путей</h2>
+        <ul>
+            <li>Относительный путь: <code>favicon.ico</code></li>
+            <li>Полный URL: <code>https://artyne-studio.online/favicon.ico</code></li>
+        </ul>
+    </div>
+    
+    <div class="test-box">
+        <h2>4. Инструкции</h2>
+        <ol>
+            <li>Откройте эту страницу на вашем сайте</li>
+            <li>Проверьте, виден ли favicon в табе браузера</li>
+            <li>Нажмите Ctrl+Shift+R для очистки кэша</li>
+            <li>Если не работает - проверьте консоль браузера (F12)</li>
+        </ol>
+    </div>
+    
+    <div class="test-box">
+        <h2>5. Возможные проблемы</h2>
+        <ul>
+            <li><strong>Кэш браузера:</strong> Нажмите Ctrl+Shift+R или Ctrl+F5</li>
+            <li><strong>GitHub Pages:</strong> Подождите 1-2 минуты после деплоя</li>
+            <li><strong>HTTPS:</strong> Убедитесь что используете https://</li>
+            <li><strong>Размер файла:</strong> favicon.ico должен быть больше 1KB</li>
+        </ul>
+    </div>
+    
+    <p style="text-align: center; margin-top: 40px;">
+        <a href="index.html" style="color: #b7003d; text-decoration: none; font-weight: bold;">← Вернуться на главную</a>
+    </p>
+</body>
+</html>
