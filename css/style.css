@@ -318,6 +318,11 @@ nav ul li:hover > .submenu-grid-wide,
   border: 2px solid #b7003d;
   width: 42px;
   height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  max-width: 42px;
+  max-height: 42px;
+  flex-shrink: 0;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -325,6 +330,16 @@ nav ul li:hover > .submenu-grid-wide,
   font-size: 18px;
   cursor: pointer;
   transition: 0.3s;
+  padding: 0;
+  overflow: hidden;
+}
+
+.call-btn i {
+  font-size: 18px !important;
+  width: 18px !important;
+  height: 18px !important;
+  line-height: 1 !important;
+  display: inline-block;
 }
 
 .call-btn:hover {
@@ -698,16 +713,34 @@ nav ul li:hover > .submenu-grid-wide,
   .mobile-contacts .socials a {
     width: 42px;
     height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    max-width: 42px;
+    max-height: 42px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    color: #b7003d;
+    font-size: 18px;
+    color: #fff;
+    background: #b7003d;
+    border: 2px solid #b7003d;
+    border-radius: 50%;
     transition: all 0.3s ease;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .mobile-contacts .socials a i {
+    font-size: 18px !important;
+    width: 18px !important;
+    height: 18px !important;
+    line-height: 1 !important;
+    display: inline-block;
   }
 
   .mobile-contacts .socials a:hover {
-    background: #ffffff;
+    background: #b7003d;
     color: #fff;
     transform: translateY(-2px);
   }
@@ -732,6 +765,18 @@ nav ul li:hover > .submenu-grid-wide,
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.socials-header .call-btn {
+  flex-shrink: 0;
+}
+
+.socials-header .call-btn i {
+  font-size: 18px !important;
+  width: 18px !important;
+  height: 18px !important;
+  line-height: 1 !important;
+  display: inline-block;
 }
 
 .socials-header a:hover {
